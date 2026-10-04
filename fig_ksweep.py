@@ -6,7 +6,7 @@ rows=[r for r in json.load(open("results/ksweep.json")) if r["split"]=="devtest"
 fig,axs=plt.subplots(1,2,figsize=(3.3,1.9),sharey=True)
 for ax,m,title in zip(axs,["Llama-3.2-1B","Qwen3-1.7B-Base"],["Llama-3","Qwen3"]):
     r0=[r for r in rows if r["model"]==m and r["arm"]=="R0"][0]["premium"]
-    for arm,c,lab in [("R1","#c0392b","R1 extend"),("R2","#2563eb","R2 repair+extend")]:
+    for arm,c,lab in [("R1","#c0392b","R1 standard extension"),("R2","#2563eb","R2 repair + extension")]:
         rs=sorted([r for r in rows if r["model"]==m and r["arm"]==arm],key=lambda r:r["K"])
         K=[r["K"]/1000 for r in rs]; P=[r["premium"] for r in rs]
         ax.plot(K,P,"o-",color=c,ms=2.5,lw=1.1,label=lab)

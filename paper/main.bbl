@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahia et~al.(2023)Ahia, Kumar, Gonen, Kasai, Mortensen, Smith, and
@@ -42,14 +42,19 @@ Lucas Bandarkar, Davis Liang, Benjamin Muller, Mikel Artetxe, Satya~Narayan
   for Computational Linguistics (Volume 1: Long Papers)}, pages 749--775,
   Bangkok, Thailand. Association for Computational Linguistics.
 
-\bibitem[{Brahma et~al.(2025)Brahma, Karthika, Singh, Adiga, Bhate,
-  Ramakrishnan, Saluja, and Desarkar}]{brahma2025morphtok}
-Maharaj Brahma, N~J Karthika, Atul Singh, Devaraj Adiga, Smruti Bhate, Ganesh
-  Ramakrishnan, Rohit Saluja, and Maunendra~Sankar Desarkar. 2025.
-\newblock \href {https://arxiv.org/abs/2504.10335} {{MorphTok}: Morphologically
-  grounded tokenization for {Indian} languages}.
-\newblock \emph{Preprint}, arXiv:2504.10335.
-\newblock Tokenization Workshop (TokShop) at ICML 2025.
+\bibitem[{Choudhury et~al.(2025)Choudhury, Chauhan, Das, Sahnan, Han, Li,
+  Singh, Jadhav, Agarwal, Choudhary, Banerjee, Koto, Bhat, Shukla, Ghosh,
+  Kamboj, Pandit, Pradhan, Pal, Sahu, Doraiswamy, Mullah, El~Filali, Sengupta,
+  Ramakrishnan, Joshi, Gosal, Sheinin, Vassilieva, and
+  Nakov}]{choudhury2025nanda}
+Monojit Choudhury, Shivam Chauhan, Rocktim~Jyoti Das, Dhruv Sahnan, Xudong Han,
+  Haonan Li, Aaryamonvikram Singh, Alok~Anil Jadhav, Utkarsh Agarwal, Mukund
+  Choudhary, Debopriyo Banerjee, Fajri Koto, Junaid Bhat, Awantika Shukla,
+  Samujjwal Ghosh, Samta Kamboj, Onkar Pandit, Lalit Pradhan, Rahul Pal, and 11
+  others. 2025.
+\newblock \href {https://arxiv.org/abs/2504.06011} {{Llama-3-Nanda-10B-Chat}:
+  An open generative large language model for {H}indi}.
+\newblock \emph{Preprint}, arXiv:2504.06011.
 
 \bibitem[{Csaki et~al.(2024)Csaki, Li, Li, Xu, Pawakapan, Zhang, Du, Zhao, Hu,
   and Thakker}]{csaki2024sambalingo}
@@ -114,7 +119,6 @@ Ramesh Kadariya. 2026.
   large language models and embedding models on a low-resource language.
 \newblock Preprint (Zenodo/ResearchGate). Code:
   \url{https://github.com/RameshKadariya/nepali-llm-benchmark}.
-\newblock UNVERIFIED: exact date and DOI.
 
 \bibitem[{Kapila and Bagavathy(2026)}]{kapila2026typedriven}
 Sai~Hemanth Kapila and Rakshika Bagavathy. 2026.
@@ -128,26 +132,12 @@ Seungduk Kim, Seungtaek Choi, and Myeongho Jeong. 2024.
   vocabulary expansion towards multilingual large language models}.
 \newblock \emph{Preprint}, arXiv:2402.14714.
 
-\bibitem[{Krishnan~K and Santhiappan(2026)}]{krishnan2026tamil}
-Hari Krishnan~K and Sudarsun Santhiappan. 2026.
-\newblock \href {https://arxiv.org/abs/2609.06690} {A grapheme-aware indic
-  tokenizer for {Tamil}: Large-scale training and intrinsic evaluation}.
-\newblock \emph{Preprint}, arXiv:2609.06690.
-
 \bibitem[{Land(2026)}]{land2026smallbugs}
 Sander Land. 2026.
 \newblock \href
   {https://tokencontributions.substack.com/p/small-pre-tokenization-bugs-with}
   {Small pre-tokenization bugs with a big multilingual price}.
 \newblock Substack blog post, 1 September 2026.
-
-\bibitem[{Liu et~al.(2025)Liu, Hayase, Hofmann, Oh, Smith, and
-  Choi}]{liu2025superbpe}
-Alisa Liu, Jonathan Hayase, Valentin Hofmann, Sewoong Oh, Noah~A. Smith, and
-  Yejin Choi. 2025.
-\newblock \href {https://arxiv.org/abs/2503.13423} {{SuperBPE}: Space travel
-  for language models}.
-\newblock In \emph{Conference on Language Modeling (COLM)}.
 
 \bibitem[{Liu et~al.(2024)Liu, Lin, Wang, and Schuetze}]{liu-etal-2024-ofa}
 Yihong Liu, Peiqin Lin, Mingyang Wang, and Hinrich Schuetze. 2024.
@@ -167,12 +157,6 @@ Jessica~M. Lundin, Ada Zhang, Nihal Karim, Hamza Louzan, Guohao Wei,
 \newblock In \emph{Proceedings of the 7th Workshop on {A}frican Natural
   Language Processing ({A}frica{NLP} 2026)}, pages 103--112, Rabat, Morocco.
   Association for Computational Linguistics.
-
-\bibitem[{Mandarapu and Kunkunuru(2026)}]{mandarapu2026ledger}
-Madhulatha Mandarapu and Sandeep Kunkunuru. 2026.
-\newblock \href {https://arxiv.org/abs/2609.00378} {Removable and irreducible:
-  A token-cost ledger for the multilingual tokenization tax}.
-\newblock \emph{Preprint}, arXiv:2609.00378.
 
 \bibitem[{{Meta Platforms, Inc.}(2024)}]{llama32license}
 {Meta Platforms, Inc.} 2024.
@@ -199,20 +183,21 @@ Benjamin Minixhofer, Edoardo~Maria Ponti, and Ivan Vuli{\'c}. 2024.
   transfer}.
 \newblock In \emph{Advances in Neural Information Processing Systems 37
   (NeurIPS 2024)}, pages 46791--46818.
-\newblock Appendix I: target pre-tokenizer is the GPT-2 regex adjusted for the
-  Unicode Mark category (code: \texttt{SPLIT\_REGEX} in
-  \url{https://github.com/bminixhofer/zett/blob/main/zett/utils.py}).
 
-\bibitem[{Mundra et~al.(2024)Mundra, Khandavally, Dabre, Puduppully,
-  Kunchukuttan, and Khapra}]{mundra-etal-2024-empirical}
-Nandini Mundra, Aditya Nanda~Kishore Khandavally, Raj Dabre, Ratish Puduppully,
-  Anoop Kunchukuttan, and Mitesh~M Khapra. 2024.
-\newblock \href {https://doi.org/10.18653/v1/2024.conll-1.8} {An empirical
-  comparison of vocabulary expansion and initialization approaches for language
-  models}.
-\newblock In \emph{Proceedings of the 28th Conference on Computational Natural
-  Language Learning}, pages 84--104, Miami, FL, USA. Association for
-  Computational Linguistics.
+\bibitem[{Minixhofer et~al.(2025)Minixhofer, Vuli{\'c}, and
+  Ponti}]{minixhofer2025alm}
+Benjamin Minixhofer, Ivan Vuli{\'c}, and Edoardo~Maria Ponti. 2025.
+\newblock \href {https://doi.org/10.52202/085713-2653} {Universal
+  cross-tokenizer distillation via approximate likelihood matching}.
+\newblock In \emph{Advances in Neural Information Processing Systems 38
+  (NeurIPS 2025)}, pages 88034--88063.
+
+\bibitem[{Nag et~al.(2024)Nag, Chakrabarti, Mukherjee, and
+  Ganguly}]{nag2024efficientcpt}
+Arijit Nag, Soumen Chakrabarti, Animesh Mukherjee, and Niloy Ganguly. 2024.
+\newblock \href {https://arxiv.org/abs/2412.10244} {Efficient continual
+  pre-training of {LLMs} for low-resource languages}.
+\newblock \emph{Preprint}, arXiv:2412.10244.
 
 \bibitem[{Nahin et~al.(2025)Nahin, Nandi, Sarker, Muhtaseem, Kowsher, Shill,
   Ibrahim, Menon, Muntasir, and Alam}]{nahin-etal-2025-titullms}
@@ -239,13 +224,6 @@ Shahriar~Kabir Nahin, Rabindra~Nath Nandi, Sagor Sarker, Quazi~Sarwar
   {{GPT-2} source code: \texttt{src/encoder.py}}.
 \newblock GitHub repository openai/gpt-2.
 
-\bibitem[{Ovcharov(2026)}]{ovcharov2026european}
-Volodymyr Ovcharov. 2026.
-\newblock \href {https://arxiv.org/abs/2605.24718} {The tokenizer tax across 25
-  {European} languages: Domain invariance, cross-lingual few-shot effects, and
-  the {Ukrainian} penalty}.
-\newblock \emph{Preprint}, arXiv:2605.24718.
-
 \bibitem[{Petrov et~al.(2023)Petrov, La~Malfa, Torr, and
   Bibi}]{petrov2023unfairness}
 Aleksandar Petrov, Emanuele La~Malfa, Philip H.~S. Torr, and Adel Bibi. 2023.
@@ -263,6 +241,15 @@ Taido Purason, Pavel Chizhov, Ivan~P. Yamshchikov, and Mark Fishel. 2026.
 \newblock In \emph{Findings of the {A}ssociation for {C}omputational
   {L}inguistics: {EACL} 2026}, pages 6492--6516, Rabat, Morocco. Association
   for Computational Linguistics.
+
+\bibitem[{Radford et~al.(2019)Radford, Wu, Child, Luan, Amodei, and
+  Sutskever}]{radford2019language}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever. 2019.
+\newblock \href
+  {https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf}
+  {Language models are unsupervised multitask learners}.
+\newblock Technical report, OpenAI.
 
 \bibitem[{Rana et~al.(2025)Rana, Menezes, Kulkarni, Khatri, and
   Agarwal}]{rana2025mutant}
@@ -289,12 +276,17 @@ Sajal Regmi, Siddhartha Pudasaini, and Chetan~Phakami Pun. 2026{\natexlab{b}}.
   letters: A pre-tokenization ceiling on multilingual tokenizer fertility}.
 \newblock \emph{Preprint}, arXiv:2608.26449.
 
-\bibitem[{Schmidt et~al.(2025)Schmidt, Reddy, Tanner, and
-  Pinter}]{schmidt2025boundless}
-Craig~W. Schmidt, Varshini Reddy, Chris Tanner, and Yuval Pinter. 2025.
-\newblock \href {https://arxiv.org/abs/2504.00178} {Boundless byte pair
-  encoding: Breaking the pre-tokenization barrier}.
-\newblock In \emph{Conference on Language Modeling (COLM)}.
+\bibitem[{Rust et~al.(2021)Rust, Pfeiffer, Vuli{\'c}, Ruder, and
+  Gurevych}]{rust-etal-2021-good}
+Phillip Rust, Jonas Pfeiffer, Ivan Vuli{\'c}, Sebastian Ruder, and Iryna
+  Gurevych. 2021.
+\newblock \href {https://doi.org/10.18653/v1/2021.acl-long.243} {How good is
+  your tokenizer? on the monolingual performance of multilingual language
+  models}.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics and the 11th International Joint Conference on
+  Natural Language Processing (Volume 1: Long Papers)}, pages 3118--3135,
+  Online. Association for Computational Linguistics.
 
 \bibitem[{Schmidt et~al.(2024)Schmidt, Reddy, Zhang, Alameddine, Uzan, Pinter,
   and Tanner}]{schmidt-etal-2024-tokenization}
@@ -306,11 +298,14 @@ Craig~W Schmidt, Varshini Reddy, Haoran Zhang, Alec Alameddine, Omri Uzan,
   Natural Language Processing}, pages 678--702, Miami, Florida, USA.
   Association for Computational Linguistics.
 
-\bibitem[{Shrestha and Pradhan(2026)}]{shrestha2026papaya}
-Kalash Shrestha and Nikhil Pradhan. 2026.
-\newblock \href {https://arxiv.org/abs/2609.33395} {Preserving morphemes:
-  Morphology-guided pre-tokenization for {Nepali}}.
-\newblock \emph{Preprint}, arXiv:2609.33395.
+\bibitem[{Sennrich et~al.(2016)Sennrich, Haddow, and
+  Birch}]{sennrich-etal-2016-neural}
+Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016.
+\newblock \href {https://doi.org/10.18653/v1/P16-1162} {Neural machine
+  translation of rare words with subword units}.
+\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association
+  for Computational Linguistics (Volume 1: Long Papers)}, pages 1715--1725,
+  Berlin, Germany. Association for Computational Linguistics.
 
 \bibitem[{Smith et~al.(2026)Smith, Dakhran, Cabrera, Lee, Pak, Tadimeti, Seyde,
   Labonne, Amini, and Lechner}]{smith2026inplace}
@@ -321,25 +316,12 @@ Jimmy T.~H. Smith, Tarek Dakhran, Alberto Cabrera, Simon~S. Lee, Paul Pak,
   expansion for pre-trained {LLMs}}.
 \newblock \emph{Preprint}, arXiv:2607.15232.
 
-\bibitem[{Somide(2026)}]{somide2026african}
-Olaoye~Anthony Somide. 2026.
-\newblock \href {https://arxiv.org/abs/2606.24460} {The {African} language tax:
-  Quantifying the cost, latency, and context penalty of tokenizing {African}
-  languages in frontier {LLMs}}.
-\newblock \emph{Preprint}, arXiv:2606.24460.
-
 \bibitem[{Srivastava(2026)}]{srivastava2026tokenizertax}
 Priyansh Srivastava. 2026.
 \newblock \href {https://arxiv.org/abs/2607.24276} {The tokenizer tax:
   Quantifying and explaining the cross-lingual cost of subword tokenization for
   {Indian} languages}.
 \newblock \emph{Preprint}, arXiv:2607.24276.
-
-\bibitem[{Tamang and Bora(2024)}]{tamang2024evaluating}
-S.~Tamang and D.~J. Bora. 2024.
-\newblock \href {https://arxiv.org/abs/2411.12240} {Evaluating tokenizer
-  performance of large language models across official {Indian} languages}.
-\newblock \emph{Preprint}, arXiv:2411.12240.
 
 \bibitem[{Tejaswi et~al.(2024)Tejaswi, Gupta, and
   Choi}]{tejaswi-etal-2024-exploring}
@@ -359,11 +341,29 @@ Menan Velayuthan and Kengatharaiyer Sarveswaran. 2025.
   Computational Linguistics}, pages 5987--5996, Abu Dhabi, UAE. Association for
   Computational Linguistics.
 
+\bibitem[{Yamaguchi et~al.(2025)Yamaguchi, Morishita, Villavicencio, and
+  Aletras}]{yamaguchi2025elchat}
+Atsuki Yamaguchi, Terufumi Morishita, Aline Villavicencio, and Nikolaos
+  Aletras. 2025.
+\newblock \href {https://arxiv.org/abs/2412.11704} {Adapting chat language
+  models using only target unlabeled language data}.
+\newblock \emph{Transactions on Machine Learning Research}.
+
 \bibitem[{Yamaguchi et~al.(2026)Yamaguchi, Villavicencio, and
   Aletras}]{yamaguchi2026lowres}
 Atsuki Yamaguchi, Aline Villavicencio, and Nikolaos Aletras. 2026.
 \newblock \href {https://doi.org/10.1162/coli.a.581} {How can we effectively
   expand the vocabulary of {LLMs} with 0.01{GB} of target language text?}
 \newblock \emph{Computational Linguistics}, 52(1):295--330.
+
+\bibitem[{Zouhar et~al.(2023)Zouhar, Meister, Gastaldi, Du, Sachan, and
+  Cotterell}]{zouhar-etal-2023-tokenization}
+Vil{\'e}m Zouhar, Clara Meister, Juan Gastaldi, Li~Du, Mrinmaya Sachan, and
+  Ryan Cotterell. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.acl-long.284} {Tokenization
+  and the noiseless channel}.
+\newblock In \emph{Proceedings of the 61st Annual Meeting of the Association
+  for Computational Linguistics (Volume 1: Long Papers)}, pages 5184--5207,
+  Toronto, Canada. Association for Computational Linguistics.
 
 \end{thebibliography}

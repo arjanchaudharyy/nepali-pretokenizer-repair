@@ -16,7 +16,7 @@ R = Path("results/cpt")
 B, SEED = 10_000, 0
 MODELS = {"llama": "Llama-3.2-1B", "qwen": "Qwen3-0.6B"}
 ARMS = ["R0", "R1", "R2"]
-EXPS = {"A": lambda m, a: f"{m}_{a}_s0", "B1": lambda m, a: f"B1_{m}_{a}", "B3": lambda m, a: f"B3_{m}_{a}"}
+EXPS = {"A": lambda m, a: f"{m}_{a}_s0", "B1": lambda m, a: f"B1_{m}_{a}", "B3": lambda m, a: f"B3_{m}_{a}", "BOS": lambda m, a: f"bos_{m}_{a}_s0"}
 KEYS = {"ne": "npi_Deva.heldout.jsonl", "en": "eng_Latn.heldout.jsonl"}
 
 

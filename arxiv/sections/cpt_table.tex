@@ -1,28 +1,29 @@
 \begin{table*}[t]
-\centering\small
-\setlength{\tabcolsep}{4pt}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lllrrrrrrrr}
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lllrrrrrrrrr}
 \toprule
-Model & Data & Arm & Tokens & ne BPB$\downarrow$ & en BPB$\downarrow$ & FLORES ne$\downarrow$ & Belebele ne & chrF ne$\to$en & chrF en$\to$ne & Gen.\ B/s \\
+ & & & & \multicolumn{2}{c}{held-out ne BPB$\downarrow$} & en BPB$\downarrow$ & FLORES & Belebele & \multicolumn{2}{c}{chrF++} & Gen. \\
+\cmidrule(lr){5-6}\cmidrule(lr){10-11}
+Model & Runs & Arm & Tokens & reg. & sep. & reg. & ne BPB & ne acc. & ne$\to$en & en$\to$ne & B/s \\
 \midrule
-Llama-3.2-1B & -- & base & 0 & 0.766 & 0.788 & 0.863 & 0.277 & 32.4 & 10.8 & 5327 \\
- & 1\,GB & \RO{} & 417M & \textbf{0.474} & 0.799 & 0.611 & 0.287 & 32.3 & 19.8 & 5147 \\
- & 1\,GB & \RI{} & 386M & 0.534 & 0.803 & 0.648 & 0.268 & 27.2 & 10.4 & 6354 \\
- & 1\,GB & \RII{} & 286M & 0.539 & 0.799 & 0.671 & 0.266 & 27.8 & 12.3 & 9398 \\
+Llama-3.2-1B & none & base & 0 & 0.766 & n/a & 0.788 & 0.863 & 0.277 & 32.4 & 10.8 & 5327 \\
+ & main & \RO{} & 417M & 0.474 & 0.471 & 0.799 & 0.611 & 0.287 & 32.3 & 19.8 & 5147 \\
+ & main & \RI{} & 386M & 0.534 & 0.483 & 0.803 & 0.648 & 0.268 & 27.2 & 10.4 & 6354 \\
+ & main & \RII{} & 286M & 0.539 & 0.510 & 0.799 & 0.671 & 0.266 & 27.8 & 12.3 & 9398 \\
 \addlinespace
- & 1\,GB + warm-up & \RO{} & 417M & 0.779 & 0.850 & 0.864 & 0.279 & 8.8 & 9.1 & 5349 \\
- & 1\,GB + warm-up & \RI{} & 386M & 0.808 & 0.854 & 0.904 & 0.271 & 9.9 & 4.2 & 7521 \\
- & 1\,GB + warm-up & \RII{} & 286M & \textbf{0.527} & 0.840 & 0.652 & 0.283 & 16.2 & 15.4 & 11078 \\
+ & warm-up & \RO{} & 417M & 0.779 & 0.471 & 0.850 & 0.864 & 0.279 & 8.8 & 9.1 & 5349 \\
+ & warm-up & \RI{} & 386M & 0.808 & 0.480 & 0.854 & 0.904 & 0.271 & 9.9 & 4.2 & 7521 \\
+ & warm-up & \RII{} & 286M & 0.527 & 0.501 & 0.840 & 0.652 & 0.283 & 16.2 & 15.4 & 11078 \\
 \addlinespace
 \midrule
-Qwen3-0.6B & -- & base & 0 & 0.852 & 0.873 & 0.945 & 0.290 & 26.0 & 6.8 & 2186 \\
- & 1\,GB & \RO{} & 574M & \textbf{0.501} & 0.864 & 0.631 & 0.270 & 20.1 & 13.6 & 3089 \\
- & 1\,GB & \RI{} & 392M & 0.561 & 0.864 & 0.689 & 0.253 & 11.6 & 6.9 & 4972 \\
- & 1\,GB & \RII{} & 292M & 0.570 & 0.862 & 0.688 & 0.266 & 17.0 & 3.9 & 7454 \\
+Qwen3-0.6B & none & base & 0 & 0.852 & 0.852 & 0.873 & 0.945 & 0.290 & 26.0 & 6.8 & 2186 \\
+ & main & \RO{} & 574M & 0.501 & 0.501 & 0.864 & 0.631 & 0.270 & 20.1 & 13.6 & 3089 \\
+ & main & \RI{} & 392M & 0.561 & 0.561 & 0.864 & 0.689 & 0.253 & 11.6 & 6.9 & 4972 \\
+ & main & \RII{} & 292M & 0.570 & 0.570 & 0.862 & 0.688 & 0.266 & 17.0 & 3.9 & 7454 \\
 \addlinespace
 \bottomrule
-\end{tabular}}
-\caption{Continued pretraining on identical bytes per arm (one seed). BPB: bits per byte on held-out native text split into ${\sim}$2{,}000-byte pieces (primary metric) and on FLORES-200 devtest. Belebele: zero-shot accuracy (900 items, chance 0.25), scored on answer text. chrF++: 5-shot FLORES-200 devtest translation. Gen.\ B/s: UTF-8 bytes of Nepali generated per second (batch 64, greedy). Tokens: training tokens seen (for B1, excluding the embedding warm-up on the first 10\% of the same stream). Bold: best Nepali BPB within each block. All BPB here use the registered prefix; the B1 Llama rows are dominated by the scoring artifact of \S\ref{sec:cpt}, and Table~\ref{tab:prefix} gives the training-separator comparison.}
+\end{tabular}
+\caption{Every continued-pretraining run (one run per arm). Main runs: 1\,GB of Nepali and 1\,GB of English. Warm-up runs: the same, after training only the embedding matrix on the first 10\% of the stream (Tokens excludes that stage). Held-out BPB is scored in pieces of about 2{,}000 bytes, after the registered prefix (reg.: beginning-of-sequence token for Llama) or the training separator (sep.: end-of-text token); for Qwen the two coincide. The base Llama model was never trained without its beginning-of-sequence token, so its separator score is not meaningful (n/a). All columns other than sep.\ use the registered prefix; for the Llama warm-up runs they are dominated by the scoring artifact of \S\ref{sec:cpt} and should not be compared with the main runs. Belebele: zero-shot accuracy on 900 items (chance 0.25); every value lies between 0.25 and 0.29 with 95\% intervals of about $\pm$0.03, so it cannot separate the arms. chrF++: 5-shot FLORES-200 devtest translation, single greedy pass, no intervals. Gen.\ B/s: UTF-8 bytes of Nepali generated per second, measured on GPUs shared with concurrent training runs; it is noisy (the base and \RO{} Qwen models share tokenizer and architecture yet differ by 41\%) and we do not draw conclusions from it.}
 \label{tab:cpt}
 \end{table*}

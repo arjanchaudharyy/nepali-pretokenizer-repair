@@ -113,7 +113,7 @@ Verified regexes (from primary sources):
 - Says o200k fixed it and that GPT-5.6 still uses o200k.
 - Lists as still affected: Llama 3, Qwen 3, GLM-4/5.
 - Lists as fixed or never affected: Llama 4, Qwen 3.5+, Kimi K3, DeepSeek V3/V4, recent Mistral.
-- Notes that that model's tokenizer uses the derived Alphabetic property, which keeps some Thai vowel signs and drops viramas and combining accents. That is a third behaviour you could test if you have that model token counts.
+- Notes that one commercial model's tokenizer uses the derived Alphabetic property, which keeps some Thai vowel signs and drops viramas and combining accents. That is a third behaviour you could test if you have that model token counts.
 - Quantitative claim: Qwen 3 uses 4.4x as many tokens per character for Hindi as for English, falling to 2x in Qwen 3.5 after the regex fix.
 - **Use:** this is a natural experiment, Qwen3 to Qwen3.5. If Qwen3.5 is in your 26, it is a strong within-family contrast.
 

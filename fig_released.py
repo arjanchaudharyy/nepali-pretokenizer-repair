@@ -23,7 +23,7 @@ from matplotlib.ticker import NullFormatter, FixedLocator, FixedFormatter
 ax.xaxis.set_major_locator(FixedLocator([0.2,0.5,1,2,4,8])); ax.xaxis.set_major_formatter(FixedFormatter(["0.2","0.5","1","2","4","8"]))
 ax.xaxis.set_minor_formatter(NullFormatter())
 ax.set_yticks(range(len(keep))); ax.set_yticklabels(lab,fontsize=6.5); ax.invert_yaxis()
-ax.set_xlabel("tokens ÷ letters-only pre-token floor (log)")
+ax.set_xlabel("tokens / letters-only pre-token floor (log scale)")
 ax.scatter([],[],marker="x",color="#555",s=14,label="base tokenizer")
 ax.scatter([],[],color="#c0392b",s=16,label="released extension")
 ax.scatter([],[],marker="|",color="#2563eb",s=60,lw=1.6,label="floor after repair")

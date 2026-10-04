@@ -32,13 +32,15 @@ def docs(path, budget):
     return out, got
 
 
-def main(tok_path, eos, ne_bytes, en_bytes, out):
+def main(tok_path, eos, ne_bytes, en_bytes, out, bos=None):
     t0 = time.time()
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     tk = Tokenizer.from_file(tok_path)
     eos_id = tk.token_to_id(eos)
     assert eos_id is not None, eos
+    bos_id = tk.token_to_id(bos) if bos else None
+    assert bos is None or bos_id is not None, bos
     ne, gne = docs(CORPUS / "npi_Deva.jsonl", int(float(ne_bytes)))
     en, gen = docs(CORPUS / "eng_Latn.jsonl", int(float(en_bytes)))
     order = [(0, i) for i in range(len(ne))] + [(1, i) for i in range(len(en))]
@@ -53,16 +55,18 @@ def main(tok_path, eos, ne_bytes, en_bytes, out):
             enc = tk.encode_batch(seq[k:k + B], add_special_tokens=False)
             buf = []
             for j, e in enumerate(enc):
+                if bos_id is not None:
+                    buf.append(bos_id)
                 buf.extend(e.ids)
                 buf.append(eos_id)
-                ntok[int(lang[k + j])] += len(e.ids) + 1
+                ntok[int(lang[k + j])] += len(e.ids) + 1 + (bos_id is not None)
             np.asarray(buf, dtype=np.uint32).tofile(f)
     meta = dict(tokenizer=tok_path, eos_id=eos_id, ne_docs=len(ne), en_docs=len(en), ne_bytes=gne,
                 en_bytes=gen, ne_tokens=ntok[0], en_tokens=ntok[1], total_tokens=ntok[0] + ntok[1],
-                vocab=tk.get_vocab_size(), secs=round(time.time() - t0, 1))
+                vocab=tk.get_vocab_size(), bos_id=bos_id, secs=round(time.time() - t0, 1))
     json.dump(meta, open(out / "meta.json", "w"), indent=1)
     print(json.dumps(meta), flush=True)
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:6])
+    main(*sys.argv[1:7])

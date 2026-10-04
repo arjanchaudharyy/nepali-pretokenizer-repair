@@ -11,7 +11,7 @@ Figure~\ref{fig:ksweep} sweeps the number of new merges $K$. Under the letters-o
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig_ksweep.pdf}
-\caption{Nepali/English premium on FLORES-200 devtest after adding $K$ merges by continued BPE, under the letters-only regex (\RI{}) and the repaired regex (\RII{}). Dashed lines: pre-token floors under each model's own pattern ($2.19$ and $2.17$ letters-only; $0.79$ and $0.80$ repaired, for Llama-3 and Qwen3). Shading: 95\% paired-bootstrap intervals.}
+\caption{Nepali/English premium on FLORES-200 devtest after adding $K$ merges by continued BPE, under the letters-only regex (\RI{}) and the repaired regex (\RII{}). Dashed lines: pre-token floors under each model's own pattern ($2.19$ and $2.17$ letters-only; $0.79$ and $0.80$ repaired, for Llama-3 and Qwen3). 95\% paired-bootstrap intervals (half-width at most 0.03) are narrower than the markers.}
 \label{fig:ksweep}
 \end{figure}
 
@@ -30,4 +30,4 @@ We repeated the sweep for seven other languages written with combining marks and
 
 \paragraph{Warm-up runs.} Training only the embedding matrix first leaves \RO{} where it was ($0.471$ after the separator) and improves \RII{} from $0.510$ to $0.501$. \RII{}'s deficit relative to \RO{} shrinks from $0.039$ to $0.031$, as the second amendment predicted, and its gap to \RI{} from $0.027$ to $0.021$ $[0.020, 0.022]$. These are differences between single runs, so we treat them as suggestive. The amendment stated its prediction for the registered prefix, where the warm-up makes Llama scores unusable: \RO{} moves from $0.474$ to $0.779$.
 
-\paragraph{English.} The registered English control holds. \RII{} $-$ \RO{} on held-out English is $+0.0003$ $[-0.0002, +0.0008]$ for Llama (non-inferior) and $-0.0028$ $[-0.0032, -0.0024]$ for Qwen (better), and no two arms of a model differ by more than $0.004$. This is expected, since the tokenizer change does not touch English and every arm sees the same English data. Under the registered prefix all three Llama arms are slightly worse on English than the base model ($0.799$ to $0.803$ against $0.788$).
+\paragraph{English.} The registered English control holds. \RII{} $-$ \RO{} on held-out English is $+0.0003$ $[-0.0002, +0.0008]$ for Llama (non-inferior) and $-0.0028$ $[-0.0032, -0.0024]$ for Qwen (better), and no two main-run arms of a model differ by more than $0.004$. This is expected, since the tokenizer change does not touch English and every arm sees the same English data. Under the registered prefix all three Llama arms are slightly worse on English than the base model ($0.799$ to $0.803$ against $0.788$).
