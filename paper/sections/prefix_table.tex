@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llrr}
+\toprule
+Model, exp. & Comparison & Registered prefix & Training separator \\
+\midrule
+Llama, A & \RI{} $-$ \RO{} & $+0.060$ $[+0.059, +0.061]$ & $+0.012$ $[+0.012, +0.013]$ \\
+ & \RII{} $-$ \RO{} & $+0.066$ $[+0.065, +0.067]$ & $+0.039$ $[+0.039, +0.040]$ \\
+ & \RII{} $-$ \RI{} & $+0.006$ $[+0.005, +0.007]$ & $+0.027$ $[+0.027, +0.028]$ \\
+\addlinespace
+Llama, B1 & \RII{} $-$ \RO{} & $-0.252$ $[-0.255, -0.248]$$^\dagger$ & $+0.031$ $[+0.030, +0.031]$ \\
+\addlinespace
+Qwen3, A & \RI{} $-$ \RO{} & $+0.060$ $[+0.059, +0.061]$ & $+0.060$ $[+0.059, +0.061]$ \\
+ & \RII{} $-$ \RO{} & $+0.070$ $[+0.068, +0.071]$ & $+0.070$ $[+0.068, +0.071]$ \\
+ & \RII{} $-$ \RI{} & $+0.009$ $[+0.009, +0.010]$ & $+0.009$ $[+0.009, +0.010]$ \\
+\bottomrule
+\end{tabular}}
+\caption{Paired differences in held-out Nepali bits per byte (positive: first arm worse), 95\% bootstrap intervals. A: 1\,GB + 1\,GB; B1: the same with an embedding warm-up. The Qwen \RII{} $-$ \RI{} upper bound is $+0.0101$, just above the 0.01 margin. Registered prefix: the model's beginning-of-sequence token where it has one (Llama), as pre-registered; Qwen has none and uses its end-of-text token in both columns. Training separator: the end-of-text token that preceded every document during continued pretraining. $^\dagger$Dominated by the scoring artifact of \S\ref{sec:cpt}: the warm-up shifts the beginning-of-sequence embedding.}
+\label{tab:prefix}
+\end{table}

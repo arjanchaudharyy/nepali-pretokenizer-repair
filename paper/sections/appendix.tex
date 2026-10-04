@@ -189,3 +189,23 @@ Llama-3.1-8B & am & 1.573 & 93.8\% & 1.00$\times$ \\
 \caption{Released vocabulary extensions that keep the letters-only regex, on FLORES-200 devtest of the target language. Tokens/floor: extended-tokenizer tokens divided by pre-tokens under its own regex (at least 1 by construction). Gap closed: share of the base-to-floor gap that the extension removed. Room: floor under the letters-only regex divided by floor under the repaired regex. Top block: \citet{yamaguchi2026lowres}; middle: LFM2.5~\citep{smith2026inplace}; bottom: Amharic, which has no combining marks (control).}
 \label{tab:released}
 \end{table}
+
+\section{Additional tokenizer arms}
+\label{app:extras}
+
+\paragraph{Regex alone, and added tokens.} Two further arms separate the parts of \RII{}. Repairing the regex without adding merges (\RII{}, $K{=}0$) changes almost nothing: $2.61\times$ for Llama-3 (from $2.58\times$) and $4.42\times$ for Qwen3. Under the repaired regex, the old merges still tokenize Nepali words in old pieces; the regex only removes the ceiling that new merges would otherwise hit. Registering \RI{}'s new strings (31{,}999 of 32{,}000; one is a partial UTF-8 sequence) as added tokens instead of merges gives $2.35\times$ for Llama-3 and $2.19\times$ for Qwen3, no better than \RI{}. The gain of \RII{} therefore needs both the regex repair and new merges.
+
+\paragraph{Broken syllables.} Extension under the letters-only regex makes syllable breaking worse. The share of Devanagari-bearing tokens (a slightly higher base than the all-token rate of \S\ref{sec:audit}) that begin with a combining mark rises from 57\% (Llama-3) and 33\% (Qwen3) to 67\% for both under \RI{}, because new merges can only build on mark-initial fragments. Under \RII{} it falls to 15\% and 12\%.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\columnwidth]{fig_split.pdf}
+\caption{Pre-tokens of \emph{nep\=alko sark\=ar} (``government of Nepal'') under the letters-only regex of Llama-3 and Qwen and under the repaired regex. Dotted circles mark pre-tokens that begin with a dependent vowel sign.}
+\label{fig:split}
+\end{figure}
+
+\section{All continued-pretraining runs}
+\label{app:cptfull}
+
+\input{sections/cpt_table}

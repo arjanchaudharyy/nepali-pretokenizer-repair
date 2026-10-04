@@ -44,6 +44,9 @@ class M:
         # document prefix: the model's BOS if it has one (Llama), else end-of-text (Qwen).
         # Same rule for every arm of a model, so arm comparisons are unaffected by it.
         self.sep = self.tok.bos_token_id if self.tok.bos_token_id is not None else self.tok.eos_token_id
+        import os
+        if os.environ.get("EVAL_PREFIX") == "eos":  # diagnostic: the separator every CPT document followed
+            self.sep = self.tok.eos_token_id
 
     def enc(self, s):
         return self.tok(s, add_special_tokens=False)["input_ids"]
@@ -191,7 +194,7 @@ def gen_speed(m, n=64, new=128):
                 gen_bytes_per_token=nbytes / gen.numel())
 
 
-def main(d, out, quick=False):
+def main(d, out, quick=False, bpb_only=False):
     t0 = time.time()
     m = M(d)
     r = dict(model=d, vocab=len(m.tok))
@@ -205,7 +208,7 @@ def main(d, out, quick=False):
     ne, en = flores("npi_Deva"), flores("eng_Latn")
     r["ne_tokens_per_byte"] = sum(len(m.enc(s)) for s in ne) / sum(len(s.encode()) for s in ne)
     r["en_tokens_per_byte"] = sum(len(m.enc(s)) for s in en) / sum(len(s.encode()) for s in en)
-    if not quick:
+    if not quick and not bpb_only:
         r.update(gen_speed(m))
         r["belebele_ne"] = belebele(m, "npi_Deva")
         r["belebele_en"] = belebele(m, "eng_Latn")
@@ -218,4 +221,4 @@ def main(d, out, quick=False):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], "--quick" in sys.argv)
+    main(sys.argv[1], sys.argv[2], "--quick" in sys.argv, "--bpb-only" in sys.argv)

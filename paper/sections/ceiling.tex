@@ -10,14 +10,9 @@ Let $T_K$ be any tokenizer obtained from $T$ by appending $K$ merges, for any $K
 
 To turn this into a floor on the premium, we divide by the English token count of the \emph{base} tokenizer. This step needs the extension to leave English unchanged. It does for \RI{}: every new merge outputs a token containing a code point in U+0900--U+097F, so no new merge can apply to English text, by the argument of Proposition~\ref{prop:lossless} with the regex left unchanged. The premium of \RI{} is therefore at least the pre-token floor of \S\ref{sec:audit}, for every $K$.
 
-The bound is not loose for the regexes deployed today. In the Llama-3 and Qwen families, the word branch is \texttt{[\textasciicircum\textbackslash r\textbackslash n\textbackslash p\{L\}\textbackslash p\{N\}]?\textbackslash p\{L\}+}: a run of letters, optionally preceded by one non-letter. A Devanagari vowel sign is not a letter, so it ends the current run and is absorbed as the optional prefix of the next one. In Figure~\ref{fig:split}, the phrase \emph{nep\=alko sark\=ar} (``government of Nepal'') becomes six pre-tokens, four of which begin with a vowel sign that belongs to the \emph{previous} consonant. Under the repaired regex each word is one pre-token.
+The bound is not loose for the regexes deployed today. In the Llama-3 and Qwen families, the word branch is \texttt{[\textasciicircum\textbackslash r\textbackslash n\textbackslash p\{L\}\textbackslash p\{N\}]?\textbackslash p\{L\}+}: a run of letters, optionally preceded by one non-letter. A Devanagari vowel sign is not a letter, so it ends the current run and is absorbed as the optional prefix of the next one. In Figure~\ref{fig:split} (Appendix~\ref{app:extras}), the phrase \emph{nep\=alko sark\=ar} (``government of Nepal'') becomes six pre-tokens, four of which begin with a vowel sign that belongs to the \emph{previous} consonant. Under the repaired regex each word is one pre-token.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.95\columnwidth]{fig_split.pdf}
-\caption{Pre-tokens of \emph{nep\=alko sark\=ar} (``government of Nepal'') under the letters-only regex of Llama-3 and Qwen and under the repaired regex. Dotted circles mark pre-tokens that begin with a dependent vowel sign.}
-\label{fig:split}
-\end{figure}
+
 
 \paragraph{The floor, measured.} Table~\ref{tab:floor} gives the pre-token floor of Llama-3 and Qwen3 under their own letters-only regexes and under the repaired regex of each model. For both families the letters-only floor is about $2.2\times$, nearly three times the repaired floor ($2.77\times$ for Llama-3, $2.73\times$ for Qwen3), and above the premium of \texttt{o200k} ($1.61\times$).
 

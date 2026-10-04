@@ -8,3 +8,7 @@ for d in $(ssh ntt 'ls -d /home/ntt/runs/llama_* /home/ntt/runs/qwen_* /home/ntt
   rsync -q -e ssh "ntt:$d/summary.json" "ntt:$d/train_log.jsonl" results/cpt/runs/$n/ < /dev/null 2>/dev/null
 done
 .venv/bin/python analyze_cpt.py
+mkdir -p results/cpt/evals_eos
+rsync -q -r -e ssh ntt:/home/ntt/evals_eos/ results/cpt/evals_eos/ < /dev/null 2>/dev/null
+echo "######## EOS-PREFIX DIAGNOSTIC"
+.venv/bin/python analyze_cpt.py evals_eos

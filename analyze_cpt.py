@@ -20,11 +20,14 @@ EXPS = {"A": lambda m, a: f"{m}_{a}_s0", "B1": lambda m, a: f"B1_{m}_{a}", "B3":
 KEYS = {"ne": "npi_Deva.heldout.jsonl", "en": "eng_Latn.heldout.jsonl"}
 
 
+EVDIR = "evals"
+
+
 def load(tag):
-    p = R / "evals" / f"{tag}.json"
+    p = R / EVDIR / f"{tag}.json"
     if not p.exists():
         return None, None
-    per = R / "evals" / f"{tag}.per.json"
+    per = R / EVDIR / f"{tag}.per.json"
     r = json.load(open(p))
     s = R / "runs" / tag / "summary.json"
     if s.exists():
@@ -58,6 +61,9 @@ def acc_ci(xs):
     return [float(xs.mean()), float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))]
 
 
+import sys
+if len(sys.argv) > 1:
+    EVDIR = sys.argv[1]
 out = {}
 for m, name in MODELS.items():
     base, base_per = load(f"{m}_base")
@@ -90,7 +96,7 @@ for m, name in MODELS.items():
                     eq[a] = r
         out[m]["exps"][e] = dict(evals=res, tests=tests, eqcompute=eq)
 
-json.dump(out, open("results/cpt_analysis.json", "w"), indent=1)
+json.dump(out, open("results/cpt_analysis.json" if EVDIR == "evals" else f"results/cpt_analysis_{EVDIR}.json", "w"), indent=1)
 f = lambda r, k, fmt=".4f": format(r[k], fmt) if r and k in r else "-"
 for m, d in out.items():
     print(f"\n==== {d['name']}")

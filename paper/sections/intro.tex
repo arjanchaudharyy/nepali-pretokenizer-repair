@@ -16,6 +16,6 @@ That result concerns tokenizers trained from scratch. Practitioners rarely train
   \item An audit of 33 released tokenizers (24 distinct), with each premium decomposed into a regex factor and a vocabulary factor, and the pre-token floor of every letters-only tokenizer (\S\ref{sec:audit}).
   \item Evidence that the floor binds in practice: released extensions and our own continued BPE under the letters-only regex stall at it (\S\ref{sec:ceiling}, \S\ref{sec:compression}).
   \item A minimal, provably English-lossless repair of a deployed model's pre-tokenizer (\S\ref{sec:method}).
-  \item A controlled comparison of \RO{} (no extension), \RI{} (extend) and \RII{} (repair + extend) on Llama-3.2-1B and Qwen3-0.6B-Base under identical data, merge budget and optimisation, scored per byte (\S\ref{sec:results}).
+  \item A controlled comparison of \RO{} (no extension), \RI{} (extend) and \RII{} (repair + extend) on Llama-3.2-1B and Qwen3-0.6B-Base under identical data, merge budget and optimisation, scored per byte (\S\ref{sec:results}). At this budget it finds a trade-off: the repair is cheaper to train and faster to generate with, and slightly worse on Nepali than standard extension.
   \item Released tokenizers, code and pre-registration.\footnote{The main analysis was registered before any continued-pretraining result was observed; a later amendment, written after the first Llama results, is disclosed in Appendix~\ref{app:prereg}.}
 \end{enumerate}

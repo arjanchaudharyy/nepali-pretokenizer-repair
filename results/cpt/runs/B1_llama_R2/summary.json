@@ -1,0 +1,13 @@
+{
+ "model": "runs/B1_llama_R2_stage1/model",
+ "data": "data/llama_R2",
+ "lr": 0.0001,
+ "seed": 0,
+ "steps": 545,
+ "tokens": 285736960,
+ "params": 1301350400,
+ "train_flops": 2231063443144704000,
+ "secs": 2032.1,
+ "gpus": 4,
+ "final_loss": 2.829383373260498
+}
