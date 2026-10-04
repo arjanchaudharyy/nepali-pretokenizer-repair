@@ -1,0 +1,208 @@
+{
+ "flores_bytes": {
+  "ne": 339472,
+  "en": 132096
+ },
+ "tokenizers": {
+  "llama_R0": {
+   "vocab": 128256,
+   "ne_tokens": 70188,
+   "en_tokens": 27171,
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "ne_bytes_per_token": 4.8366102467658285,
+   "en_tokens_per_byte": 0.20569131540697674
+  },
+  "llama_R1": {
+   "vocab": 160256,
+   "ne_tokens": 59886,
+   "en_tokens": 27171,
+   "ne_tokens_per_byte": 0.17640924730169205,
+   "ne_bytes_per_token": 5.668637077113182,
+   "en_tokens_per_byte": 0.20569131540697674
+  },
+  "llama_R2": {
+   "vocab": 160256,
+   "ne_tokens": 27561,
+   "en_tokens": 27171,
+   "ne_tokens_per_byte": 0.0811878446528727,
+   "ne_bytes_per_token": 12.317114763615253,
+   "en_tokens_per_byte": 0.20569131540697674
+  },
+  "qwen_R0": {
+   "vocab": 151669,
+   "ne_tokens": 121958,
+   "en_tokens": 27621,
+   "ne_tokens_per_byte": 0.3592579063958147,
+   "ne_bytes_per_token": 2.783515636530609,
+   "en_tokens_per_byte": 0.20909792877906977
+  },
+  "qwen_R1": {
+   "vocab": 183669,
+   "ne_tokens": 60405,
+   "en_tokens": 27621,
+   "ne_tokens_per_byte": 0.1779380920959608,
+   "ne_bytes_per_token": 5.619932124824104,
+   "en_tokens_per_byte": 0.20909792877906977
+  },
+  "qwen_R2": {
+   "vocab": 183669,
+   "ne_tokens": 28019,
+   "en_tokens": 27621,
+   "ne_tokens_per_byte": 0.08253699863317152,
+   "ne_bytes_per_token": 12.115778578821514,
+   "en_tokens_per_byte": 0.20909792877906977
+  }
+ },
+ "ratios": {
+  "llama": {
+   "R0_over_R2": 2.546641994122129,
+   "R1_over_R2": 2.1728529443779254,
+   "R0_over_R1": 1.1720268510169323
+  },
+  "qwen": {
+   "R0_over_R2": 4.352689246582676,
+   "R1_over_R2": 2.1558585245726114,
+   "R0_over_R1": 2.01900504925089
+  }
+ },
+ "measured": {
+  "evals/B1_llama_R0": {
+   "gen_tokens_per_s": 1180.2998880424132,
+   "gen_bytes_per_s": 5349.098345149247,
+   "gen_bytes_per_token": 4.531982421875,
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "evalpy_flores_ne_bytes_per_token": 4.836610246765829
+  },
+  "evals/B1_llama_R1": {
+   "gen_tokens_per_s": 1440.2886756189087,
+   "gen_bytes_per_s": 7520.901938104254,
+   "gen_bytes_per_token": 5.2218017578125,
+   "ne_tokens_per_byte": 0.17640924730169205,
+   "evalpy_flores_ne_bytes_per_token": 5.668637077113181
+  },
+  "evals/B1_llama_R2": {
+   "gen_tokens_per_s": 1285.32259160565,
+   "gen_bytes_per_s": 11077.591666886437,
+   "gen_bytes_per_token": 8.6185302734375,
+   "ne_tokens_per_byte": 0.0811878446528727,
+   "evalpy_flores_ne_bytes_per_token": 12.317114763615253
+  },
+  "evals/llama_R0_s0": {
+   "gen_tokens_per_s": 1139.4136759399928,
+   "gen_bytes_per_s": 5147.112120585372,
+   "gen_bytes_per_token": 4.517333984375,
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "evalpy_flores_ne_bytes_per_token": 4.836610246765829
+  },
+  "evals/llama_R0_s0_eqcompute": {
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "evalpy_flores_ne_bytes_per_token": 4.836610246765829
+  },
+  "evals/llama_R1_s0": {
+   "gen_tokens_per_s": 1219.3780942664519,
+   "gen_bytes_per_s": 6354.400737821635,
+   "gen_bytes_per_token": 5.211181640625,
+   "ne_tokens_per_byte": 0.17640924730169205,
+   "evalpy_flores_ne_bytes_per_token": 5.668637077113181
+  },
+  "evals/llama_R1_s0_eqcompute": {
+   "ne_tokens_per_byte": 0.17640924730169205,
+   "evalpy_flores_ne_bytes_per_token": 5.668637077113181
+  },
+  "evals/llama_R2_s0": {
+   "gen_tokens_per_s": 1164.0845329661356,
+   "gen_bytes_per_s": 9397.794261195726,
+   "gen_bytes_per_token": 8.0731201171875,
+   "ne_tokens_per_byte": 0.0811878446528727,
+   "evalpy_flores_ne_bytes_per_token": 12.317114763615253
+  },
+  "evals/llama_base": {
+   "gen_tokens_per_s": 1183.330302134147,
+   "gen_bytes_per_s": 5326.719753600928,
+   "gen_bytes_per_token": 4.50146484375,
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "evalpy_flores_ne_bytes_per_token": 4.836610246765829
+  },
+  "evals/qwen_R0_s0": {
+   "gen_tokens_per_s": 1143.0121462930963,
+   "gen_bytes_per_s": 3088.5884851494116,
+   "gen_bytes_per_token": 2.7021484375,
+   "ne_tokens_per_byte": 0.3592579063958147,
+   "evalpy_flores_ne_bytes_per_token": 2.783515636530609
+  },
+  "evals/qwen_R0_s0_eqcompute": {
+   "ne_tokens_per_byte": 0.3592579063958147,
+   "evalpy_flores_ne_bytes_per_token": 2.783515636530609
+  },
+  "evals/qwen_R1_s0": {
+   "gen_tokens_per_s": 980.231813694285,
+   "gen_bytes_per_s": 4971.876475929106,
+   "gen_bytes_per_token": 5.0721435546875,
+   "ne_tokens_per_byte": 0.1779380920959608,
+   "evalpy_flores_ne_bytes_per_token": 5.619932124824104
+  },
+  "evals/qwen_R1_s0_eqcompute": {
+   "ne_tokens_per_byte": 0.1779380920959608,
+   "evalpy_flores_ne_bytes_per_token": 5.619932124824104
+  },
+  "evals/qwen_R2_s0": {
+   "gen_tokens_per_s": 998.4131435407945,
+   "gen_bytes_per_s": 7453.72937410497,
+   "gen_bytes_per_token": 7.465576171875,
+   "ne_tokens_per_byte": 0.08253699863317152,
+   "evalpy_flores_ne_bytes_per_token": 12.115778578821514
+  },
+  "evals/qwen_base": {
+   "gen_tokens_per_s": 810.740533777133,
+   "gen_bytes_per_s": 2185.891866398381,
+   "gen_bytes_per_token": 2.6961669921875,
+   "ne_tokens_per_byte": 0.3592579063958147,
+   "evalpy_flores_ne_bytes_per_token": 2.783515636530609
+  },
+  "evals_eos/B1_llama_R0": {
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "evalpy_flores_ne_bytes_per_token": 4.836610246765829
+  },
+  "evals_eos/B1_llama_R1": {
+   "ne_tokens_per_byte": 0.17640924730169205,
+   "evalpy_flores_ne_bytes_per_token": 5.668637077113181
+  },
+  "evals_eos/B1_llama_R2": {
+   "ne_tokens_per_byte": 0.0811878446528727,
+   "evalpy_flores_ne_bytes_per_token": 12.317114763615253
+  },
+  "evals_eos/llama_R0_s0": {
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "evalpy_flores_ne_bytes_per_token": 4.836610246765829
+  },
+  "evals_eos/llama_R1_s0": {
+   "ne_tokens_per_byte": 0.17640924730169205,
+   "evalpy_flores_ne_bytes_per_token": 5.668637077113181
+  },
+  "evals_eos/llama_R2_s0": {
+   "ne_tokens_per_byte": 0.0811878446528727,
+   "evalpy_flores_ne_bytes_per_token": 12.317114763615253
+  },
+  "evals_eos/llama_base": {
+   "ne_tokens_per_byte": 0.20675637460526936,
+   "evalpy_flores_ne_bytes_per_token": 4.836610246765829
+  },
+  "evals_eos/qwen_R0_s0": {
+   "ne_tokens_per_byte": 0.3592579063958147,
+   "evalpy_flores_ne_bytes_per_token": 2.783515636530609
+  },
+  "evals_eos/qwen_R1_s0": {
+   "ne_tokens_per_byte": 0.1779380920959608,
+   "evalpy_flores_ne_bytes_per_token": 5.619932124824104
+  },
+  "evals_eos/qwen_R2_s0": {
+   "ne_tokens_per_byte": 0.08253699863317152,
+   "evalpy_flores_ne_bytes_per_token": 12.115778578821514
+  },
+  "evals_eos/qwen_base": {
+   "ne_tokens_per_byte": 0.3592579063958147,
+   "evalpy_flores_ne_bytes_per_token": 2.783515636530609
+  }
+ },
+ "qwen_0.6B_vs_1.7B_tokenizer_identical": true
+}

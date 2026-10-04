@@ -1,0 +1,536 @@
+{
+ "skipped": [],
+ "pairs": {
+  "cl100k|Phi-4": {
+   "vocab": [
+    100277,
+    100352
+   ],
+   "kinds": [
+    "letter-regex",
+    "letter-regex"
+   ],
+   "regexes_equal": false,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27182,
+      27182
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      129516,
+      129516
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      129589,
+      129589
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      50811,
+      50811
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      82288,
+      82288
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "cl100k|OLMo-2": {
+   "vocab": [
+    100277,
+    100278
+   ],
+   "kinds": [
+    "letter-regex",
+    "letter-regex"
+   ],
+   "regexes_equal": false,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27182,
+      27182
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      129516,
+      129516
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      129589,
+      129589
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      50811,
+      50811
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      82288,
+      82288
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "cl100k|Granite-4.1": {
+   "vocab": [
+    100277,
+    100352
+   ],
+   "kinds": [
+    "letter-regex",
+    "letter-regex"
+   ],
+   "regexes_equal": false,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27182,
+      27182
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      129516,
+      129516
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      129589,
+      129589
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      50811,
+      50811
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      82288,
+      82288
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "Qwen2.5|Qwen3": {
+   "vocab": [
+    151665,
+    151669
+   ],
+   "kinds": [
+    "letter-regex",
+    "letter-regex"
+   ],
+   "regexes_equal": true,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27621,
+      27621
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      121958,
+      121958
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      121973,
+      121973
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27704,
+      27704
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      44991,
+      44991
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "Llama-3|SmolLM3": {
+   "vocab": [
+    128256,
+    128256
+   ],
+   "kinds": [
+    "letter-regex",
+    "letter-regex"
+   ],
+   "regexes_equal": true,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27171,
+      27171
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      70188,
+      70188
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      68527,
+      68527
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      34811,
+      34811
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      44926,
+      44926
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "o200k|gpt-oss": {
+   "vocab": [
+    200019,
+    200019
+   ],
+   "kinds": [
+    "mark-regex",
+    "mark-regex"
+   ],
+   "regexes_equal": true,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      26873,
+      26873
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      43377,
+      43377
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      42263,
+      42263
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      33555,
+      33555
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      37133,
+      37133
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "Mistral-NeMo|Sarvam-M": {
+   "vocab": [
+    131072,
+    131072
+   ],
+   "kinds": [
+    "mark-regex",
+    "mark-regex"
+   ],
+   "regexes_equal": true,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27827,
+      27827
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      59248,
+      59248
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      49978,
+      49978
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      39046,
+      39046
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      34566,
+      34566
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "Gemma-3|Gemma-4": {
+   "vocab": [
+    262145,
+    262144
+   ],
+   "kinds": [
+    "no-regex",
+    "no-regex"
+   ],
+   "regexes_equal": true,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27114,
+      27114
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      41449,
+      41449
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      35518,
+      35518
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      29243,
+      29243
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      39892,
+      39892
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  },
+  "DeepSeek-V3|DeepSeek-V4": {
+   "vocab": [
+    128815,
+    129280
+   ],
+   "kinds": [
+    "mark-regex",
+    "mark-regex"
+   ],
+   "regexes_equal": true,
+   "langs": {
+    "eng_Latn": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      27041,
+      27041
+     ],
+     "first_diff": null
+    },
+    "npi_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      80239,
+      80239
+     ],
+     "first_diff": null
+    },
+    "hin_Deva": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      75500,
+      75500
+     ],
+     "first_diff": null
+    },
+    "zho_Hans": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      25396,
+      25396
+     ],
+     "first_diff": null
+    },
+    "arb_Arab": {
+     "identical": 1012,
+     "n": 1012,
+     "tokens": [
+      43718,
+      43718
+     ],
+     "first_diff": null
+    }
+   },
+   "all_identical": true
+  }
+ }
+}

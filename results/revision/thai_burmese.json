@@ -1,0 +1,143 @@
+{
+ "pythainlp": "5.3.8",
+ "models": {
+  "Llama-3.2-1B|tha_Thai|R0": {
+   "tokens": 59618,
+   "script_tokens": 57296,
+   "span_space_share": 0.0,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.0789409382853952,
+   "multiword_share_script": 0.07883621893325887,
+   "share_ge3_words": 0.00010471935213627478,
+   "total_tokens": 59618
+  },
+  "Llama-3.2-1B|tha_Thai|R1": {
+   "tokens": 40541,
+   "script_tokens": 38262,
+   "span_space_share": 0.0,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.3450420783022319,
+   "multiword_share_script": 0.3254142491244577,
+   "share_ge3_words": 0.019471015629083686,
+   "total_tokens": 40541
+  },
+  "Llama-3.2-1B|tha_Thai|R2": {
+   "tokens": 25929,
+   "script_tokens": 23607,
+   "span_space_share": 0.0,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.3069852162494175,
+   "multiword_share_script": 0.2841106451476257,
+   "share_ge3_words": 0.02134959969500572,
+   "total_tokens": 25929
+  },
+  "Llama-3.2-1B|mya_Mymr|R0": {
+   "tokens": 315795,
+   "script_tokens": 305661,
+   "span_space_share": 6.333222501939549e-06,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.0,
+   "share_ge2_syllables": 0.0,
+   "share_ge3_syllables": 0.0,
+   "share_ge4_syllables": 0.0,
+   "total_tokens": 315795
+  },
+  "Llama-3.2-1B|mya_Mymr|R1": {
+   "tokens": 82180,
+   "script_tokens": 80958,
+   "span_space_share": 2.433682161109759e-05,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.3283554435633291,
+   "share_ge2_syllables": 0.2993898070604511,
+   "share_ge3_syllables": 0.027310457274142146,
+   "share_ge4_syllables": 0.0015934188097532053,
+   "total_tokens": 82180
+  },
+  "Llama-3.2-1B|mya_Mymr|R2": {
+   "tokens": 32788,
+   "script_tokens": 31470,
+   "span_space_share": 6.09979260705136e-05,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 2.2394026056561804,
+   "share_ge2_syllables": 0.763520813473149,
+   "share_ge3_syllables": 0.3604067365745154,
+   "share_ge4_syllables": 0.08798856053384176,
+   "total_tokens": 32788
+  },
+  "Qwen3-1.7B-Base|tha_Thai|R0": {
+   "tokens": 70455,
+   "script_tokens": 66344,
+   "span_space_share": 0.0,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.0164747377306163,
+   "multiword_share_script": 0.01644459182443024,
+   "share_ge3_words": 3.014590618593995e-05,
+   "total_tokens": 70455
+  },
+  "Qwen3-1.7B-Base|tha_Thai|R1": {
+   "tokens": 40928,
+   "script_tokens": 38175,
+   "span_space_share": 0.0,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.3301637197118532,
+   "multiword_share_script": 0.31122462344466273,
+   "share_ge3_words": 0.018808120497707925,
+   "total_tokens": 40928
+  },
+  "Qwen3-1.7B-Base|tha_Thai|R2": {
+   "tokens": 24295,
+   "script_tokens": 21476,
+   "span_space_share": 0.0,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.2817563792140063,
+   "multiword_share_script": 0.2501862544235426,
+   "share_ge3_words": 0.029288508102067425,
+   "total_tokens": 24295
+  },
+  "Qwen3-1.7B-Base|mya_Mymr|R0": {
+   "tokens": 246611,
+   "script_tokens": 236480,
+   "span_space_share": 8.109938323919047e-06,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.0,
+   "share_ge2_syllables": 0.0,
+   "share_ge3_syllables": 0.0,
+   "share_ge4_syllables": 0.0,
+   "total_tokens": 246611
+  },
+  "Qwen3-1.7B-Base|mya_Mymr|R1": {
+   "tokens": 82623,
+   "script_tokens": 81404,
+   "span_space_share": 2.4206334797816588e-05,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.321077588324898,
+   "share_ge2_syllables": 0.2941501646110756,
+   "share_ge3_syllables": 0.025281312957594223,
+   "share_ge4_syllables": 0.0015846887130853522,
+   "total_tokens": 82623
+  },
+  "Qwen3-1.7B-Base|mya_Mymr|R2": {
+   "tokens": 30556,
+   "script_tokens": 29216,
+   "span_space_share": 6.545359340227778e-05,
+   "span_space_share_script": 0.0,
+   "mean_units_per_script_token": 1.81920865279299,
+   "share_ge2_syllables": 0.546789430449069,
+   "share_ge3_syllables": 0.20440854326396496,
+   "share_ge4_syllables": 0.053840361445783136,
+   "total_tokens": 30556
+  }
+ },
+ "reference": {
+  "tha_Thai": {
+   "newmm_words": 24536,
+   "mean_chars_per_word": 4.870272253015976,
+   "space_chunks": 4303
+  },
+  "mya_Mymr": {
+   "space_chunks": 10344,
+   "mean_syllables_per_space_chunk": 5.072505800464037,
+   "total_syllables": 52470
+  }
+ }
+}

@@ -1,0 +1,23 @@
+\begin{table}[!htb]
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{Premium} & \multicolumn{2}{c}{Mark-initial} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Tokenizer & Llama-3 & Qwen3 & Llama-3 & Qwen3 \\
+\midrule
+\RO{} & 2.583 & 4.415 & 55\% & 32\% \\
+\RI{}, $K{=}32$k & 2.204 & 2.187 & 65\% & 64\% \\
+\RII{}, $K{=}32$k & 1.014 & 1.014 & 13\% & 11\% \\
+\RII{} strings, added & 1.025 & 1.009 & 7\% & 7\% \\
+\quad whole words only & 2.486 & 4.219 & 54\% & 32\% \\
+\midrule
+Added-token share & 77\% & 83\% & & \\
+Starts mid-word & 21\% & 21\% & & \\
+Ends mid-word & 28\% & 28\% & & \\
+\bottomrule
+\end{tabular}
+\caption{Added tokens on the unchanged letters-only regex, FLORES-200 devtest. We register the 31{,}753 of \RII{}'s 32{,}000 new strings that decode to whole Devanagari text (with at most one leading space) as added tokens. Premium: Nepali tokens / English tokens. Mark-initial: share of Nepali tokens that start with a combining mark. The bottom rows describe default matching, which ignores word boundaries: the share of tokens that are added tokens, and the share of added-token matches that start or end inside a word. No sentence without a Devanagari character changes its token ids (191{,}460 FLORES-200 sentences, both models, both matching modes).}
+\label{tab:added}
+\end{table}
