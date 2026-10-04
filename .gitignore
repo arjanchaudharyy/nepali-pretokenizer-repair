@@ -8,3 +8,4 @@ arxiv_submission.tar.gz
 *.aux
 *.log
 *.out
+.gstack/
