@@ -1,0 +1,13 @@
+{
+ "base": "Qwen/Qwen3-1.7B-Base",
+ "arm": "R2",
+ "K": 8000,
+ "bytes": 1000000463,
+ "types": 1535245,
+ "regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{M}\\p{N}]?[\\p{L}\\p{M}]+|\\p{N}| ?[^\\s\\p{L}\\p{M}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+",
+ "base_regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+",
+ "new_merges": 8000,
+ "new_tokens": 8000,
+ "first_new_id": 151669,
+ "secs": 121.4
+}

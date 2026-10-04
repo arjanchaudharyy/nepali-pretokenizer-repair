@@ -1,0 +1,22 @@
+{
+ "model": "runs/llama_R1_s0/model",
+ "vocab": 160256,
+ "bpb_flores_ne": 0.6478244628439959,
+ "bpb_flores_en": 0.9962411051434291,
+ "bpb_native_ne": 0.4819855006293097,
+ "bytes_native_ne": 4001293,
+ "bpb_native_en": 0.7433055823550647,
+ "bytes_native_en": 4042178,
+ "bpb_chunk2k_ne": 0.5336437893677592,
+ "bpb_chunk2k_en": 0.8026856135057425,
+ "ne_tokens_per_byte": 0.17640924730169205,
+ "en_tokens_per_byte": 0.20569131540697674,
+ "gen_tokens_per_s": 1219.3780942664519,
+ "gen_bytes_per_s": 6354.400737821635,
+ "gen_bytes_per_token": 5.211181640625,
+ "belebele_ne": 0.2677777777777778,
+ "belebele_en": 0.3466666666666667,
+ "chrf_ne_en": 27.19798166842708,
+ "chrf_en_ne": 10.44420817965806,
+ "secs": 1071.2
+}

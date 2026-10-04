@@ -1,2 +1,26 @@
-% filled after prep
-\textcolor{red}{[data statistics pending]}
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrr}
+\toprule
+& Nepali & English \\
+\midrule
+documents read & 170,790 & 215,961 \\
+dropped: under 200 chars & 0 & 0 \\
+dropped: exact duplicate & 0 & 69 \\
+dropped: FLORES 10-gram & 0 & 16 \\
+documents kept & 166,300 & 209,713 \\
+held-out (MB) & 30 & 30 \\
+\midrule
+\multicolumn{3}{l}{CPT tokens per arm (millions), 3\,GB + 3\,GB}\\
+Llama-3.2-1B R0 & 207 & 211 \\
+Llama-3.2-1B R1 & 176 & 211 \\
+Llama-3.2-1B R2 & 76 & 211 \\
+Qwen3-0.6B R0 & 359 & 215 \\
+Qwen3-0.6B R1 & 177 & 215 \\
+Qwen3-0.6B R2 & 76 & 215 \\
+\bottomrule
+\end{tabular}
+\caption{Corpus cleaning (FineWeb-2 \texttt{npi\_Deva}; FineWeb-Edu) and the token counts of each arm's identical 6\,GB training stream. English token counts differ across arms of a model by less than 0.003\%, from the few English documents that contain Devanagari or combining marks.}
+\label{tab:data}
+\end{table}

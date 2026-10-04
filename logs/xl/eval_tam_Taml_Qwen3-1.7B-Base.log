@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+tam_Taml Qwen3-1.7B-Base R1 4000 2.6533 True True
+tam_Taml Qwen3-1.7B-Base R1 16000 2.641 True True
+tam_Taml Qwen3-1.7B-Base R1 32000 2.6403 True True
+tam_Taml Qwen3-1.7B-Base R2 4000 1.4216 True True
+tam_Taml Qwen3-1.7B-Base R2 16000 1.1193 True True
+tam_Taml Qwen3-1.7B-Base R2 32000 1.0169 True True

@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+tha_Thai Llama-3.2-1B R1 4000 1.7873 True True
+tha_Thai Llama-3.2-1B R1 16000 1.5767 True True
+tha_Thai Llama-3.2-1B R1 32000 1.4921 True True
+tha_Thai Llama-3.2-1B R2 4000 1.3281 True True
+tha_Thai Llama-3.2-1B R2 16000 1.0594 True True
+tha_Thai Llama-3.2-1B R2 32000 0.9543 True True

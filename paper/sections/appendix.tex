@@ -1,13 +1,14 @@
 \section{Pre-registration history}
 \label{app:prereg}
 
-We pre-registered in three steps, in the public repository's git history, and report all three.
+We pre-registered in four steps, in the public repository's git history, and report all four. Times are git commit times in IST (UTC+05:30).
 
 \begin{enumerate}
   \setlength\itemsep{0pt}
-  \item Commit \texttt{bf5ebe4} (2026-10-04 17:59 NPT) registered hypotheses about the mechanism, a regex-only tokenizer ablation, a cross-script dose--response and from-scratch training. Our literature check then found that \citet{regmi2026vowel} had published the mechanism, the ablation, the cross-script analysis and a from-scratch downstream comparison five weeks earlier. We withdrew those hypotheses as contributions and do not report them as new.
-  \item Commit \texttt{3c03367} (2026-10-04 18:16 NPT), before any model was trained or evaluated, registered the retrofit study reported here: arms \RO{}, \RI{}, \RII{} and the untrained base model as a reference; $K{=}32{,}000$ unless \RII{} saturated earlier on FLORES dev; equal-bytes continued pretraining; learning rate selected once per model on \RO{}; two seeds; primary metric held-out native Nepali BPB with a non-inferiority margin of 0.01 bits per byte; English BPB as a control; Belebele, translation and decoding speed as secondary. Its compression prediction (P1), including the letters-only floors, had already been measured when it was written, so we report P1 as a measurement, not a confirmed prediction.
-  \item Commit \texttt{5ff74e8} (2026-10-04 19:50 NPT), amendment 2, was written after an internal review and before any continued-pretraining run had produced an evaluation. Earlier launches of continued pretraining were stopped by us before completion because of pipeline bugs, and none produced an evaluated checkpoint. The only evaluation run before the amendment, of the untouched base Llama-3.2-1B with a since-fixed document-prefix bug, is discarded. The amendment fixed the primary analysis as stated in \S\ref{sec:setup}.
+  \item Commit \texttt{bf5ebe4} (2026-10-04 17:59 IST) registered hypotheses about the mechanism, a regex-only tokenizer ablation, a cross-script dose--response and from-scratch training. Our literature check then found that \citet{regmi2026vowel} had published the mechanism, the ablation, the cross-script analysis and a from-scratch downstream comparison five weeks earlier. We withdrew those hypotheses as contributions and do not report them as new.
+  \item Commit \texttt{3c03367} (2026-10-04 18:16 IST), before any model was trained or evaluated, registered the retrofit study reported here: arms \RO{}, \RI{}, \RII{} and the untrained base model as a reference; $K{=}32{,}000$ unless \RII{} saturated earlier on FLORES dev; equal-bytes continued pretraining; learning rate selected once per model on \RO{}; two seeds; primary metric held-out native Nepali BPB with a non-inferiority margin of 0.01 bits per byte; English BPB as a control; Belebele, translation and decoding speed as secondary. Its compression prediction (P1), including the letters-only floors, had already been measured when it was written, so we report P1 as a measurement, not a confirmed prediction.
+  \item Commit \texttt{5ff74e8} (2026-10-04 19:50 IST), amendment 2, was written after an internal review and before any continued-pretraining run had produced an evaluation. Earlier launches of continued pretraining were stopped by us before completion because of pipeline bugs, and none produced an evaluated checkpoint. The only evaluation run before the amendment, of the untouched base Llama-3.2-1B with a since-fixed document-prefix bug, is discarded. The amendment fixed the primary analysis as stated in \S\ref{sec:setup}.
+  \item Commit \texttt{bfab80d} (2026-10-04 21:46 IST), amendment 3, was written \emph{after} observing Experiment A's Llama \RO{} and \RII{} results and before any \RI{} or Qwen result. It registered Experiment B (embedding warm-up, more data) and added a `worse' category to the claim rules. We report all comparisons under amendment 2's rules, which do not use that category.
 \end{enumerate}
 
 \paragraph{Deviations from the second registration (amendment 2).}
@@ -68,7 +69,7 @@ and the same change is made in the punctuation branch \texttt{\textvisiblespace?
   \item \textbf{Translation}: FLORES-200 devtest Nepali$\leftrightarrow$English, 5-shot from FLORES dev, greedy decoding capped at 512 new tokens, chrF++.
   \item \textbf{Generation speed}: UTF-8 bytes generated per second in greedy continuation of FLORES dev Nepali sentences.
 \end{itemize}
-The equal-compute checkpoints are scored on BPB only.
+The equal-compute checkpoints are scored on BPB only, on the first 1\,MB of each held-out slice.
 
 \section{Data}
 \label{app:data}
@@ -145,13 +146,13 @@ Amharic & 0\% & 7.59 & 0.98 & 0.98 & 4.05 & 0.98 & 0.98 \\
 Korean & 0\% & 1.49 & 0.98 & 0.98 & 1.63 & 0.98 & 0.98 \\
 \bottomrule
 \end{tabular}
-\caption{Language/English token premium on FLORES-200 devtest, $K{=}32{,}000$. Marks: share of NFC code points that are combining marks. Amharic and Korean have none (control). $^\dagger$Thai is written without spaces, so whole phrases are single pre-tokens and \RI{} is not yet at its floor.}
+\caption{Language/English token premium on FLORES-200 devtest, $K{=}32{,}000$. Marks: share of NFC code points that are combining marks. Amharic and Korean have none (control). $^\dagger$Thai is written without spaces, so whole phrases are single pre-tokens and \RI{} is not yet at its floor. For \RI{}, merge learning stopped below 32{,}000 for Tamil, Telugu, Sinhala, Burmese and Hindi (Llama) (22{,}325--31{,}815 merges), because no further merge was available under the letters-only regex.}
 \label{tab:xling}
 \end{table}
 
 For each language we downloaded the FineWeb-2 \emph{test} split, normalised it to NFC, and removed documents that share a whitespace 10-gram with that language's FLORES-200 dev or devtest (for Thai, which has no spaces, we also checked 50-character overlaps and found none). The resulting merge-learning text ranges from 25\,MB (Amharic) to 361\,MB (Bengali), less than the 1\,GB used for Nepali; Sinhala and Amharic \RII{} may be limited by it. $K{=}4$k and $16$k are prefixes of one $32$k run.
 
-The Nepali filter keeps a new merge only if its output contains a complete Devanagari character. For scripts that the base vocabularies cover poorly, many characters are themselves split into byte pieces, and this filter would drop the first byte-level merge of a character and every merge built on it (for Sinhala \RII{}, only 13{,}530 of 32{,}000 merges survived). For the cross-script sweep we therefore also keep merges whose output is a byte piece of a target-script character. Such merges can only fire on target-script bytes, so the English guarantee is unaffected; we verified English token ids on all 1{,}012 sentences for every tokenizer. Hindi uses the same script as Nepali, and its new merges also change Nepali tokenization; we did not measure that interaction.
+The Nepali filter keeps a new merge only if its output contains a complete Devanagari character. For scripts that the base vocabularies cover poorly, many characters are themselves split into byte pieces, and this filter would drop the first byte-level merge of a character and every merge built on it (for Sinhala \RII{}, on Llama-3, only 13{,}530 of 32{,}000 merges survived). For the cross-script sweep we therefore also keep merges whose output is a byte piece of a target-script character. Such merges can only fire on target-script bytes, so the English guarantee is unaffected; we verified English token ids on all 1{,}012 sentences for every tokenizer. Hindi uses the same script as Nepali, and its new merges also change Nepali tokenization; we did not measure that interaction.
 
 \section{Released extensions}
 \label{app:released}

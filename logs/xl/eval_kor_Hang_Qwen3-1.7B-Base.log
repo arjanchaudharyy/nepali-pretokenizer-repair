@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+kor_Hang Qwen3-1.7B-Base R1 4000 1.2376 True True
+kor_Hang Qwen3-1.7B-Base R1 16000 1.0547 True True
+kor_Hang Qwen3-1.7B-Base R1 32000 0.9757 True True
+kor_Hang Qwen3-1.7B-Base R2 4000 1.2376 True True
+kor_Hang Qwen3-1.7B-Base R2 16000 1.0547 True True
+kor_Hang Qwen3-1.7B-Base R2 32000 0.9757 True True

@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+tha_Thai Qwen3-1.7B-Base R1 4000 1.7855 True True
+tha_Thai Qwen3-1.7B-Base R1 16000 1.5658 True True
+tha_Thai Qwen3-1.7B-Base R1 32000 1.4818 True True
+tha_Thai Qwen3-1.7B-Base R2 4000 1.1629 True True
+tha_Thai Qwen3-1.7B-Base R2 16000 0.9664 True True
+tha_Thai Qwen3-1.7B-Base R2 32000 0.8796 True True

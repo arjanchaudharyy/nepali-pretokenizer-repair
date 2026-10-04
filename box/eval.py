@@ -25,6 +25,7 @@ H = Path("/home/ntt")
 FL = H / "flores200_dataset"
 dev = torch.device("cuda")
 LN2 = math.log(2)
+PER = {}  # per-item outputs saved next to the summary for paired tests
 
 
 def nfc(s):
@@ -123,6 +124,7 @@ def bpb_chunks(m, path, max_bytes, chunk=2000):
             if nbytes >= max_bytes:
                 break
     nll = m.batch_nll([[m.sep] + m.enc(x) for x in pieces], bs=16)
+    PER[path.name] = dict(nll_bits=[v / LN2 for v in nll], bytes=[len(x.encode()) for x in pieces])
     return sum(nll) / LN2 / sum(len(x.encode()) for x in pieces)
 
 
@@ -146,6 +148,7 @@ def belebele(m, code):
         scores = [-(f - base) / max(1, len(o.encode())) for f, o in zip(full, opts)]
         pred = max(range(4), key=lambda i: scores[i])
         correct += int(pred + 1 == int(ex["correct_answer_num"]))
+        PER.setdefault(f"belebele_{code}", []).append(int(pred + 1 == int(ex["correct_answer_num"])))
     return correct / len(ds)
 
 
@@ -210,6 +213,7 @@ def main(d, out, quick=False):
         r["chrf_en_ne"] = chrf(m, "eng_Latn", "npi_Deva")
     r["secs"] = round(time.time() - t0, 1)
     json.dump(r, open(out, "w"), indent=1)
+    json.dump(PER, open(out.replace(".json", ".per.json"), "w"))
     print(json.dumps(r), flush=True)
 
 

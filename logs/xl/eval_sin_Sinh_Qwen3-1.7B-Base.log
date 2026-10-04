@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+sin_Sinh Qwen3-1.7B-Base R1 4000 2.3769 True True
+sin_Sinh Qwen3-1.7B-Base R1 16000 2.3315 True True
+sin_Sinh Qwen3-1.7B-Base R1 32000 2.3282 True True
+sin_Sinh Qwen3-1.7B-Base R2 4000 1.6233 True True
+sin_Sinh Qwen3-1.7B-Base R2 16000 1.3255 True True
+sin_Sinh Qwen3-1.7B-Base R2 32000 1.2423 True True

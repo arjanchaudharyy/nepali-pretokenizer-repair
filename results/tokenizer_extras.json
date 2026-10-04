@@ -1,0 +1,615 @@
+{
+ "split": "devtest",
+ "models": {
+  "Llama-3.2-1B": {
+   "r1b_build": {
+    "candidates": 32000,
+    "partial_utf8_dropped": 1,
+    "added": 31999,
+    "already_in_vocab_or_dup": 0,
+    "vocab_before": 128256,
+    "vocab_after": 160255,
+    "leading_space": 7336
+   },
+   "compression": {
+    "R0": {
+     "premium": 2.5831953185381473,
+     "lo": 2.554210378530351,
+     "hi": 2.611941220506694,
+     "ne_tokens": 70188,
+     "en_tokens": 27171,
+     "premium_vs_base_en": 2.5831953185381473,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R2_K0": {
+     "premium": 2.608148393507784,
+     "lo": 2.5794091207006953,
+     "hi": 2.636378325421673,
+     "ne_tokens": 70866,
+     "en_tokens": 27171,
+     "premium_vs_base_en": 2.608148393507784,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R1_K32000": {
+     "premium": 2.2040410732030473,
+     "lo": 2.179521955035105,
+     "hi": 2.2283924151628387,
+     "ne_tokens": 59886,
+     "en_tokens": 27171,
+     "premium_vs_base_en": 2.2040410732030473,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R2_K32000": {
+     "premium": 1.0143535386993485,
+     "lo": 1.0042228414338872,
+     "hi": 1.0241211117292224,
+     "ne_tokens": 27561,
+     "en_tokens": 27171,
+     "premium_vs_base_en": 1.0143535386993485,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R1b_added32000": {
+     "premium": 2.350299952154871,
+     "lo": 2.323709436105143,
+     "hi": 2.376977722709169,
+     "ne_tokens": 63860,
+     "en_tokens": 27171,
+     "premium_vs_base_en": 2.350299952154871,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    }
+   },
+   "mark_initial": {
+    "R0": {
+     "all": 0.5544537527782527,
+     "devanagari": 0.5706576728499156,
+     "n_tokens": 70188,
+     "n_deva_tokens": 68195
+    },
+    "R2_K0": {
+     "all": 0.5491773205768634,
+     "devanagari": 0.5679801517805021,
+     "n_tokens": 70866,
+     "n_deva_tokens": 68520
+    },
+    "R1_K32000": {
+     "all": 0.6490331630097185,
+     "devanagari": 0.66831734241205,
+     "n_tokens": 59886,
+     "n_deva_tokens": 58158
+    },
+    "R2_K32000": {
+     "all": 0.1346830666521534,
+     "devanagari": 0.146969157065368,
+     "n_tokens": 27561,
+     "n_deva_tokens": 25257
+    },
+    "R1b_added32000": {
+     "all": 0.610992796742875,
+     "devanagari": 0.652922572332201,
+     "n_tokens": 63860,
+     "n_deva_tokens": 59759
+    }
+   },
+   "unseen_ref": {
+    "sample_bytes": 30001883,
+    "sample_lines": 5130,
+    "base_token_types": 5685,
+    "base_bigram_types": 118300
+   },
+   "unseen": {
+    "R0": {
+     "tokens_unseen": 0.0038325639710491822,
+     "bigrams_unseen": 0.02461836475078062,
+     "old_tokens_unseen": 0.0038325639710491822,
+     "old_old_bigrams_unseen": 0.02461836475078062,
+     "old_old_bigram_share": 1.0,
+     "token_types_unseen": 0.1475541299117883,
+     "bigram_types_unseen": 0.0967848856479947,
+     "n_tokens": 70188,
+     "n_bigrams": 69176
+    },
+    "R2_K0": {
+     "tokens_unseen": 0.003866452177348799,
+     "bigrams_unseen": 0.033555701892518684,
+     "old_tokens_unseen": 0.003866452177348799,
+     "old_old_bigrams_unseen": 0.033555701892518684,
+     "old_old_bigram_share": 1.0,
+     "token_types_unseen": 0.1516626115166261,
+     "bigram_types_unseen": 0.09847152712024888,
+     "n_tokens": 70866,
+     "n_bigrams": 69854
+    },
+    "R1_K32000": {
+     "tokens_unseen": 0.1550946798917944,
+     "bigrams_unseen": 0.30358052790705575,
+     "old_tokens_unseen": 0.004916614222781624,
+     "old_old_bigrams_unseen": 0.032310597120604204,
+     "old_old_bigram_share": 0.7196725209770017,
+     "token_types_unseen": 0.7185886402753873,
+     "bigram_types_unseen": 0.5086144003591672,
+     "n_tokens": 59886,
+     "n_bigrams": 58874
+    },
+    "R2_K32000": {
+     "tokens_unseen": 0.7417365117376002,
+     "bigrams_unseen": 0.9352894647632679,
+     "old_tokens_unseen": 0.03706709956709957,
+     "old_old_bigrams_unseen": 0.3111467522052927,
+     "old_old_bigram_share": 0.09393950807940035,
+     "token_types_unseen": 0.8973607038123167,
+     "bigram_types_unseen": 0.9530656538252849,
+     "n_tokens": 27561,
+     "n_bigrams": 26549
+    }
+   },
+   "first_new_id": 128256
+  },
+  "Qwen3-1.7B-Base": {
+   "r1b_build": {
+    "candidates": 32000,
+    "partial_utf8_dropped": 1,
+    "added": 31999,
+    "already_in_vocab_or_dup": 0,
+    "vocab_before": 151669,
+    "vocab_after": 183668,
+    "leading_space": 7703
+   },
+   "compression": {
+    "R0": {
+     "premium": 4.4154085659462,
+     "lo": 4.358456230359251,
+     "hi": 4.4749515373102255,
+     "ne_tokens": 121958,
+     "en_tokens": 27621,
+     "premium_vs_base_en": 4.4154085659462,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R2_K0": {
+     "premium": 4.415299952934362,
+     "lo": 4.358418170733956,
+     "hi": 4.47477209753585,
+     "ne_tokens": 121955,
+     "en_tokens": 27621,
+     "premium_vs_base_en": 4.415299952934362,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R1_K32000": {
+     "premium": 2.186922993374606,
+     "lo": 2.161398425069151,
+     "hi": 2.212659371237921,
+     "ne_tokens": 60405,
+     "en_tokens": 27621,
+     "premium_vs_base_en": 2.186922993374606,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R2_K32000": {
+     "premium": 1.0144093262372833,
+     "lo": 1.0043772904498947,
+     "hi": 1.0239718438565595,
+     "ne_tokens": 28019,
+     "en_tokens": 27621,
+     "premium_vs_base_en": 1.0144093262372833,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    },
+    "R1b_added32000": {
+     "premium": 2.187574671445639,
+     "lo": 2.1620012177086387,
+     "hi": 2.213253801373616,
+     "ne_tokens": 60423,
+     "en_tokens": 27621,
+     "premium_vs_base_en": 2.187574671445639,
+     "en_identical": true,
+     "lossless_ne": true,
+     "lossless_en": true
+    }
+   },
+   "mark_initial": {
+    "R0": {
+     "all": 0.3197166237557192,
+     "devanagari": 0.32736675957954126,
+     "n_tokens": 121958,
+     "n_deva_tokens": 119108
+    },
+    "R2_K0": {
+     "all": 0.3197244885408552,
+     "devanagari": 0.32736675957954126,
+     "n_tokens": 121955,
+     "n_deva_tokens": 119108
+    },
+    "R1_K32000": {
+     "all": 0.6434566674944127,
+     "devanagari": 0.66831734241205,
+     "n_tokens": 60405,
+     "n_deva_tokens": 58158
+    },
+    "R2_K32000": {
+     "all": 0.10756986330704164,
+     "devanagari": 0.11951780474264415,
+     "n_tokens": 28019,
+     "n_deva_tokens": 25218
+    },
+    "R1b_added32000": {
+     "all": 0.6432649818777618,
+     "devanagari": 0.6679957378063451,
+     "n_tokens": 60423,
+     "n_deva_tokens": 58186
+    }
+   },
+   "unseen_ref": {
+    "sample_bytes": 30001883,
+    "sample_lines": 5130,
+    "base_token_types": 4582,
+    "base_bigram_types": 21347
+   },
+   "unseen": {
+    "R0": {
+     "tokens_unseen": 0.0018038997031765034,
+     "bigrams_unseen": 0.005787706910522051,
+     "old_tokens_unseen": 0.0018038997031765034,
+     "old_old_bigrams_unseen": 0.005787706910522051,
+     "old_old_bigram_share": 1.0,
+     "token_types_unseen": 0.33783783783783783,
+     "bigram_types_unseen": 0.13780455855383808,
+     "n_tokens": 121958,
+     "n_bigrams": 120946
+    },
+    "R2_K0": {
+     "tokens_unseen": 0.00184494280677299,
+     "bigrams_unseen": 0.00579611883283861,
+     "old_tokens_unseen": 0.00184494280677299,
+     "old_old_bigrams_unseen": 0.00579611883283861,
+     "old_old_bigram_share": 1.0,
+     "token_types_unseen": 0.3452914798206278,
+     "bigram_types_unseen": 0.13817514420555846,
+     "n_tokens": 121955,
+     "n_bigrams": 120943
+    },
+    "R1_K32000": {
+     "tokens_unseen": 0.7235493750517341,
+     "bigrams_unseen": 0.9317933089758053,
+     "old_tokens_unseen": 0.011893491124260355,
+     "old_old_bigrams_unseen": 0.1137606650623496,
+     "old_old_bigram_share": 0.07696193154075397,
+     "token_types_unseen": 0.9328621908127208,
+     "bigram_types_unseen": 0.9761594654283935,
+     "n_tokens": 60405,
+     "n_bigrams": 59393
+    },
+    "R2_K32000": {
+     "tokens_unseen": 0.8406081587494201,
+     "bigrams_unseen": 0.9586773799385344,
+     "old_tokens_unseen": 0.047964186740567044,
+     "old_old_bigrams_unseen": 0.2696335078534031,
+     "old_old_bigram_share": 0.05657792424186322,
+     "token_types_unseen": 0.9682713347921226,
+     "bigram_types_unseen": 0.9872163630552893,
+     "n_tokens": 28019,
+     "n_bigrams": 27007
+    }
+   },
+   "first_new_id": 151669
+  }
+ },
+ "fragments": {
+  "Llama-3.2-1B": {
+   "original": {
+    "first_30MB": {
+     "bytes": 30001883,
+     "types": 24705,
+     "tokens": 5158513
+    },
+    "full": {
+     "bytes": 274937201,
+     "types": 65970,
+     "tokens": 47172650,
+     "types_for_99pct": 5892,
+     "types_for_999pct": 29724,
+     "mark_initial_types": 39609
+    }
+   },
+   "repaired": {
+    "first_30MB": {
+     "bytes": 30001883,
+     "types": 157169,
+     "tokens": 1763361
+    },
+    "full": {
+     "bytes": 274937201,
+     "types": 631609,
+     "tokens": 16101358,
+     "types_for_99pct": 470596,
+     "types_for_999pct": 615508,
+     "mark_initial_types": 540
+    }
+   }
+  },
+  "Qwen3-1.7B-Base": {
+   "original": {
+    "first_30MB": {
+     "bytes": 30001883,
+     "types": 23862,
+     "tokens": 5191540
+    },
+    "full": {
+     "bytes": 274937201,
+     "types": 64744,
+     "tokens": 47474343,
+     "types_for_99pct": 5549,
+     "types_for_999pct": 28474,
+     "mark_initial_types": 39609
+    }
+   },
+   "repaired": {
+    "first_30MB": {
+     "bytes": 30001883,
+     "types": 156326,
+     "tokens": 1796388
+    },
+    "full": {
+     "bytes": 274937201,
+     "types": 630383,
+     "tokens": 16403051,
+     "types_for_99pct": 466353,
+     "types_for_999pct": 613980,
+     "mark_initial_types": 540
+    }
+   }
+  }
+ },
+ "fragments_regex_identical_across_models": false,
+ "ksweep_meta": {
+  "n": 28,
+  "secs_K64000_min": 116.9,
+  "secs_K64000_max": 214.1,
+  "secs_all_min": 93.4,
+  "secs_all_max": 214.1,
+  "merge_text_bytes": [
+   1000000463
+  ],
+  "rows": [
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R1",
+    "K": 1000,
+    "types": 124596,
+    "new_tokens": 1000,
+    "secs": 168.0
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R1",
+    "K": 16000,
+    "types": 124596,
+    "new_tokens": 16000,
+    "secs": 168.2
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R1",
+    "K": 2000,
+    "types": 124596,
+    "new_tokens": 2000,
+    "secs": 166.7
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R1",
+    "K": 32000,
+    "types": 124596,
+    "new_tokens": 32000,
+    "secs": 172.5
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R1",
+    "K": 4000,
+    "types": 124596,
+    "new_tokens": 4000,
+    "secs": 166.3
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R1",
+    "K": 64000,
+    "types": 124596,
+    "new_tokens": 64000,
+    "secs": 188.3
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R1",
+    "K": 8000,
+    "types": 124596,
+    "new_tokens": 8000,
+    "secs": 167.1
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R2",
+    "K": 1000,
+    "types": 1536573,
+    "new_tokens": 1000,
+    "secs": 94.0
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R2",
+    "K": 16000,
+    "types": 1536573,
+    "new_tokens": 16000,
+    "secs": 98.6
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R2",
+    "K": 2000,
+    "types": 1536573,
+    "new_tokens": 2000,
+    "secs": 93.4
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R2",
+    "K": 32000,
+    "types": 1536573,
+    "new_tokens": 32000,
+    "secs": 103.2
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R2",
+    "K": 4000,
+    "types": 1536573,
+    "new_tokens": 4000,
+    "secs": 96.8
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R2",
+    "K": 64000,
+    "types": 1536573,
+    "new_tokens": 64000,
+    "secs": 116.9
+   },
+   {
+    "base": "unsloth/Llama-3.2-1B",
+    "arm": "R2",
+    "K": 8000,
+    "types": 1536573,
+    "new_tokens": 8000,
+    "secs": 96.9
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R1",
+    "K": 1000,
+    "types": 123268,
+    "new_tokens": 1000,
+    "secs": 198.1
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R1",
+    "K": 16000,
+    "types": 123268,
+    "new_tokens": 16000,
+    "secs": 189.2
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R1",
+    "K": 2000,
+    "types": 123268,
+    "new_tokens": 2000,
+    "secs": 185.5
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R1",
+    "K": 32000,
+    "types": 123268,
+    "new_tokens": 32000,
+    "secs": 202.5
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R1",
+    "K": 4000,
+    "types": 123268,
+    "new_tokens": 4000,
+    "secs": 183.5
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R1",
+    "K": 64000,
+    "types": 123268,
+    "new_tokens": 64000,
+    "secs": 214.1
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R1",
+    "K": 8000,
+    "types": 123268,
+    "new_tokens": 8000,
+    "secs": 188.5
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R2",
+    "K": 1000,
+    "types": 1535245,
+    "new_tokens": 1000,
+    "secs": 116.7
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R2",
+    "K": 16000,
+    "types": 1535245,
+    "new_tokens": 16000,
+    "secs": 123.7
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R2",
+    "K": 2000,
+    "types": 1535245,
+    "new_tokens": 2000,
+    "secs": 121.6
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R2",
+    "K": 32000,
+    "types": 1535245,
+    "new_tokens": 32000,
+    "secs": 129.8
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R2",
+    "K": 4000,
+    "types": 1535245,
+    "new_tokens": 4000,
+    "secs": 118.0
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R2",
+    "K": 64000,
+    "types": 1535245,
+    "new_tokens": 64000,
+    "secs": 147.8
+   },
+   {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "arm": "R2",
+    "K": 8000,
+    "types": 1535245,
+    "new_tokens": 8000,
+    "secs": 121.4
+   }
+  ]
+ },
+ "secs": 64.2
+}

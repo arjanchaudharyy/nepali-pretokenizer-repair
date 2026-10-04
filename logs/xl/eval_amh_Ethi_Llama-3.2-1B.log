@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+amh_Ethi Llama-3.2-1B R1 4000 1.3902 True True
+amh_Ethi Llama-3.2-1B R1 16000 1.0761 True True
+amh_Ethi Llama-3.2-1B R1 32000 0.9763 True True
+amh_Ethi Llama-3.2-1B R2 4000 1.3902 True True
+amh_Ethi Llama-3.2-1B R2 16000 1.0761 True True
+amh_Ethi Llama-3.2-1B R2 32000 0.9763 True True

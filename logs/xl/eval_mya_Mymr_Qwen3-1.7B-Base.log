@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+mya_Mymr Qwen3-1.7B-Base R1 4000 3.0227 True True
+mya_Mymr Qwen3-1.7B-Base R1 16000 2.9945 True True
+mya_Mymr Qwen3-1.7B-Base R1 32000 2.9913 True True
+mya_Mymr Qwen3-1.7B-Base R2 4000 1.5808 True True
+mya_Mymr Qwen3-1.7B-Base R2 16000 1.2194 True True
+mya_Mymr Qwen3-1.7B-Base R2 32000 1.1063 True True

@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+amh_Ethi Qwen3-1.7B-Base R1 4000 1.3759 True True
+amh_Ethi Qwen3-1.7B-Base R1 16000 1.0733 True True
+amh_Ethi Qwen3-1.7B-Base R1 32000 0.976 True True
+amh_Ethi Qwen3-1.7B-Base R2 4000 1.3759 True True
+amh_Ethi Qwen3-1.7B-Base R2 16000 1.0733 True True
+amh_Ethi Qwen3-1.7B-Base R2 32000 0.976 True True

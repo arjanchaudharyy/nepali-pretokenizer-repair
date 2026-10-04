@@ -3,7 +3,7 @@
 
 \paragraph{Practical recommendation.} Anyone adapting a Llama-3, Qwen2.5/3, GLM, Phi-4, OLMo-2, Granite or LFM2 model to Nepali, or to another language written with combining marks, should check the pre-tokenizer before extending the vocabulary. The check takes one line: count pre-tokens on a target-language sample under the model's regex and compare with the token count. If they are close, as for Llama-3 on Nepali or the Telugu-extended Llama-3 of \S\ref{sec:ceiling}, extension has little room left. The repair in \S\ref{sec:method} is a two-substitution edit that leaves the token ids of all ASCII English and code unchanged (Proposition~\ref{prop:lossless}). Deployments whose tokenizer has no normalizer, such as Llama-3, should apply NFC before tokenizing to keep accented Latin text inside the guarantee.
 
-\paragraph{What the repair does not fix.} A wider word class removes the splits the regex forces; it does not make BPE respect syllables, and 26\% of \texttt{o200k}'s Nepali tokens still begin with a vowel sign (\S\ref{sec:audit}). Grapheme- and akshara-aware tokenizers~\citep{kapila2026typedriven,darshana2026wwho,velayuthan-sarveswaran-2025-egalitarian} go further, but they change more than marks and would not preserve English tokenization in a deployed model. Combining the two in a retrofit is future work.
+\paragraph{What the repair does not fix.} A wider word class removes the splits the regex forces; it does not make BPE respect syllables, and 26\% of \texttt{o200k}'s Nepali tokens still begin with a combining mark (\S\ref{sec:audit}). Grapheme- and akshara-aware tokenizers~\citep{kapila2026typedriven,darshana2026wwho,velayuthan-sarveswaran-2025-egalitarian} go further, but they change more than marks and would not preserve English tokenization in a deployed model. Combining the two in a retrofit is future work.
 
 \section*{Limitations}
 
@@ -15,7 +15,7 @@
   \item \textbf{Equal compute.} The equal-compute checkpoints of \RO{} and \RI{} are taken mid-schedule, before their learning rate has annealed, which disadvantages them.
   \item \textbf{Downstream tasks.} Bits per byte is our primary metric. Belebele and few-shot translation are weak signals at this model size, and we report them as secondary.
   \item \textbf{Embedding initialisation.} We use mean initialisation for all arms. Stronger initialisers~\citep{dobler-de-melo-2023-focus,minixhofer2024zett} could change the absolute numbers, though they would apply to \RI{} and \RII{} alike.
-  \item \textbf{Languages.} Continued pretraining is done for Nepali only. For eight other languages we show the compression effect and the floors of released extensions, but not the effect on model quality.
+  \item \textbf{Languages.} Continued pretraining is done for Nepali only. For nine other languages we show the compression effect and the floors of released extensions, but not the effect on model quality.
   \item \textbf{Closed tokenizers.} We do not measure closed API tokenizers such as Gemini, whose regexes are not public.
 \end{itemize}
 

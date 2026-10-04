@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+tel_Telu Qwen3-1.7B-Base R1 4000 2.4534 True True
+tel_Telu Qwen3-1.7B-Base R1 16000 2.4305 True True
+tel_Telu Qwen3-1.7B-Base R1 32000 2.4288 True True
+tel_Telu Qwen3-1.7B-Base R2 4000 1.446 True True
+tel_Telu Qwen3-1.7B-Base R2 16000 1.109 True True
+tel_Telu Qwen3-1.7B-Base R2 32000 1.0069 True True

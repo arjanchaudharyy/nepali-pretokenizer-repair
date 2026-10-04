@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+ben_Beng Qwen3-1.7B-Base R1 4000 2.2987 True True
+ben_Beng Qwen3-1.7B-Base R1 16000 2.2682 True True
+ben_Beng Qwen3-1.7B-Base R1 32000 2.2643 True True
+ben_Beng Qwen3-1.7B-Base R2 4000 1.3958 True True
+ben_Beng Qwen3-1.7B-Base R2 16000 1.0896 True True
+ben_Beng Qwen3-1.7B-Base R2 32000 1.0048 True True

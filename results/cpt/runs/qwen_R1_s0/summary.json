@@ -1,0 +1,13 @@
+{
+ "model": "models/qwen_R1",
+ "data": "data/qwen_R1",
+ "lr": 0.0001,
+ "seed": 0,
+ "steps": 748,
+ "tokens": 392167424,
+ "params": 628544512,
+ "train_flops": 1478968092842262528,
+ "secs": 2235.6,
+ "gpus": 4,
+ "final_loss": 2.282466173171997
+}

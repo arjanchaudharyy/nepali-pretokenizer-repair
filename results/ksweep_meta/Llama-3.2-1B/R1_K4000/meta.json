@@ -1,0 +1,13 @@
+{
+ "base": "unsloth/Llama-3.2-1B",
+ "arm": "R1",
+ "K": 4000,
+ "bytes": 1000000463,
+ "types": 124596,
+ "regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+",
+ "base_regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+",
+ "new_merges": 4000,
+ "new_tokens": 4000,
+ "first_new_id": 128256,
+ "secs": 166.3
+}

@@ -1,0 +1,22 @@
+{
+ "model": "runs/qwen_R0_s0/model",
+ "vocab": 151669,
+ "bpb_flores_ne": 0.6312312382030314,
+ "bpb_flores_en": 1.049417899147919,
+ "bpb_native_ne": 0.4589463496540795,
+ "bytes_native_ne": 4001293,
+ "bpb_native_en": 0.8039555678228522,
+ "bytes_native_en": 4042178,
+ "bpb_chunk2k_ne": 0.5007050444717446,
+ "bpb_chunk2k_en": 0.8643085049223079,
+ "ne_tokens_per_byte": 0.3592579063958147,
+ "en_tokens_per_byte": 0.20909792877906977,
+ "gen_tokens_per_s": 1143.0121462930963,
+ "gen_bytes_per_s": 3088.5884851494116,
+ "gen_bytes_per_token": 2.7021484375,
+ "belebele_ne": 0.27,
+ "belebele_en": 0.35888888888888887,
+ "chrf_ne_en": 20.053119048710464,
+ "chrf_en_ne": 13.552864879954365,
+ "secs": 1102.1
+}

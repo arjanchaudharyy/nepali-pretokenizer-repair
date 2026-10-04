@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+tam_Taml Llama-3.2-1B R1 4000 2.6815 True True
+tam_Taml Llama-3.2-1B R1 16000 2.6687 True True
+tam_Taml Llama-3.2-1B R1 32000 2.6681 True True
+tam_Taml Llama-3.2-1B R2 4000 1.4294 True True
+tam_Taml Llama-3.2-1B R2 16000 1.1206 True True
+tam_Taml Llama-3.2-1B R2 32000 1.0169 True True

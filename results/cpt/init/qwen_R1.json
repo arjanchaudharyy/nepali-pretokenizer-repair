@@ -1,0 +1,1 @@
+{"base": "Qwen/Qwen3-0.6B-Base", "ext": "tok/Qwen3-1.7B-Base/R1_K32000", "new_rows": 32000, "first_new_id": 151669, "tied": true, "english_logit_maxdiff": 0.0}

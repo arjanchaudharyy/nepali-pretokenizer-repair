@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+hin_Deva Qwen3-1.7B-Base R1 4000 2.3797 True True
+hin_Deva Qwen3-1.7B-Base R1 16000 2.3588 True True
+hin_Deva Qwen3-1.7B-Base R1 32000 2.3566 True True
+hin_Deva Qwen3-1.7B-Base R2 4000 1.4991 True True
+hin_Deva Qwen3-1.7B-Base R2 16000 1.24 True True
+hin_Deva Qwen3-1.7B-Base R2 32000 1.1647 True True

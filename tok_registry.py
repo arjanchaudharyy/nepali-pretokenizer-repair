@@ -39,6 +39,17 @@ HF = [
     ("Sarvam-1", "Sarvam", "sarvamai/sarvam-1"),
     ("Sarvam-M", "Sarvam", "sarvamai/sarvam-m"),
     ("Arkios", "Arkios", "sajalregmi4/arkios-tokenizer"),
+    # 2026 releases
+    ("Qwen3.5", "Alibaba", "Qwen/Qwen3.5-9B"),
+    ("Kimi-K3", "Moonshot", "moonshotai/Kimi-K3"),
+    ("Gemma-4", "Google", "google/gemma-4-12B-it"),
+    ("DeepSeek-V4", "DeepSeek", "deepseek-ai/DeepSeek-V4-Flash"),
+    ("GLM-5.3", "Zhipu", "zai-org/GLM-5.3"),
+    ("Mistral-Large-3", "Mistral", "mistralai/Mistral-Large-3-675B-Instruct-2512"),
+    ("Granite-4.1", "IBM", "ibm-granite/granite-4.1-3b"),
+    # published vocabulary-extension retrofits of letters-only models
+    ("LFM2", "Liquid", "LiquidAI/LFM2-8B-A1B"),
+    ("TituLLM", "Hishab", "hishab/titulm-llama-3.2-1b-v2.0"),
 ]
 TIKTOKEN = [("GPT-2", "OpenAI", "gpt2"), ("cl100k", "OpenAI", "cl100k_base"),
             ("o200k", "OpenAI", "o200k_base")]
@@ -50,6 +61,10 @@ def classify(regexes: list[str]) -> str:
     joined = " ".join(regexes)
     # mark-aware if any word class includes \p{M} (or the \p{Mn}/\p{Mc} subclasses)
     if "\\p{M" in joined or "\\p{Mn" in joined:
+        return "mark-regex"
+    # Oniguruma's \w includes combining marks (Mn/Mc), so a \w-based word
+    # class keeps vowel signs attached (verified on TituLLM's released regex).
+    if "\\w" in joined.replace("[^\\w", ""):
         return "mark-regex"
     if "\\p{L}" in joined or "\\p{Lu}" in joined or "\\p{Lo}" in joined:
         return "letter-regex"
