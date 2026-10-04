@@ -16,6 +16,8 @@ import numpy as np
 from tokenizers import Tokenizer
 
 H = Path("/home/ntt")
+import os
+CORPUS = Path(os.environ.get("CORPUS_DIR", "/home/ntt/corpus"))
 
 
 def docs(path, budget):
@@ -37,8 +39,8 @@ def main(tok_path, eos, ne_bytes, en_bytes, out):
     tk = Tokenizer.from_file(tok_path)
     eos_id = tk.token_to_id(eos)
     assert eos_id is not None, eos
-    ne, gne = docs(H / "corpus/npi_Deva.jsonl", int(float(ne_bytes)))
-    en, gen = docs(H / "corpus/eng_Latn.jsonl", int(float(en_bytes)))
+    ne, gne = docs(CORPUS / "npi_Deva.jsonl", int(float(ne_bytes)))
+    en, gen = docs(CORPUS / "eng_Latn.jsonl", int(float(en_bytes)))
     order = [(0, i) for i in range(len(ne))] + [(1, i) for i in range(len(en))]
     random.Random(0).shuffle(order)
     src = (ne, en)

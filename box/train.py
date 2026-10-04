@@ -31,6 +31,7 @@ p.add_argument("--max_steps", type=int, default=0)
 p.add_argument("--frac", type=float, default=1.0)  # train on this PREFIX of the stream (same documents in every arm)
 p.add_argument("--save", type=int, default=1)
 p.add_argument("--ckpt", type=int, default=0)
+p.add_argument("--only_embed", type=int, default=0)  # stage 1: train only the (tied) embedding matrix
 p.add_argument("--save_at", type=int, default=0)  # also save a checkpoint after this many steps (equal-compute comparison)
 a = p.parse_args()
 
@@ -61,10 +62,15 @@ model.config.use_cache = False
 if a.ckpt:
     model.gradient_checkpointing_enable()
 n_params = sum(p.numel() for p in model.parameters())
+if a.only_embed:
+    emb = model.get_input_embeddings().weight
+    out_w = model.get_output_embeddings().weight
+    for p_ in model.parameters():
+        p_.requires_grad_(p_ is emb or p_ is out_w)
 ddp = DDP(model, device_ids=[local])
-decay = [p for n, p in model.named_parameters() if p.dim() >= 2]
-no_decay = [p for n, p in model.named_parameters() if p.dim() < 2]
-opt = torch.optim.AdamW([{"params": decay, "weight_decay": 0.1}, {"params": no_decay, "weight_decay": 0.0}],
+decay = [p for n, p in model.named_parameters() if p.dim() >= 2 and p.requires_grad]
+no_decay = [p for n, p in model.named_parameters() if p.dim() < 2 and p.requires_grad]
+opt = torch.optim.AdamW([g for g in ({"params": decay, "weight_decay": 0.1}, {"params": no_decay, "weight_decay": 0.0}) if g["params"]],
                         lr=a.lr, betas=(0.9, 0.95), eps=1e-8, fused=True)
 
 
@@ -98,7 +104,7 @@ for step in range(steps):
             loss = ddp(input_ids=x, labels=x).loss
             (loss / accum).backward()
         tot += loss.detach() / accum
-    gn = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+    gn = torch.nn.utils.clip_grad_norm_([p_ for p_ in model.parameters() if p_.requires_grad], 1.0)
     opt.step()
     opt.zero_grad(set_to_none=True)
     if a.save_at and step + 1 == a.save_at and step + 1 < steps and rank == 0:

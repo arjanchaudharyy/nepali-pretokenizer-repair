@@ -16,6 +16,8 @@ from pathlib import Path
 import pyarrow.parquet as pq
 
 H = Path("/home/ntt")
+import os
+CORPUS = Path(os.environ.get("CORPUS_DIR", "/home/ntt/corpus"))
 FL = H / "flores200_dataset"
 NGRAM = 10
 
@@ -46,8 +48,8 @@ def files_for(code):
 
 def main(code, budget, held_bytes=0):
     grams, nsent = flores_grams(sorted({code, "eng_Latn"}))
-    out_p = H / "corpus" / f"{code}.jsonl"
-    held_p = H / "corpus" / f"{code}.heldout.jsonl"
+    out_p = CORPUS / f"{code}.jsonl"
+    held_p = CORPUS / f"{code}.heldout.jsonl"
     st = dict(docs=0, short=0, dup=0, contam=0, kept=0, bytes=0, held=0)
     seen = set()
     out = open(out_p, "w", encoding="utf-8")
@@ -89,7 +91,7 @@ def main(code, budget, held_bytes=0):
     out.close()
     held and held.close()
     st.update(code=code, flores_sentences_indexed=nsent, budget=budget)
-    json.dump(st, open(H / "logs" / f"prep.{code}.json", "w"), indent=1)
+    json.dump(st, open(CORPUS / f"prep.{code}.json", "w"), indent=1)
     print(json.dumps(st), flush=True)
 
 
