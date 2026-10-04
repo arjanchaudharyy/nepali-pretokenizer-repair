@@ -23,6 +23,7 @@ COLS = [
     ("llama", "A", REG, "registered_BOS"),
     ("llama", "A", SEP, "training_separator_EOS"),
     ("llama", "B1", SEP, "training_separator_EOS"),
+    ("llama", "BOS", REG, "registered_BOS"),  # BOS-consistent rerun (amendment 4): BOS in training
     ("qwen", "A", REG, "registered_BOS"),  # Qwen has no BOS: both prefixes are identical
 ]
 ARMS = (("R0", r"\RO{}"), ("R1", r"\RI{}"), ("R2", r"\RII{}"))
@@ -46,34 +47,34 @@ def sign(v):
 for a, _ in ARMS:
     assert abs(bpb(REG, "qwen", "A", a) - bpb(SEP, "qwen", "A", a)) < 1e-9
 
-L = [r"\begin{table*}[t]", r"\centering\small", r"\setlength{\tabcolsep}{6pt}",
-     r"\begin{tabular}{lcccc}", r"\toprule",
-     r" & \multicolumn{3}{c}{Llama-3.2-1B} & Qwen3-0.6B \\",
-     r"\cmidrule(lr){2-4}\cmidrule(lr){5-5}",
-     r" & \multicolumn{2}{c}{main runs} & warm-up runs & main runs \\",
-     r"\cmidrule(lr){2-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}",
-     r" & registered prefix & training separator & training separator & (both identical) \\",
+L = [r"\begin{table*}[t]", r"\centering\small", r"\setlength{\tabcolsep}{4.5pt}",
+     r"\begin{tabular}{lccccc}", r"\toprule",
+     r" & \multicolumn{4}{c}{Llama-3.2-1B} & Qwen3-0.6B \\",
+     r"\cmidrule(lr){2-5}\cmidrule(lr){6-6}",
+     r" & \multicolumn{2}{c}{main runs} & warm-up runs & BOS rerun & main runs \\",
+     r"\cmidrule(lr){2-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}\cmidrule(lr){6-6}",
+     r" & registered prefix & training sep. & training sep. & registered prefix & (both identical) \\",
      r"\midrule",
-     r"\multicolumn{5}{l}{\emph{Held-out Nepali BPB} (lower is better)} \\"]
+     r"\multicolumn{6}{l}{\emph{Held-out Nepali BPB} (lower is better)} \\"]
 lb = REG["llama"]["base"]["bpb_chunk2k_ne"]
 qb = REG["qwen"]["base"]["bpb_chunk2k_ne"]
-L.append(f"Base model, no training & {lb:.3f} & n/a & n/a & {qb:.3f} \\\\")
+L.append(f"Base model (untrained) & {lb:.3f} & n/a & n/a & {lb:.3f} & {qb:.3f} \\\\")
 for a, lab in ARMS:
     cells = [f"{bpb(src, m, e, a):.3f}" for m, e, src, _ in COLS]
     L.append(f"{lab} & " + " & ".join(cells) + r" \\")
 L += [r"\midrule",
-      r"\multicolumn{5}{l}{\emph{Paired difference in held-out Nepali BPB} (positive: first arm worse), document-clustered 95\% interval} \\"]
+      r"\multicolumn{6}{l}{\emph{Paired difference in held-out Nepali BPB} (positive: first arm worse), document-clustered 95\% interval} \\"]
 for x, y in PAIRS:
     ts = [test(m, e, pfx, x, y) for m, e, _, pfx in COLS]
     lab = dict(ARMS)[x] + r" $-$ " + dict(ARMS)[y]
     L.append(f"{lab} & " + " & ".join(sign(t["diff"]) for t in ts) + r" \\")
     L.append(" & " + " & ".join(f"[{sign(t['cluster_lo'])}, {sign(t['cluster_hi'])}]" for t in ts) + r" \\[2pt]")
 L[-1] = L[-1].replace(r"\\[2pt]", r"\\")
-tok = lambda m: " / ".join(f"{REG[m]['exps']['A']['evals'][a]['train']['tokens'] / 1e6:.0f}" for a, _ in ARMS)
+tok = lambda m, e="A": " / ".join(f"{REG[m]['exps'][e]['evals'][a]['train']['tokens'] / 1e6:.0f}" for a, _ in ARMS)
 r = GEN["ratios"]
 L += [r"\midrule",
-      f"Training tokens (M), \\RO{{}}/\\RI{{}}/\\RII{{}} & \\multicolumn{{3}}{{c}}{{{tok('llama')}}} & {tok('qwen')} \\\\",
-      f"Decoding steps, relative to \\RII{{}} & \\multicolumn{{3}}{{c}}{{"
+      f"Training tokens (M) & \\multicolumn{{3}}{{c}}{{{tok('llama')}}} & {tok('llama', 'BOS')} & {tok('qwen')} \\\\",
+      f"Decoding steps & \\multicolumn{{4}}{{c}}{{"
       f"{r['llama']['R0_over_R2']:.2f} / {r['llama']['R1_over_R2']:.2f} / 1}} & "
       f"{r['qwen']['R0_over_R2']:.2f} / {r['qwen']['R1_over_R2']:.2f} / 1 \\\\",
       r"\bottomrule", r"\end{tabular}"]
@@ -81,12 +82,13 @@ nd = CB["docs"]["ne"]
 L += [r"\caption{Continued pretraining on the same 1\,GB of Nepali and 1\,GB of English in every arm (one run per arm). "
       r"BPB: bits per byte on held-out native Nepali, scored in pieces of about 2{,}000 bytes. "
       r"Registered prefix: the beginning-of-sequence token, as pre-registered. "
-      r"Training separator: the end-of-text token that preceded every document during training (a post hoc diagnostic). "
+      r"Training separator (sep.): the end-of-text token that preceded every document in the main and warm-up runs (a post hoc diagnostic). "
+      r"BOS rerun: the three Llama arms retrained exactly as in the main runs except that every training document is wrapped as BOS, document, end-of-text (third amendment, registered before running); it has no prefix artifact and is our main Llama result. "
       r"Qwen has no beginning-of-sequence token, so both prefixes are the end-of-text token. "
       f"Intervals resample {nd['docs']} documents ({nd['pieces']:,} pieces; a piece shorter than 1{{,}}900 bytes is taken to end a document) "
       r"and reflect only the sampling of evaluation text. "
       r"Warm-up runs under the registered prefix and all secondary metrics are in Table~\ref{tab:cpt}. "
-      r"Decoding steps: tokens needed for FLORES-200 Nepali devtest, relative to \RII{}.}",
+      r"Training tokens and decoding steps are given as \RO{} / \RI{} / \RII{}; decoding steps are the tokens needed for FLORES-200 Nepali devtest, relative to \RII{}.}",
       r"\label{tab:prefix}", r"\end{table*}"]
 out = "\n".join(L).replace(f"{nd['pieces']:,}", f"{nd['pieces']:,}".replace(",", "{,}")) + "\n"
 open("paper/sections/prefix_table.tex", "w").write(out)

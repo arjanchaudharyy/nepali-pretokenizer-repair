@@ -1,32 +1,32 @@
 \begin{table*}[t]
 \centering\small
-\setlength{\tabcolsep}{6pt}
-\begin{tabular}{lcccc}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{lccccc}
 \toprule
- & \multicolumn{3}{c}{Llama-3.2-1B} & Qwen3-0.6B \\
-\cmidrule(lr){2-4}\cmidrule(lr){5-5}
- & \multicolumn{2}{c}{main runs} & warm-up runs & main runs \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}
- & registered prefix & training separator & training separator & (both identical) \\
+ & \multicolumn{4}{c}{Llama-3.2-1B} & Qwen3-0.6B \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-6}
+ & \multicolumn{2}{c}{main runs} & warm-up runs & BOS rerun & main runs \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}\cmidrule(lr){6-6}
+ & registered prefix & training sep. & training sep. & registered prefix & (both identical) \\
 \midrule
-\multicolumn{5}{l}{\emph{Held-out Nepali BPB} (lower is better)} \\
-Base model, no training & 0.766 & n/a & n/a & 0.852 \\
-\RO{} & 0.474 & 0.471 & 0.471 & 0.501 \\
-\RI{} & 0.534 & 0.483 & 0.480 & 0.561 \\
-\RII{} & 0.539 & 0.510 & 0.501 & 0.570 \\
+\multicolumn{6}{l}{\emph{Held-out Nepali BPB} (lower is better)} \\
+Base model (untrained) & 0.766 & n/a & n/a & 0.766 & 0.852 \\
+\RO{} & 0.474 & 0.471 & 0.471 & 0.471 & 0.501 \\
+\RI{} & 0.534 & 0.483 & 0.480 & 0.483 & 0.561 \\
+\RII{} & 0.539 & 0.510 & 0.501 & 0.509 & 0.570 \\
 \midrule
-\multicolumn{5}{l}{\emph{Paired difference in held-out Nepali BPB} (positive: first arm worse), document-clustered 95\% interval} \\
-\RI{} $-$ \RO{} & +0.060 & +0.012 & +0.010 & +0.060 \\
- & [+0.058, +0.061] & [+0.011, +0.013] & [+0.009, +0.011] & [+0.058, +0.062] \\[2pt]
-\RII{} $-$ \RO{} & +0.066 & +0.039 & +0.031 & +0.070 \\
- & [+0.064, +0.068] & [+0.038, +0.041] & [+0.029, +0.032] & [+0.067, +0.072] \\[2pt]
-\RII{} $-$ \RI{} & +0.006 & +0.027 & +0.021 & +0.009 \\
- & [+0.004, +0.007] & [+0.026, +0.028] & [+0.020, +0.022] & [+0.008, +0.010] \\
+\multicolumn{6}{l}{\emph{Paired difference in held-out Nepali BPB} (positive: first arm worse), document-clustered 95\% interval} \\
+\RI{} $-$ \RO{} & +0.060 & +0.012 & +0.010 & +0.012 & +0.060 \\
+ & [+0.058, +0.061] & [+0.011, +0.013] & [+0.009, +0.011] & [+0.011, +0.013] & [+0.058, +0.062] \\[2pt]
+\RII{} $-$ \RO{} & +0.066 & +0.039 & +0.031 & +0.038 & +0.070 \\
+ & [+0.064, +0.068] & [+0.038, +0.041] & [+0.029, +0.032] & [+0.037, +0.039] & [+0.067, +0.072] \\[2pt]
+\RII{} $-$ \RI{} & +0.006 & +0.027 & +0.021 & +0.026 & +0.009 \\
+ & [+0.004, +0.007] & [+0.026, +0.028] & [+0.020, +0.022] & [+0.024, +0.027] & [+0.008, +0.010] \\
 \midrule
-Training tokens (M), \RO{}/\RI{}/\RII{} & \multicolumn{3}{c}{417 / 386 / 286} & 574 / 392 / 292 \\
-Decoding steps, relative to \RII{} & \multicolumn{3}{c}{2.55 / 2.17 / 1} & 4.35 / 2.16 / 1 \\
+Training tokens (M) & \multicolumn{3}{c}{417 / 386 / 286} & 418 / 386 / 286 & 574 / 392 / 292 \\
+Decoding steps & \multicolumn{4}{c}{2.55 / 2.17 / 1} & 4.35 / 2.16 / 1 \\
 \bottomrule
 \end{tabular}
-\caption{Continued pretraining on the same 1\,GB of Nepali and 1\,GB of English in every arm (one run per arm). BPB: bits per byte on held-out native Nepali, scored in pieces of about 2{,}000 bytes. Registered prefix: the beginning-of-sequence token, as pre-registered. Training separator: the end-of-text token that preceded every document during training (a post hoc diagnostic). Qwen has no beginning-of-sequence token, so both prefixes are the end-of-text token. Intervals resample 484 documents (2{,}259 pieces; a piece shorter than 1{,}900 bytes is taken to end a document) and reflect only the sampling of evaluation text. Warm-up runs under the registered prefix and all secondary metrics are in Table~\ref{tab:cpt}. Decoding steps: tokens needed for FLORES-200 Nepali devtest, relative to \RII{}.}
+\caption{Continued pretraining on the same 1\,GB of Nepali and 1\,GB of English in every arm (one run per arm). BPB: bits per byte on held-out native Nepali, scored in pieces of about 2{,}000 bytes. Registered prefix: the beginning-of-sequence token, as pre-registered. Training separator (sep.): the end-of-text token that preceded every document in the main and warm-up runs (a post hoc diagnostic). BOS rerun: the three Llama arms retrained exactly as in the main runs except that every training document is wrapped as BOS, document, end-of-text (third amendment, registered before running); it has no prefix artifact and is our main Llama result. Qwen has no beginning-of-sequence token, so both prefixes are the end-of-text token. Intervals resample 484 documents (2{,}259 pieces; a piece shorter than 1{,}900 bytes is taken to end a document) and reflect only the sampling of evaluation text. Warm-up runs under the registered prefix and all secondary metrics are in Table~\ref{tab:cpt}. Training tokens and decoding steps are given as \RO{} / \RI{} / \RII{}; decoding steps are the tokens needed for FLORES-200 Nepali devtest, relative to \RII{}.}
 \label{tab:prefix}
 \end{table*}

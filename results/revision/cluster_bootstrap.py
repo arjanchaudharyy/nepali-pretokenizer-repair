@@ -27,7 +27,7 @@ B, SEED, CUT = 10_000, 0, 1900
 KEYS = {"ne": "npi_Deva.heldout.jsonl", "en": "eng_Latn.heldout.jsonl"}
 PREFIXES = {"registered_BOS": "evals", "training_separator_EOS": "evals_eos"}
 EXPS = {"A_llama": lambda a: f"llama_{a}_s0", "A_qwen": lambda a: f"qwen_{a}_s0",
-        "B1_llama": lambda a: f"B1_llama_{a}"}
+        "B1_llama": lambda a: f"B1_llama_{a}", "BOS_llama": lambda a: f"bos_llama_{a}_s0"}
 PAIRS = (("R1", "R0"), ("R2", "R0"), ("R2", "R1"))
 
 

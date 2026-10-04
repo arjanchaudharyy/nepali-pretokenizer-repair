@@ -1,0 +1,15 @@
+{
+ "model": "runs/bos_llama_R0_s0/model",
+ "vocab": 128256,
+ "bpb_flores_ne": 1.3657587914925398,
+ "bpb_flores_en": 1.9728362616161708,
+ "bpb_native_ne": 0.7453384399272616,
+ "bytes_native_ne": 4001293,
+ "bpb_native_en": 1.078304465126899,
+ "bytes_native_en": 4042178,
+ "bpb_chunk2k_ne": 1.017190400808024,
+ "bpb_chunk2k_en": 1.294921993793079,
+ "ne_tokens_per_byte": 0.20675637460526936,
+ "en_tokens_per_byte": 0.20569131540697674,
+ "secs": 160.1
+}
