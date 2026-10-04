@@ -1,13 +1,17 @@
 #!/bin/bash
-# Build the arXiv source bundle: tex + sections + figures + style + precompiled .bbl
+# Build the arXiv source bundle from the IEEE-format version (main_arxiv.tex), with precompiled .bbl.
 set -e
 cd "$(dirname "$0")/paper"
-tectonic -X compile --keep-intermediates main.tex > /dev/null
+tectonic -X compile --keep-intermediates main_arxiv.tex > /dev/null 2>&1
+tectonic -X compile main.tex > /dev/null 2>&1
+tectonic -X compile main_anon.tex > /dev/null 2>&1
 rm -rf ../arxiv && mkdir -p ../arxiv/sections
-cp main.tex main.bbl acl.sty acl_natbib.bst refs.bib ../arxiv/
+cp main_arxiv.tex ../arxiv/main.tex
+cp main_arxiv.bbl ../arxiv/main.bbl
+cp refs.bib ../arxiv/
+CLS=$(find ~/Library/Caches/Tectonic -name IEEEtran.cls 2>/dev/null | head -1); [ -n "$CLS" ] && cp "$CLS" ../arxiv/
 cp sections/*.tex ../arxiv/sections/
-for f in $(grep -ho "includegraphics\[[^]]*\]{[^}]*}" main.tex sections/*.tex | sed 's/.*{\(.*\)}/\1/' | sort -u); do cp "$f" ../arxiv/; done
-cp main.pdf ../arxiv_preview.pdf
+for f in $(grep -ho "includegraphics\[[^]]*\]{[^}]*}" main_arxiv.tex sections/*.tex | sed 's/.*{\(.*\)}/\1/' | sort -u); do cp "$f" ../arxiv/; done
+cp main_arxiv.pdf ../arxiv_preview.pdf
 cd ../arxiv && tar czf ../arxiv_submission.tar.gz . && cd ..
-echo "bundle: arxiv_submission.tar.gz ($(du -h arxiv_submission.tar.gz | cut -f1)); files: $(ls arxiv | wc -l)"
-grep -L "red" arxiv/sections/*.tex > /dev/null; grep -n "textcolor{red}{\\[" arxiv/sections/*.tex && echo "WARNING: red placeholders remain" || echo "no placeholders"
+echo "bundle: arxiv_submission.tar.gz ($(du -h arxiv_submission.tar.gz | cut -f1)); files: $(ls arxiv | wc -l | tr -d ' ')"

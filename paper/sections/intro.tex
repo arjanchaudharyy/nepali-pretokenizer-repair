@@ -8,7 +8,7 @@ Regmi et al.\ studied tokenizers trained from scratch. Most practitioners instea
 
 \paragraph{Findings.} For Llama-3 and Qwen3 the \emph{pre-token floor}, the lowest premium any merge-based extension can reach, is about $2.2$ (\S\ref{sec:floor}). Ten released extensions for six scripts end within 4\% of their floors, and our own extension under the letters-only regex stalls at it. Registering \RII{}'s learned strings as added tokens does get below the floor, but a fifth of the matches then start in the middle of a word. Our repair adds marks to the word class with two string substitutions and, together with new merges, brings Nepali to parity with English while leaving every token id of mark-free, non-Devanagari text unchanged (\S\ref{sec:method}). The model-quality result is less favourable. Under our pre-registered analysis, continued pretraining with no new tokens gave the best held-out Nepali bits per byte on both models, so our main hypothesis failed. Between the two extension recipes, the repair was non-inferior to standard extension for Llama and slightly worse for Qwen, and it was clearly worse for Llama when scored after the separator used in training (\S\ref{sec:cpt}). It needs about half as many decoding steps as standard extension for the same Nepali text.
 
-\paragraph{Contributions.}
+\paragraph{Contributions.} We make four contributions:
 \begin{enumerate}
   \setlength\itemsep{0pt}
   \item Evidence that the pre-token floor binds released merge-based extensions, and a test of the added-token route around it (\S\ref{sec:floor}); an audit of 24 distinct deployed tokenizers with per-tokenizer floors (\S\ref{sec:audit}).
