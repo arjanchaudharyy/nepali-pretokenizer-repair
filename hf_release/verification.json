@@ -1,0 +1,54 @@
+{
+ "Llama-3.2-Nepali-Repaired-Tokenizer-32k": {
+  "regex_as_loaded_matches": true,
+  "base": "unsloth/Llama-3.2-1B",
+  "arm": "R2",
+  "vocab": 160256,
+  "new_tokens": 32000,
+  "english_identical": true,
+  "lossless": true,
+  "special_ids_identical": true,
+  "premium": 1.0143535386993485,
+  "base_premium": 2.5831953185381473,
+  "regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{M}\\p{N}]?[\\p{L}\\p{M}]+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{M}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+"
+ },
+ "Llama-3.2-Nepali-Extended-Tokenizer-32k": {
+  "regex_as_loaded_matches": true,
+  "base": "unsloth/Llama-3.2-1B",
+  "arm": "R1",
+  "vocab": 160256,
+  "new_tokens": 32000,
+  "english_identical": true,
+  "lossless": true,
+  "special_ids_identical": true,
+  "premium": 2.2040410732030473,
+  "base_premium": 2.5831953185381473,
+  "regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+"
+ },
+ "Qwen3-Nepali-Repaired-Tokenizer-32k": {
+  "regex_as_loaded_matches": true,
+  "base": "Qwen/Qwen3-1.7B-Base",
+  "arm": "R2",
+  "vocab": 183669,
+  "new_tokens": 32000,
+  "english_identical": true,
+  "lossless": true,
+  "special_ids_identical": true,
+  "premium": 1.0144093262372833,
+  "base_premium": 4.4154085659462,
+  "regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{M}\\p{N}]?[\\p{L}\\p{M}]+|\\p{N}| ?[^\\s\\p{L}\\p{M}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+"
+ },
+ "Qwen3-Nepali-Extended-Tokenizer-32k": {
+  "regex_as_loaded_matches": true,
+  "base": "Qwen/Qwen3-1.7B-Base",
+  "arm": "R1",
+  "vocab": 183669,
+  "new_tokens": 32000,
+  "english_identical": true,
+  "lossless": true,
+  "special_ids_identical": true,
+  "premium": 2.186922993374606,
+  "base_premium": 4.4154085659462,
+  "regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+"
+ }
+}

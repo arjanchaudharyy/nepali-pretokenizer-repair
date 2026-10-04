@@ -9,3 +9,4 @@ arxiv_submission.tar.gz
 *.log
 *.out
 .gstack/
+hf_release/*/tokenizer.json
