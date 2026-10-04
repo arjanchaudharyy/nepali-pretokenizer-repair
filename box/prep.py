@@ -46,8 +46,8 @@ def files_for(code):
 
 def main(code, budget, held_bytes=0):
     grams, nsent = flores_grams(sorted({code, "eng_Latn"}))
-    out_p = H / "corpus" / f"{code}.txt"
-    held_p = H / "corpus" / f"{code}.heldout.txt"
+    out_p = H / "corpus" / f"{code}.jsonl"
+    held_p = H / "corpus" / f"{code}.heldout.jsonl"
     st = dict(docs=0, short=0, dup=0, contam=0, kept=0, bytes=0, held=0)
     seen = set()
     out = open(out_p, "w", encoding="utf-8")
@@ -71,12 +71,12 @@ def main(code, budget, held_bytes=0):
                 if contaminated(t, grams):
                     st["contam"] += 1
                     continue
-                b = len(t.encode()) + 1
+                b = len(t.encode())
                 if held is not None and st["held"] < held_bytes:
-                    held.write(t + "\n")
+                    held.write(json.dumps(t, ensure_ascii=False) + "\n")
                     st["held"] += b
                     continue
-                out.write(t + "\n")
+                out.write(json.dumps(t, ensure_ascii=False) + "\n")
                 st["bytes"] += b
                 st["kept"] += 1
                 if st["bytes"] >= budget:
