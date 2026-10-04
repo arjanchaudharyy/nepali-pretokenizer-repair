@@ -21,35 +21,14 @@ All 28 extended tokenizers are lossless on FLORES Nepali and English and give to
 
 \paragraph{Broken syllables.} Extension under the letters-only regex makes syllable breaking worse. The share of Devanagari tokens that begin with a combining mark rises from 57\% (Llama-3) and 33\% (Qwen3) to 67\% for both under \RI{}, because new merges can only build on mark-initial fragments. Under \RII{} it falls to 15\% and 12\%.
 
-\paragraph{Other scripts.} We repeated the sweep for eight more languages, using the FineWeb-2 test split of each (25--361\,MB) to learn merges, with the same Devanagari-style output filter adapted to each script (Appendix~\ref{app:xling}). Table~\ref{tab:xling} gives the result at $K{=}32{,}000$. For every language written with combining marks, \RI{} stops at its floor and \RII{} reaches $0.88$--$1.24\times$. For the two scripts without combining marks, Amharic and Korean, \RI{} and \RII{} are identical at every $K$, as the mechanism predicts. All 126 tokenizers in this sweep are lossless and give English token ids identical to their base tokenizer on all 1{,}012 English devtest sentences.
+\paragraph{Other scripts.} We repeated the sweep for eight more languages, using the FineWeb-2 test split of each (25--361\,MB) to learn merges, with the same Devanagari-style output filter adapted to each script (Appendix~\ref{app:xling}). Table~\ref{tab:xling} (Appendix~\ref{app:xling}) gives the result at $K{=}32{,}000$; for example, \RII{} takes Tamil from $7.65\times$ to $1.02\times$ and Burmese from $11.62\times$ to $1.21\times$ on Llama-3, where \RI{} stops at $2.67\times$ and $3.02\times$. For every language written with combining marks, \RI{} stops at its floor and \RII{} reaches $0.88$--$1.24\times$. For the two scripts without combining marks, Amharic and Korean, \RI{} and \RII{} are identical at every $K$, as the mechanism predicts. All 126 tokenizers in this sweep are lossless and give English token ids identical to their base tokenizer on all 1{,}012 English devtest sentences.
 
-\begin{table}[t]
-\centering
-\small
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{lr|rrr|rrr}
-\toprule
-& & \multicolumn{3}{c|}{Llama-3} & \multicolumn{3}{c}{Qwen3} \\
-Lang. & Marks & \RO{} & \RI{} & \RII{} & \RO{} & \RI{} & \RII{} \\
-\midrule
-Hindi & 31\% & 2.52 & 2.38 & 1.17 & 4.42 & 2.36 & 1.16 \\
-Bengali & 32\% & 5.84 & 2.29 & 1.01 & 5.03 & 2.26 & 1.00 \\
-Tamil & 35\% & 7.65 & 2.67 & 1.02 & 6.11 & 2.64 & 1.02 \\
-Telugu & 36\% & 8.29 & 2.45 & 1.02 & 6.99 & 2.43 & 1.01 \\
-Sinhala & 28\% & 8.63 & 2.30 & 1.20 & 6.88 & 2.33 & 1.24 \\
-Burmese & 50\% & 11.62 & 3.02 & 1.21 & 8.93 & 2.99 & 1.11 \\
-Thai$^\dagger$ & 21\% & 2.19 & 1.49 & 0.95 & 2.55 & 1.48 & 0.88 \\
-\midrule
-Amharic & 0\% & 7.59 & 0.98 & 0.98 & 4.05 & 0.98 & 0.98 \\
-Korean & 0\% & 1.49 & 0.98 & 0.98 & 1.63 & 0.98 & 0.98 \\
-\bottomrule
-\end{tabular}
-\caption{Language/English token premium on FLORES-200 devtest, $K{=}32{,}000$. Marks: share of NFC code points that are combining marks. Amharic and Korean have none (control). $^\dagger$Thai is written without spaces, so whole phrases are single pre-tokens and \RI{} is not yet at its floor.}
-\label{tab:xling}
-\end{table}
+
 
 \subsection{Continued pretraining}
 \label{sec:cpt}
+
+\input{sections/cpt_table}
 
 Table~\ref{tab:cpt} reports every run. We state each comparison with the pre-registered paired bootstrap over held-out Nepali pieces (difference in bits per byte, 95\% interval).
 
@@ -62,4 +41,3 @@ Table~\ref{tab:cpt} reports every run. We state each comparison with the pre-reg
 %% QWEN-RESULTS
 %% EXPB-RESULTS
 
-\input{sections/cpt_table}

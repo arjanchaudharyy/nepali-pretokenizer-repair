@@ -1,7 +1,7 @@
 \section{The pre-token floor binds vocabulary extension}
 \label{sec:ceiling}
 
-\paragraph{Pre-tokens bound tokens.} A byte-level BPE tokenizer first splits text $s$ with a regex into pre-tokens $P(s) = (p_1,\dots,p_m)$, then encodes each $p_i$ independently by applying merges in rank order. Since every non-empty pre-token yields at least one token, $|T(s)| \ge |P(s)|$, a bound \citet{regmi2026vowel} call the pre-tokenization ceiling. Vocabulary extension appends merges but leaves $P$ unchanged, so the same bound holds for every extended tokenizer.\footnote{The bound does not apply to strings registered as HuggingFace \emph{added tokens}, which are matched before the regex runs. SinLlama~\citep{aravinda2025sinllama} extends Llama-3 for Sinhala this way, and thereby bypasses the bound for those exact strings. Added tokens are matched greedily and do not compose with merges, so they behave differently from a merge-based extension.}
+\paragraph{Pre-tokens bound tokens.} A byte-level BPE tokenizer first splits text $s$ with a regex into pre-tokens $P(s) = (p_1,\dots,p_m)$, then encodes each $p_i$ independently by applying merges in rank order. Since every non-empty pre-token yields at least one token, $|T(s)| \ge |P(s)|$, a bound \citet{regmi2026vowel} call the pre-tokenization ceiling. Vocabulary extension appends merges but leaves $P$ unchanged, so the same bound holds for every extended tokenizer. Strings registered as HuggingFace \emph{added tokens} bypass the bound (Appendix~\ref{app:released}).
 
 \begin{observation}[Extension floor; a direct corollary of the bound of \citealp{regmi2026vowel}]
 \label{prop:ceiling}
@@ -14,12 +14,12 @@ The bound is not loose for the regexes deployed today. In the Llama-3 and Qwen f
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_split.pdf}
+\includegraphics[width=0.95\columnwidth]{fig_split.pdf}
 \caption{Pre-tokens of \emph{nep\=alko sark\=ar} (``government of Nepal'') under the letters-only regex of Llama-3 and Qwen and under the repaired regex. Dotted circles mark pre-tokens that begin with a dependent vowel sign.}
 \label{fig:split}
 \end{figure}
 
-\paragraph{The floor, measured.} Table~\ref{tab:floor} gives the pre-token floor of Llama-3 and Qwen3 under their own letters-only regexes and under the repaired regex of each model. For both families the letters-only floor is about $2.2\times$, nearly three times the repaired floor ($2.77\times$ for Llama-3, $2.73\times$ for Qwen3). Extension can remove at most 15\% of Llama-3's current premium. Even with unlimited appended merges, a letters-only model stays above the premium that \texttt{o200k} achieves today ($1.61\times$).
+\paragraph{The floor, measured.} Table~\ref{tab:floor} gives the pre-token floor of Llama-3 and Qwen3 under their own letters-only regexes and under the repaired regex of each model. For both families the letters-only floor is about $2.2\times$, nearly three times the repaired floor ($2.77\times$ for Llama-3, $2.73\times$ for Qwen3), and above the premium of \texttt{o200k} ($1.61\times$).
 
 \begin{table}[t]
 \centering
@@ -37,11 +37,11 @@ Floor, repaired regex & 0.79 & 0.80 & 0.80 \\
 \label{tab:floor}
 \end{table}
 
-\paragraph{Released extensions sit on the floor.} The floor binds in practice. Figure~\ref{fig:released} and Table~\ref{tab:released} (Appendix~\ref{app:released}) measure 12 released vocabulary extensions of letters-only models (15 extension--language pairs): eleven by \citet{yamaguchi2026lowres}, ten of them for six scripts written with combining marks and one for Amharic, on Llama-3, Llama-3.1, Qwen2.5 and Qwen3, and the 61k-token in-place expansion of LFM2~\citep{smith2026inplace}, measured on four of its languages. Every Yamaguchi extension for a script with combining marks uses between $1.013\times$ and $1.036\times$ as many tokens as its floor, closing 98.2--99.5\% of the gap between the base tokenizer and the floor: these extensions have spent nearly all the room the regex leaves. LFM2.5, a multilingual expansion, sits at $1.07\times$ its floor for Hindi and $1.16\times$ for Nepali. Under the repaired regex the same text has 2.2 to 5.9 times fewer pre-tokens, so the same extensions would have had that much more room. The one script without combining marks behaves differently: Yamaguchi's Amharic extension stays at $1.57\times$ its floor, and the repair does not move the floor at all. Two releases fall below the letters-only floor, by different routes. TituLLM~\citep{nahin-etal-2025-titullms} changed the regex (\S\ref{sec:related}), and SinLlama~\citep{aravinda2025sinllama} registered 11{,}080 strings as added tokens, which are matched before the regex runs.
+\paragraph{Released extensions sit on the floor.} Figure~\ref{fig:released} and Table~\ref{tab:released} (Appendix~\ref{app:released}) measure 12 released vocabulary extensions of letters-only models (15 extension--language pairs): eleven by \citet{yamaguchi2026lowres} on Llama-3, Llama-3.1, Qwen2.5 and Qwen3, ten of them for six scripts written with combining marks and one for Amharic, and the 61k-token in-place expansion of LFM2~\citep{smith2026inplace}, on four of its languages. Every Yamaguchi extension for a script with combining marks uses $1.013\times$ to $1.036\times$ as many tokens as its floor, closing 98.2--99.5\% of the gap between the base tokenizer and the floor. LFM2.5 sits at $1.07\times$ its floor for Hindi and $1.16\times$ for Nepali. Under the repaired regex the same text has 2.2 to 5.9 times fewer pre-tokens, so these extensions would have had that much more room. Yamaguchi's Amharic extension, for a script without combining marks, stays at $1.57\times$ its floor, and the repair does not move that floor. Two releases fall below the letters-only floor: TituLLM~\citep{nahin-etal-2025-titullms} changed the regex (\S\ref{sec:related}), and SinLlama~\citep{aravinda2025sinllama} registered 11{,}080 strings as added tokens.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_released.pdf}
+\includegraphics[width=0.95\columnwidth]{fig_released.pdf}
 \caption{Released vocabulary extensions of letters-only models, on FLORES-200 devtest of each target language, relative to the letters-only pre-token floor. Ten extensions by \citet{yamaguchi2026lowres} (top) and LFM2.5~\citep{smith2026inplace} (bottom) move from the base tokenizer ($\times$) to the floor (\textcolor{red}{$\bullet$}) and stop there. The repaired regex would lower the floor to the blue tick. Full numbers, including the Amharic control, in Table~\ref{tab:released}.}
 \label{fig:released}
 \end{figure}
