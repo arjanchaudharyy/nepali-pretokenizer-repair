@@ -1,0 +1,65 @@
+\section{Results}
+\label{sec:results}
+
+This section reports the controlled experiments: compression of the extended tokenizers and continued pretraining.
+
+\subsection{Compression of repaired tokenizers}
+\label{sec:compression}
+
+Figure~\ref{fig:ksweep} sweeps the number of new merges $K$ for both models. Under the letters-only regex (\RI{}), extension saturates almost at once: for Llama-3 the first 1{,}000 merges take the premium from $2.58\times$ to $2.32\times$, and the next 63{,}000 only to $2.20\times$, within $0.01$ of the pre-token floor ($2.19\times$). For Qwen3, \RI{} cuts the premium from $4.42\times$ to $2.19\times$ by $K{=}16$k and then stops at $2.18\times$ against a floor of $2.17\times$. That \RI{} comes this close to its floor, rather than merely staying above it, is consistent with the small number of distinct Nepali pre-tokens the letters-only regex produces: the 1\,GB merge-training text has about 124k distinct pre-tokens under it, against 1.54M under the repaired regex. Under the repaired regex (\RII{}), the same merge budget keeps paying: $1.11\times$ at $K{=}16$k, $1.01\times$ at $32$k and $0.95\times$ at $64$k for both models, below parity with English and below \texttt{o200k}. At the pre-registered $K{=}32{,}000$, \RII{} encodes Nepali in 46\% of \RI{}'s tokens for both models.
+
+All 28 extended tokenizers are lossless on FLORES Nepali and English and give token ids identical to the original tokenizer on all 1{,}012 English devtest sentences, as Proposition~\ref{prop:lossless} (for \RII{}) and its argument in \S\ref{sec:ceiling} (for \RI{}) require. FLORES dev, which we used to check the choice of $K$, gives the same picture within $0.02$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_ksweep.pdf}
+\caption{Nepali/English premium on FLORES-200 devtest after adding $K$ merges by continued BPE, under the letters-only regex (\RI{}) and the repaired regex (\RII{}). Dashed lines: pre-token floors of each regex, under each model's own pattern. Qwen3 tokenizers are built on Qwen3-1.7B-Base, whose tokenizer Qwen3-0.6B-Base shares. Shading: 95\% paired-bootstrap intervals.}
+\label{fig:ksweep}
+\end{figure}
+
+\paragraph{Regex alone, and added tokens.} Two further arms separate the parts of \RII{}. Repairing the regex without adding merges (\RII{}, $K{=}0$) changes almost nothing: $2.61\times$ for Llama-3 (from $2.58\times$) and $4.42\times$ for Qwen3. Under the repaired regex, the old merges still tokenize Nepali words in old pieces; the regex only removes the ceiling that new merges would otherwise hit. Registering \RI{}'s 32{,}000 new strings as added tokens instead of merges gives $2.35\times$ for Llama-3 and $2.19\times$ for Qwen3, no better than \RI{}. The gain of \RII{} therefore needs both the regex repair and new merges.
+
+\paragraph{Broken syllables.} Extension under the letters-only regex makes syllable breaking worse. The share of Devanagari tokens that begin with a combining mark rises from 57\% (Llama-3) and 33\% (Qwen3) to 67\% for both under \RI{}, because new merges can only build on mark-initial fragments. Under \RII{} it falls to 15\% and 12\%.
+
+\paragraph{Other scripts.} We repeated the sweep for eight more languages, using the FineWeb-2 test split of each (25--361\,MB) to learn merges, with the same Devanagari-style output filter adapted to each script (Appendix~\ref{app:xling}). Table~\ref{tab:xling} gives the result at $K{=}32{,}000$. For every language written with combining marks, \RI{} stops at its floor and \RII{} reaches $0.88$--$1.24\times$. For the two scripts without combining marks, Amharic and Korean, \RI{} and \RII{} are identical at every $K$, as the mechanism predicts. All 126 tokenizers in this sweep are lossless and give English token ids identical to their base tokenizer on all 1{,}012 English devtest sentences.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lr|rrr|rrr}
+\toprule
+& & \multicolumn{3}{c|}{Llama-3} & \multicolumn{3}{c}{Qwen3} \\
+Lang. & Marks & \RO{} & \RI{} & \RII{} & \RO{} & \RI{} & \RII{} \\
+\midrule
+Hindi & 31\% & 2.52 & 2.38 & 1.17 & 4.42 & 2.36 & 1.16 \\
+Bengali & 32\% & 5.84 & 2.29 & 1.01 & 5.03 & 2.26 & 1.00 \\
+Tamil & 35\% & 7.65 & 2.67 & 1.02 & 6.11 & 2.64 & 1.02 \\
+Telugu & 36\% & 8.29 & 2.45 & 1.02 & 6.99 & 2.43 & 1.01 \\
+Sinhala & 28\% & 8.63 & 2.30 & 1.20 & 6.88 & 2.33 & 1.24 \\
+Burmese & 50\% & 11.62 & 3.02 & 1.21 & 8.93 & 2.99 & 1.11 \\
+Thai$^\dagger$ & 21\% & 2.19 & 1.49 & 0.95 & 2.55 & 1.48 & 0.88 \\
+\midrule
+Amharic & 0\% & 7.59 & 0.98 & 0.98 & 4.05 & 0.98 & 0.98 \\
+Korean & 0\% & 1.49 & 0.98 & 0.98 & 1.63 & 0.98 & 0.98 \\
+\bottomrule
+\end{tabular}
+\caption{Language/English token premium on FLORES-200 devtest, $K{=}32{,}000$. Marks: share of NFC code points that are combining marks. Amharic and Korean have none (control). $^\dagger$Thai is written without spaces, so whole phrases are single pre-tokens and \RI{} is not yet at its floor.}
+\label{tab:xling}
+\end{table}
+
+\subsection{Continued pretraining}
+\label{sec:cpt}
+
+Table~\ref{tab:cpt} reports every run. We state each comparison with the pre-registered paired bootstrap over held-out Nepali pieces (difference in bits per byte, 95\% interval).
+
+\paragraph{Extension of either kind costs quality at this budget.} For Llama-3.2-1B, continued pretraining without new tokens (\RO{}) lowers held-out Nepali BPB from 0.766 to 0.474. Both extended arms end higher: \RI{} by $+0.060$ $[+0.059, +0.061]$ and \RII{} by $+0.066$ $[+0.065, +0.067]$ bits per byte. The cost does not come from the repair: it appears equally when 32{,}000 tokens are added under the original regex. The 32{,}000 new rows start from averages of existing rows; with 1\,GB of Nepali they do not catch up with the original vocabulary, which the base model already knows. \RO{} is also best at English-to-Nepali translation (chrF++ 19.8 against 10.4 and 12.3).
+
+\paragraph{Among extensions, the repair matches standard extension with less compute.} \RII{} and \RI{} differ by $+0.006$ $[+0.005, +0.007]$ bits per byte on Nepali, inside the pre-registered non-inferiority margin of 0.01, although the interval excludes zero. \RII{} reaches this with 286M training tokens against \RI{}'s 386M (26\% fewer), and is slightly better on English ($-0.003$ $[-0.004, -0.003]$). At equal compute, when \RI{} is stopped after the same number of steps as \RII{}, \RII{} is better on Nepali (0.539 against 0.562), though \RI{}'s learning rate has not yet annealed at that point. \RII{} generates Nepali at 9{,}398 bytes per second against 6{,}354 for \RI{} and 5{,}147 for \RO{}, 1.48$\times$ and 1.83$\times$ faster, because each token carries 2.5 times more text than under \RO{}.
+
+\paragraph{English is unaffected.} English BPB after continued pretraining is 0.799 for both \RO{} and \RII{} ($+0.0003$ $[-0.0001, +0.0007]$), as the invariance result predicts for the tokenizer and as the equal English data in every arm predicts for the model.
+
+%% QWEN-RESULTS
+%% EXPB-RESULTS
+
+\input{sections/cpt_table}

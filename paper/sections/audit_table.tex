@@ -1,0 +1,36 @@
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrrrrrl}
+\toprule
+Tokenizer & Aliases & Regex & $|V|$ & ne/en & 95\% CI & Floor & Mark-init. & Lossless \\
+\midrule
+IndicBERTv2 & -- & none & 250,000 & 1.09 & [1.08, 1.10] & -- & 6\% & no \\
+Arkios & -- & mark-aware & 65,536 & 1.12 & [1.10, 1.13] & 0.78 & 15\% & yes \\
+XLM-R & -- & none & 250,002 & 1.12 & [1.11, 1.14] & -- & 7\% & no \\
+NLLB-200 & -- & none & 256,204 & 1.17 & [1.16, 1.18] & -- & 6\% & no \\
+BLOOM & -- & other & 250,680 & 1.18 & [1.16, 1.19] & -- & 17\% & yes \\
+mT5 & -- & none & 250,100 & 1.46 & [1.45, 1.47] & -- & 11\% & no \\
+Gemma-3 & Gemma-4 & none & 262,145 & 1.53 & [1.51, 1.54] & -- & 9\% & yes \\
+Sarvam-1 & -- & none & 68,096 & 1.54 & [1.52, 1.56] & -- & 14\% & yes \\
+o200k & gpt-oss & mark-aware & 200,019 & 1.61 & [1.60, 1.63] & 0.80 & 26\% & yes \\
+Llama-4 & -- & mark-aware & 201,135 & 1.83 & [1.81, 1.85] & 0.80 & 30\% & yes \\
+Mistral-NeMo & Sarvam-M & mark-aware & 131,072 & 2.13 & [2.11, 2.15] & 0.79 & 33\% & yes \\
+Gemma-2 & -- & none & 256,000 & 2.13 & [2.11, 2.15] & -- & 19\% & yes \\
+Qwen3.5 & -- & mark-aware & 248,077 & 2.20 & [2.18, 2.23] & 0.80 & 19\% & yes \\
+Llama-3 & SmolLM3 & letters-only & 128,256 & 2.58 & [2.55, 2.61] & 2.19 & 55\% & yes \\
+TituLLM & -- & mark-aware & 170,497 & 2.60 & [2.57, 2.63] & 0.78 & 55\% & yes \\
+DeepSeek-V3 & DeepSeek-V4 & mark-aware & 128,815 & 2.97 & [2.93, 3.00] & 0.78 & 38\% & yes \\
+GLM-5.3 & -- & letters-only & 154,856 & 4.35 & [4.29, 4.40] & 2.19 & 33\% & yes \\
+Qwen2.5 & Qwen3 & letters-only & 151,665 & 4.42 & [4.36, 4.47] & 2.17 & 32\% & yes \\
+Mistral-7B & -- & none & 32,768 & 4.44 & [4.38, 4.50] & -- & 29\% & yes \\
+GLM-4.5 & -- & letters-only & 151,365 & 4.76 & [4.71, 4.82] & 2.19 & 30\% & yes \\
+cl100k & Phi-4, OLMo-2, Granite-4.1 & letters-only & 100,277 & 4.76 & [4.71, 4.82] & 2.19 & 30\% & yes \\
+Falcon3 & -- & letters-only & 131,072 & 5.07 & [5.00, 5.14] & 3.21 & 28\% & yes \\
+LFM2 & -- & letters-only & 64,400 & 5.77 & [5.70, 5.84] & 2.15 & 24\% & yes \\
+GPT-2 & -- & letters-only & 50,257 & 7.55 & [7.46, 7.65] & 3.23 & 19\% & yes \\
+\bottomrule
+\end{tabular}
+\caption{All 24 distinct tokenizers (33 released tokenizers) on FLORES-200 devtest. Aliases: tokenizers with identical token counts on all 36 FLORES languages measured. Regex: letters-only, mark-aware, other, or none (no regex pre-tokenizer). ne/en: Nepali/English token premium with 95\% paired-bootstrap interval. Floor: pre-token floor under the tokenizer's own regex, a lower bound on the premium of any vocabulary extension (letters-only and mark-aware tokenizers only). Mark-init.: share of Nepali tokens whose first character is a combining mark. Lossless: decoding reproduces the input on 200 Nepali sentences. Arkios is from \citet{regmi2026arkios}. Hugging Face repositories are listed in the released code.}
+\label{tab:audit-full}
+\end{table*}

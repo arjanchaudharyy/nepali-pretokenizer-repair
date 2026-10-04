@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[final]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\newtheorem{proposition}{Proposition}
+\newtheorem{observation}{Observation}
+\newcommand{\pL}{\texttt{\textbackslash p\{L\}}}
+\newcommand{\pM}{\texttt{\textbackslash p\{M\}}}
+\newcommand{\RO}{\textsc{R0}}
+\newcommand{\RI}{\textsc{R1}}
+\newcommand{\RII}{\textsc{R2}}
+
+\title{Extend or Repair? Vocabulary Extension Cannot Cross\\ a Pre-Tokenizer Boundary}
+
+\author{Aarjan Chaudhary \and Shrey Sharma \and Navyata Dhakal \\
+  Independent researchers, Nepal \\
+  \texttt{arjanchaudharyy@gmail.com}}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\input{sections/intro}
+\input{sections/related}
+\input{sections/audit}
+\input{sections/ceiling}
+\input{sections/method}
+\input{sections/setup}
+\input{sections/results}
+\input{sections/discussion}
+
+\bibliography{refs}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

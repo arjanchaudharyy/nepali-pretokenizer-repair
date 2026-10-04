@@ -1,0 +1,26 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Practical recommendation.} Anyone adapting a Llama-3, Qwen2.5/3, GLM, Phi-4, OLMo-2, Granite or LFM2 model to Nepali, or to another language written with combining marks, should check the pre-tokenizer before extending the vocabulary. The check takes one line: count pre-tokens on a target-language sample under the model's regex and compare with the token count. If they are close, as for Llama-3 on Nepali or the Telugu-extended Llama-3 of \S\ref{sec:ceiling}, extension has little room left. The repair in \S\ref{sec:method} is a two-substitution edit. It leaves the token ids of every input with no combining mark and no code point in U+0900--U+097F unchanged, which includes all ASCII English and code. Mark-free Devanagari and Devanagari digits do change, by design. Deployments whose tokenizer has no normalizer, such as Llama-3, should apply NFC before tokenizing to keep accented Latin text inside the guarantee.
+
+\paragraph{What the repair does not fix.} A wider word class removes the splits the regex forces; it does not make BPE respect syllables, and 26\% of \texttt{o200k}'s Nepali tokens still begin with a vowel sign (\S\ref{sec:audit}). Grapheme- and akshara-aware tokenizers~\citep{kapila2026typedriven,darshana2026wwho,velayuthan-sarveswaran-2025-egalitarian} go further, but they change more than marks and would not preserve English tokenization in a deployed model. Combining the two in a retrofit is future work.
+
+\section*{Limitations}
+
+\begin{itemize}
+  \setlength\itemsep{0pt}
+  \item \textbf{Scale and budget.} We adapt 1B- and 0.6B-parameter models with 2\,GB of text per arm (1\,GB per language). Larger models, or much longer continued pretraining, may close part of the gap between arms; \citet{dagan2024getting} found that a model recovers from a pre-tokenizer change after more than 50B tokens of training, far more than we use.
+  \item \textbf{One seed.} Each arm is trained once. We cannot separate arm effects from data-order variance, and we say so wherever we make a claim.
+  \item \textbf{Learning rate.} A single fixed learning rate ($10^{-4}$) is used for every arm and is not tuned. The new embedding rows of \RI{} and \RII{} might prefer a different rate or a separate warm-up stage.
+  \item \textbf{Equal compute.} The equal-compute checkpoints of \RO{} and \RI{} are taken mid-schedule, before their learning rate has annealed, which disadvantages them.
+  \item \textbf{Downstream tasks.} Bits per byte is our primary metric. Belebele and few-shot translation are weak signals at this model size, and we report them as secondary.
+  \item \textbf{Embedding initialisation.} We use mean initialisation for all arms. Stronger initialisers~\citep{dobler-de-melo-2023-focus,minixhofer2024zett} could change the absolute numbers, though they would apply to \RI{} and \RII{} alike.
+  \item \textbf{Languages.} Continued pretraining is done for Nepali only. For eight other languages we show the compression effect and the floors of released extensions, but not the effect on model quality.
+  \item \textbf{Closed tokenizers.} We do not measure closed API tokenizers such as Gemini, whose regexes are not public.
+\end{itemize}
+
+\section*{Ethics and use of AI assistance}
+
+All text and evaluation data are public (FineWeb-2, FineWeb-Edu, FLORES-200, Belebele) and used under their licences; we do not collect data from people. Released Llama-derived weights follow the Llama 3.2 Community License~\citep{llama32license}; Qwen3-derived weights are Apache-2.0.
+
+This work was carried out with substantial assistance from a large language model assistant, which under the authors' direction implemented and ran the experiments, searched and verified the literature, and drafted the text. The numbers in the paper can be reproduced from public tokenizers and data with our released code. The authors take responsibility for the content.

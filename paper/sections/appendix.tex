@@ -1,0 +1,81 @@
+\section{Pre-registration history}
+\label{app:prereg}
+
+We pre-registered in three steps, in the public repository's git history, and report all three.
+
+\begin{enumerate}
+  \setlength\itemsep{0pt}
+  \item Commit \texttt{bf5ebe4} (2026-10-04 17:59 NPT) registered hypotheses about the mechanism, a regex-only tokenizer ablation, a cross-script dose--response and from-scratch training. Our literature check then found that \citet{regmi2026vowel} had published the mechanism, the ablation, the cross-script analysis and a from-scratch downstream comparison five weeks earlier. We withdrew those hypotheses as contributions and do not report them as new.
+  \item Commit \texttt{3c03367} (2026-10-04 18:16 NPT), before any model was trained or evaluated, registered the retrofit study reported here: arms \RO{}, \RI{}, \RII{} and the untrained base model as a reference; $K{=}32{,}000$ unless \RII{} saturated earlier on FLORES dev; equal-bytes continued pretraining; learning rate selected once per model on \RO{}; two seeds; primary metric held-out native Nepali BPB with a non-inferiority margin of 0.01 bits per byte; English BPB as a control; Belebele, translation and decoding speed as secondary. Its compression prediction (P1), including the letters-only floors, had already been measured when it was written, so we report P1 as a measurement, not a confirmed prediction.
+  \item Commit \texttt{5ff74e8} (2026-10-04 19:50 NPT), amendment 2, was written after an internal review and before any continued-pretraining run had produced an evaluation. Earlier launches of continued pretraining were stopped by us before completion because of pipeline bugs, and none produced an evaluated checkpoint. The only evaluation run before the amendment, of the untouched base Llama-3.2-1B with a since-fixed document-prefix bug, is discarded. The amendment fixed the primary analysis as stated in \S\ref{sec:setup}.
+\end{enumerate}
+
+\paragraph{Deviations from the second registration (amendment 2).}
+\begin{itemize}
+  \setlength\itemsep{0pt}
+  \item Qwen3-0.6B-Base replaces Qwen3-1.7B-Base (budget and time; same tokenizer).
+  \item 1\,GB of Nepali and 1\,GB of English per arm replace 3\,GB and 3\,GB, with identical documents in every arm.
+  \item A fixed learning rate of $10^{-4}$ for every run replaces selection on \RO{} from $\{3{\times}10^{-5}, 10^{-4}, 3{\times}10^{-4}\}$ by a 200-step pilot, which was never completed.
+  \item One seed (seed 0) per arm replaces two.
+  \item New: \RO{} and \RI{} are also checkpointed at \RII{}'s final step count (equal-compute view).
+  \item New: byte-matched BPB on pieces of about 2{,}000 bytes is the primary metric; the registered sliding-window BPB becomes secondary.
+  \item New: a paired bootstrap over held-out pieces, with explicit claim rules, is the primary test.
+  \item The translation cap is 512 new tokens instead of 256, to avoid truncating Nepali output of \RO{}.
+\end{itemize}
+
+\paragraph{Pipeline bugs fixed before any reported run.} (1) Documents had been stored one per line with their internal newlines, so ``documents'' were paragraphs; they are now stored as one JSON-encoded document per line. (2) New-token embeddings had been initialised by decoding tokens to text, which turns partial UTF-8 tokens into U+FFFD; constituents now come from applying the original merges to the byte-level string. (3) The initialisation exactness check had covered Qwen's padding rows; it now covers only the original vocabulary. (4) Evaluation had prefixed documents with end-of-text, while base Llama expects its beginning-of-sequence token; we now use the latter where it exists, identically for every arm of a model.
+
+Between the first two commits, the retrofit tokenizer code was tested on a 30\,MB sample of the FineWeb-2 Nepali \emph{test} split only.
+
+\section{Data}
+\label{app:data}
+
+\input{sections/data_table}
+
+\section{Full audit}
+\label{app:audit}
+
+Table~\ref{tab:audit-full} lists every distinct tokenizer. Aliases are tokenizers whose token counts are identical to another tokenizer's on all 36 FLORES languages we measured; we did not compare token ids. Kimi-K3 (requires executing remote code) and Mistral-Large-3 (degenerate HuggingFace load) are not included.
+
+\input{sections/audit_table}
+
+\section{Cross-script sweep}
+\label{app:xling}
+
+For each language we downloaded the FineWeb-2 \emph{test} split, normalised it to NFC, and removed documents that share a whitespace 10-gram with that language's FLORES-200 dev or devtest (for Thai, which has no spaces, we also checked 50-character overlaps and found none). The resulting merge-learning text ranges from 25\,MB (Amharic) to 361\,MB (Bengali), less than the 1\,GB used for Nepali; Sinhala and Amharic \RII{} may be limited by it. $K{=}4$k and $16$k are prefixes of one $32$k run.
+
+The Nepali filter keeps a new merge only if its output contains a complete Devanagari character. For scripts that the base vocabularies cover poorly, many characters are themselves split into byte pieces, and this filter would drop the first byte-level merge of a character and every merge built on it (for Sinhala \RII{}, only 13{,}530 of 32{,}000 merges survived). For the cross-script sweep we therefore also keep merges whose output is a byte piece of a target-script character. Such merges can only fire on target-script bytes, so the English guarantee is unaffected; we verified English token ids on all 1{,}012 sentences for every tokenizer. Hindi uses the same script as Nepali, and its new merges also change Nepali tokenization; we did not measure that interaction.
+
+\section{Released extensions}
+\label{app:released}
+
+\begin{table}[h]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrr}
+\toprule
+Base & Lang. & Tokens/floor & Gap closed & Room \\
+\midrule
+Llama-3-8B & te & 1.016 & 99.3\% & 3.16$\times$ \\
+Llama-3-8B & si & 1.021 & 99.3\% & 2.42$\times$ \\
+Llama-3-8B & my & 1.013 & 99.5\% & 5.87$\times$ \\
+Llama-3.1-8B & ta & 1.018 & 99.1\% & 3.58$\times$ \\
+Llama-3.1-8B & bn & 1.020 & 98.7\% & 2.74$\times$ \\
+Llama-3.1-8B & gu & 1.026 & 98.9\% & 2.52$\times$ \\
+Qwen2.5-7B & si & 1.019 & 99.1\% & 2.40$\times$ \\
+Qwen2.5-7B & my & 1.036 & 98.2\% & 5.72$\times$ \\
+Qwen3-14B & bn & 1.019 & 98.5\% & 2.71$\times$ \\
+Qwen3-14B & te & 1.027 & 98.6\% & 3.11$\times$ \\
+\midrule
+LFM2 (2.5) & hi & 1.068 & 95.5\% & 2.24$\times$ \\
+LFM2 (2.5) & ne & 1.160 & 90.5\% & 2.77$\times$ \\
+LFM2 (2.5) & bn & 1.243 & 92.4\% & 2.74$\times$ \\
+LFM2 (2.5) & th & 1.819 & 87.9\% & 5.57$\times$ \\
+\midrule
+Llama-3.1-8B & am & 1.573 & 93.8\% & 1.00$\times$ \\
+\bottomrule
+\end{tabular}
+\caption{Released vocabulary extensions that keep the letters-only regex, on FLORES-200 devtest of the target language. Tokens/floor: extended-tokenizer tokens divided by pre-tokens under its own regex (at least 1 by construction). Gap closed: share of the base-to-floor gap that the extension removed. Room: floor under the letters-only regex divided by floor under the repaired regex. Top block: \citet{yamaguchi2026lowres}; middle: LFM2.5~\citep{smith2026inplace}; bottom: Amharic, which has no combining marks (control).}
+\label{tab:released}
+\end{table}
