@@ -1,0 +1,232 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\bibstyle{acl_natbib}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\citation{gpt2encoder}
+\citation{regmi2026vowel}
+\citation{tejaswi-etal-2024-exploring,yamaguchi2026lowres,purason-etal-2026-teaching,smith2026inplace}
+\citation{yamaguchi2026lowres,purason-etal-2026-teaching,smith2026inplace}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Vocabulary extension cannot cross a pre-tokenizer boundary.}{1}{section*.1}\protected@file@percent }
+\citation{dagan2024getting}
+\citation{purason-etal-2026-teaching}
+\citation{petrov2023unfairness,ahia-etal-2023-languages,lundin-etal-2026-token,ovcharov2026european,somide2026african,tamang2024evaluating}
+\citation{kadariya2026nepali}
+\citation{srivastava2026tokenizertax}
+\citation{mandarapu2026ledger}
+\citation{goyal-etal-2022-flores,nllb2022}
+\citation{petrov2023unfairness}
+\citation{schmidt-etal-2024-tokenization}
+\citation{tiktoken_issue292}
+\citation{minixhofer2024zett}
+\citation{velayuthan-sarveswaran-2025-egalitarian}
+\citation{rana2025mutant}
+\citation{regmi2026vowel}
+\citation{land2026smallbugs}
+\citation{kapila2026typedriven,darshana2026wwho,krishnan2026tamil,shrestha2026papaya}
+\citation{brahma2025morphtok}
+\citation{liu2025superbpe,schmidt2025boundless}
+\@writefile{toc}{\contentsline {paragraph}{An English-lossless repair.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Contributions.}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Related work}{section.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Tokenization premiums.}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pre-tokenization of combining marks.}{2}{section*.5}\protected@file@percent }
+\citation{gee-etal-2022-fast,minixhofer-etal-2022-wechsel,dobler-de-melo-2023-focus,liu-etal-2024-ofa,mundra-etal-2024-empirical}
+\citation{tejaswi-etal-2024-exploring,kim2024eeve,csaki2024sambalingo}
+\citation{duwal2024nepalidapt}
+\citation{purason-etal-2026-teaching,smith2026inplace}
+\citation{yamaguchi2026lowres}
+\citation{dagan2024getting}
+\citation{nahin-etal-2025-titullms}
+\citation{regmi2026arkios}
+\@writefile{toc}{\contentsline {paragraph}{Beyond one character class.}{3}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Adapting the vocabulary of a pretrained model.}{3}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Production audit}{3}{section.3}\protected@file@percent }
+\newlabel{sec:audit}{{3}{3}{Production audit}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Nepali/English token premium of 24 distinct tokenizers (33 released tokenizers; ``+$n$'' counts aliases) on FLORES-200 devtest, with 95\% paired-bootstrap intervals. Black ticks mark the pre-token floor of each letters-only tokenizer: no vocabulary extension can move its bar to the left of the tick.\relax }}{3}{figure.caption.9}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:audit}{{1}{3}{Nepali/English token premium of 24 distinct tokenizers (33 released tokenizers; ``+$n$'' counts aliases) on FLORES-200 devtest, with 95\% paired-bootstrap intervals. Black ticks mark the pre-token floor of each letters-only tokenizer: no vocabulary extension can move its bar to the left of the tick.\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{The pre-token floor.}{3}{section*.8}\protected@file@percent }
+\citation{land2026smallbugs}
+\citation{regmi2026vowel}
+\citation{regmi2026vowel}
+\@writefile{toc}{\contentsline {paragraph}{Every letters-only tokenizer has a floor of at least $2.15\times $.}{4}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Decomposition.}{4}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Within-family changes.}{4}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Broken syllables.}{4}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}The pre-token floor binds vocabulary extension}{4}{section.4}\protected@file@percent }
+\newlabel{sec:ceiling}{{4}{4}{The pre-token floor binds vocabulary extension}{section.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Pre-tokens bound tokens.}{4}{section*.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Pre-tokens of \emph  {nep\=alko sark\=ar} (``government of Nepal'') under the letters-only regex of Llama-3 and Qwen and under the repaired regex. Dotted circles mark pre-tokens that begin with a dependent vowel sign.\relax }}{4}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:split}{{2}{4}{Pre-tokens of \emph {nep\=alko sark\=ar} (``government of Nepal'') under the letters-only regex of Llama-3 and Qwen and under the repaired regex. Dotted circles mark pre-tokens that begin with a dependent vowel sign.\relax }{figure.caption.15}{}}
+\newlabel{prop:ceiling}{{1}{4}{Extension floor; a direct corollary of the bound of \citealp {regmi2026vowel}}{observation.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{The floor, measured.}{4}{section*.16}\protected@file@percent }
+\citation{yamaguchi2026lowres}
+\citation{smith2026inplace}
+\citation{nahin-etal-2025-titullms}
+\citation{aravinda2025sinllama}
+\citation{yamaguchi2026lowres}
+\citation{smith2026inplace}
+\citation{yamaguchi2026lowres}
+\citation{smith2026inplace}
+\citation{land2026smallbugs}
+\citation{purason-etal-2026-teaching}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Nepali/English token premium on FLORES-200 devtest, and the pre-token floor under each regex (pre-tokens of Nepali / tokens of English): a lower bound on the premium of any vocabulary extension under that regex. Each model's floors use its own pattern (Qwen splits digits singly, Llama-3 in groups of up to three). Llama-3 and Qwen3 ship the letters-only regex; for \texttt  {o200k}, which ships a mark-aware regex, the floor is under its own pattern.\relax }}{5}{table.caption.17}\protected@file@percent }
+\newlabel{tab:floor}{{1}{5}{Nepali/English token premium on FLORES-200 devtest, and the pre-token floor under each regex (pre-tokens of Nepali / tokens of English): a lower bound on the premium of any vocabulary extension under that regex. Each model's floors use its own pattern (Qwen splits digits singly, Llama-3 in groups of up to three). Llama-3 and Qwen3 ship the letters-only regex; for \texttt {o200k}, which ships a mark-aware regex, the floor is under its own pattern.\relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{Released extensions sit on the floor.}{5}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Repairing a deployed tokenizer}{5}{section.5}\protected@file@percent }
+\newlabel{sec:method}{{5}{5}{Repairing a deployed tokenizer}{section.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Regex edit.}{5}{section*.20}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Released vocabulary extensions of letters-only models, on FLORES-200 devtest of each target language, relative to the letters-only pre-token floor. Ten extensions by \citet  {yamaguchi2026lowres} (top) and LFM2.5\nobreakspace  {}\citep  {smith2026inplace} (bottom) move from the base tokenizer ($\times $) to the floor (\leavevmode {\color  {red}$\bullet $}) and stop there. The repaired regex would lower the floor to the blue tick. Full numbers, including the Amharic control, in Table\nobreakspace  {}\ref  {tab:released}.\relax }}{5}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:released}{{3}{5}{Released vocabulary extensions of letters-only models, on FLORES-200 devtest of each target language, relative to the letters-only pre-token floor. Ten extensions by \citet {yamaguchi2026lowres} (top) and LFM2.5~\citep {smith2026inplace} (bottom) move from the base tokenizer ($\times $) to the floor (\textcolor {red}{$\bullet $}) and stop there. The repaired regex would lower the floor to the blue tick. Full numbers, including the Amharic control, in Table~\ref {tab:released}.\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {paragraph}{Continued BPE, restricted to Devanagari.}{5}{section*.21}\protected@file@percent }
+\newlabel{prop:lossless}{{1}{5}{English invariance}{proposition.1}{}}
+\citation{gee-etal-2022-fast}
+\citation{purason-etal-2026-teaching,yamaguchi2026lowres}
+\citation{bandarkar-etal-2024-belebele}
+\@writefile{toc}{\contentsline {paragraph}{Embedding initialisation.}{6}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Arms.}{6}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experimental setup}{6}{section.6}\protected@file@percent }
+\newlabel{sec:setup}{{6}{6}{Experimental setup}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Models.}{6}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data and tokenizers.}{6}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Continued pretraining.}{6}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation.}{6}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Analysis.}{6}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Results}{6}{section.7}\protected@file@percent }
+\newlabel{sec:results}{{7}{6}{Results}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Compression of repaired tokenizers}{6}{subsection.7.1}\protected@file@percent }
+\newlabel{sec:compression}{{7.1}{6}{Compression of repaired tokenizers}{subsection.7.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Nepali/English premium on FLORES-200 devtest after adding $K$ merges by continued BPE, under the letters-only regex (\textsc  {R1}{}) and the repaired regex (\textsc  {R2}{}). Dashed lines: pre-token floors of each regex, under each model's own pattern. Qwen3 tokenizers are built on Qwen3-1.7B-Base, whose tokenizer Qwen3-0.6B-Base shares. Shading: 95\% paired-bootstrap intervals.\relax }}{7}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:ksweep}{{4}{7}{Nepali/English premium on FLORES-200 devtest after adding $K$ merges by continued BPE, under the letters-only regex (\RI {}) and the repaired regex (\RII {}). Dashed lines: pre-token floors of each regex, under each model's own pattern. Qwen3 tokenizers are built on Qwen3-1.7B-Base, whose tokenizer Qwen3-0.6B-Base shares. Shading: 95\% paired-bootstrap intervals.\relax }{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {paragraph}{Regex alone, and added tokens.}{7}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Broken syllables.}{7}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Other scripts.}{7}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Continued pretraining}{7}{subsection.7.2}\protected@file@percent }
+\newlabel{sec:cpt}{{7.2}{7}{Continued pretraining}{subsection.7.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Extension of either kind costs quality at this budget.}{7}{section*.34}\protected@file@percent }
+\citation{kapila2026typedriven,darshana2026wwho,velayuthan-sarveswaran-2025-egalitarian}
+\citation{dagan2024getting}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Continued pretraining on identical bytes per arm (one seed). BPB: bits per byte on held-out native text split into ${\sim }$2{,}000-byte pieces (primary metric) and on FLORES-200 devtest. Belebele: zero-shot accuracy (900 items, chance 0.25), scored on answer text. chrF++: 5-shot FLORES-200 devtest translation. Gen.\ B/s: UTF-8 bytes of Nepali generated per second (batch 64, greedy). Tokens: training tokens seen. Bold: best Nepali BPB within each block.\relax }}{8}{table.caption.33}\protected@file@percent }
+\newlabel{tab:cpt}{{2}{8}{Continued pretraining on identical bytes per arm (one seed). BPB: bits per byte on held-out native text split into ${\sim }$2{,}000-byte pieces (primary metric) and on FLORES-200 devtest. Belebele: zero-shot accuracy (900 items, chance 0.25), scored on answer text. chrF++: 5-shot FLORES-200 devtest translation. Gen.\ B/s: UTF-8 bytes of Nepali generated per second (batch 64, greedy). Tokens: training tokens seen. Bold: best Nepali BPB within each block.\relax }{table.caption.33}{}}
+\@writefile{toc}{\contentsline {paragraph}{Among extensions, the repair matches standard extension with less compute.}{8}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{English is unaffected.}{8}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Discussion}{8}{section.8}\protected@file@percent }
+\newlabel{sec:discussion}{{8}{8}{Discussion}{section.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Practical recommendation.}{8}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What the repair does not fix.}{8}{section*.38}\protected@file@percent }
+\citation{dobler-de-melo-2023-focus,minixhofer2024zett}
+\citation{llama32license}
+\bibdata{refs}
+\bibcite{ahia-etal-2023-languages}{{1}{2023}{{Ahia et~al.}}{{Ahia, Kumar, Gonen, Kasai, Mortensen, Smith, and Tsvetkov}}}
+\bibcite{tiktoken_issue292}{{2}{2024}{{ajaykg}}{{}}}
+\bibcite{aravinda2025sinllama}{{3}{2025}{{Aravinda et~al.}}{{Aravinda, Sirajudeen, Karunathilake, de~Silva, Kaur, and Ranathunga}}}
+\bibcite{bandarkar-etal-2024-belebele}{{4}{2024}{{Bandarkar et~al.}}{{Bandarkar, Liang, Muller, Artetxe, Shukla, Husa, Goyal, Krishnan, Zettlemoyer, and Khabsa}}}
+\bibcite{brahma2025morphtok}{{5}{2025}{{Brahma et~al.}}{{Brahma, Karthika, Singh, Adiga, Bhate, Ramakrishnan, Saluja, and Desarkar}}}
+\bibcite{csaki2024sambalingo}{{6}{2024}{{Csaki et~al.}}{{Csaki, Li, Li, Xu, Pawakapan, Zhang, Du, Zhao, Hu, and Thakker}}}
+\bibcite{dagan2024getting}{{7}{2024}{{Dagan et~al.}}{{Dagan, Synnaeve, and Rozi{\`e}re}}}
+\bibcite{darshana2026wwho}{{8}{2026}{{Darshana}}{{}}}
+\bibcite{dobler-de-melo-2023-focus}{{9}{2023}{{Dobler and de~Melo}}{{}}}
+\bibcite{duwal2024nepalidapt}{{10}{2024}{{Duwal et~al.}}{{Duwal, Prasai, and Manandhar}}}
+\bibcite{gee-etal-2022-fast}{{11}{2022}{{Gee et~al.}}{{Gee, Zugarini, Rigutini, and Torroni}}}
+\bibcite{goyal-etal-2022-flores}{{12}{2022}{{Goyal et~al.}}{{Goyal, Gao, Chaudhary, Chen, Wenzek, Ju, Krishnan, Ranzato, Guzm{\'a}n, and Fan}}}
+\bibcite{kadariya2026nepali}{{13}{2026}{{Kadariya}}{{}}}
+\bibcite{kapila2026typedriven}{{14}{2026}{{Kapila and Bagavathy}}{{}}}
+\bibcite{kim2024eeve}{{15}{2024}{{Kim et~al.}}{{Kim, Choi, and Jeong}}}
+\bibcite{krishnan2026tamil}{{16}{2026}{{Krishnan~K and Santhiappan}}{{}}}
+\bibcite{land2026smallbugs}{{17}{2026}{{Land}}{{}}}
+\bibcite{liu2025superbpe}{{18}{2025}{{Liu et~al.}}{{Liu, Hayase, Hofmann, Oh, Smith, and Choi}}}
+\bibcite{liu-etal-2024-ofa}{{19}{2024}{{Liu et~al.}}{{Liu, Lin, Wang, and Schuetze}}}
+\bibcite{lundin-etal-2026-token}{{20}{2026}{{Lundin et~al.}}{{Lundin, Zhang, Karim, Louzan, Wei, Adelani, and Carroll}}}
+\bibcite{mandarapu2026ledger}{{21}{2026}{{Mandarapu and Kunkunuru}}{{}}}
+\bibcite{llama32license}{{22}{2024}{{Meta Platforms, Inc.}}{{}}}
+\bibcite{minixhofer-etal-2022-wechsel}{{23}{2022}{{Minixhofer et~al.}}{{Minixhofer, Paischer, and Rekabsaz}}}
+\bibcite{minixhofer2024zett}{{24}{2024}{{Minixhofer et~al.}}{{Minixhofer, Ponti, and Vuli{\'c}}}}
+\bibcite{mundra-etal-2024-empirical}{{25}{2024}{{Mundra et~al.}}{{Mundra, Khandavally, Dabre, Puduppully, Kunchukuttan, and Khapra}}}
+\bibcite{nahin-etal-2025-titullms}{{26}{2025}{{Nahin et~al.}}{{Nahin, Nandi, Sarker, Muhtaseem, Kowsher, Shill, Ibrahim, Menon, Muntasir, and Alam}}}
+\bibcite{nllb2022}{{27}{2022}{{{NLLB Team} et~al.}}{{{NLLB Team}, Costa-juss{\`a}, Cross, {\c {C}}elebi, Elbayad, Heafield et~al.}}}
+\bibcite{gpt2encoder}{{28}{2019}{{OpenAI}}{{}}}
+\bibcite{ovcharov2026european}{{29}{2026}{{Ovcharov}}{{}}}
+\bibcite{petrov2023unfairness}{{30}{2023}{{Petrov et~al.}}{{Petrov, La~Malfa, Torr, and Bibi}}}
+\bibcite{purason-etal-2026-teaching}{{31}{2026}{{Purason et~al.}}{{Purason, Chizhov, Yamshchikov, and Fishel}}}
+\bibcite{rana2025mutant}{{32}{2025}{{Rana et~al.}}{{Rana, Menezes, Kulkarni, Khatri, and Agarwal}}}
+\bibcite{regmi2026arkios}{{33}{2026{a}}{{Regmi et~al.}}{{Regmi, Pudasaini, and Pun}}}
+\bibcite{regmi2026vowel}{{34}{2026{b}}{{Regmi et~al.}}{{Regmi, Pudasaini, and Pun}}}
+\bibcite{schmidt2025boundless}{{35}{2025}{{Schmidt et~al.}}{{Schmidt, Reddy, Tanner, and Pinter}}}
+\bibcite{schmidt-etal-2024-tokenization}{{36}{2024}{{Schmidt et~al.}}{{Schmidt, Reddy, Zhang, Alameddine, Uzan, Pinter, and Tanner}}}
+\bibcite{shrestha2026papaya}{{37}{2026}{{Shrestha and Pradhan}}{{}}}
+\bibcite{smith2026inplace}{{38}{2026}{{Smith et~al.}}{{Smith, Dakhran, Cabrera, Lee, Pak, Tadimeti, Seyde, Labonne, Amini, and Lechner}}}
+\bibcite{somide2026african}{{39}{2026}{{Somide}}{{}}}
+\bibcite{srivastava2026tokenizertax}{{40}{2026}{{Srivastava}}{{}}}
+\bibcite{tamang2024evaluating}{{41}{2024}{{Tamang and Bora}}{{}}}
+\bibcite{tejaswi-etal-2024-exploring}{{42}{2024}{{Tejaswi et~al.}}{{Tejaswi, Gupta, and Choi}}}
+\bibcite{velayuthan-sarveswaran-2025-egalitarian}{{43}{2025}{{Velayuthan and Sarveswaran}}{{}}}
+\bibcite{yamaguchi2026lowres}{{44}{2026}{{Yamaguchi et~al.}}{{Yamaguchi, Villavicencio, and Aletras}}}
+\citation{regmi2026vowel}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Pre-registration history}{11}{appendix.A}\protected@file@percent }
+\newlabel{app:prereg}{{A}{11}{Pre-registration history}{appendix.A}{}}
+\@writefile{toc}{\contentsline {paragraph}{Deviations from the second registration (amendment 2).}{11}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pipeline bugs fixed before any reported run.}{12}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Repair details}{12}{appendix.B}\protected@file@percent }
+\newlabel{app:regex}{{B}{12}{Repair details}{appendix.B}{}}
+\@writefile{toc}{\contentsline {paragraph}{Regex edit.}{12}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Continued BPE.}{12}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Scope of Proposition\nobreakspace  {}\ref  {prop:lossless}.}{12}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Embedding initialisation.}{12}{section*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Proof of Proposition\nobreakspace  {}\ref  {prop:lossless}}{12}{appendix.C}\protected@file@percent }
+\newlabel{app:proof}{{C}{12}{Proof of Proposition~\ref {prop:lossless}}{appendix.C}{}}
+\citation{bandarkar-etal-2024-belebele}
+\citation{bandarkar-etal-2024-belebele}
+\citation{regmi2026arkios}
+\citation{regmi2026arkios}
+\citation{regmi2026arkios}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Training and evaluation protocol}{13}{appendix.D}\protected@file@percent }
+\newlabel{app:protocol}{{D}{13}{Training and evaluation protocol}{appendix.D}{}}
+\@writefile{toc}{\contentsline {paragraph}{Data.}{13}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Continued pretraining.}{13}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation.}{13}{section*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Data}{13}{appendix.E}\protected@file@percent }
+\newlabel{app:data}{{E}{13}{Data}{appendix.E}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Full audit}{13}{appendix.F}\protected@file@percent }
+\newlabel{app:audit}{{F}{13}{Full audit}{appendix.F}{}}
+\@writefile{toc}{\contentsline {paragraph}{Broken syllables.}{13}{section*.52}\protected@file@percent }
+\citation{land2026smallbugs}
+\citation{regmi2026arkios}
+\citation{regmi2026arkios}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces All 24 distinct tokenizers (33 released tokenizers) on FLORES-200 devtest. Aliases: tokenizers with identical token counts on all 36 FLORES languages measured. Regex: letters-only, mark-aware, other, or none (no regex pre-tokenizer). ne/en: Nepali/English token premium with 95\% paired-bootstrap interval. Floor: pre-token floor under the tokenizer's own regex, a lower bound on the premium of any vocabulary extension (letters-only and mark-aware tokenizers only). Mark-init.: share of Nepali tokens whose first character is a combining mark. Lossless: decoding reproduces the input on 200 Nepali sentences. Arkios is from \citet  {regmi2026arkios}. Hugging Face repositories are listed in the released code.\relax }}{14}{table.caption.51}\protected@file@percent }
+\newlabel{tab:audit-full}{{3}{14}{All 24 distinct tokenizers (33 released tokenizers) on FLORES-200 devtest. Aliases: tokenizers with identical token counts on all 36 FLORES languages measured. Regex: letters-only, mark-aware, other, or none (no regex pre-tokenizer). ne/en: Nepali/English token premium with 95\% paired-bootstrap interval. Floor: pre-token floor under the tokenizer's own regex, a lower bound on the premium of any vocabulary extension (letters-only and mark-aware tokenizers only). Mark-init.: share of Nepali tokens whose first character is a combining mark. Lossless: decoding reproduces the input on 200 Nepali sentences. Arkios is from \citet {regmi2026arkios}. Hugging Face repositories are listed in the released code.\relax }{table.caption.51}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {G}Premium decomposition}{14}{appendix.G}\protected@file@percent }
+\newlabel{app:decomp}{{G}{14}{Premium decomposition}{appendix.G}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {H}Cross-script sweep}{14}{appendix.H}\protected@file@percent }
+\newlabel{app:xling}{{H}{14}{Cross-script sweep}{appendix.H}{}}
+\citation{aravinda2025sinllama}
+\citation{yamaguchi2026lowres}
+\citation{smith2026inplace}
+\citation{yamaguchi2026lowres}
+\citation{smith2026inplace}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Premium = base $\times $ regex factor $\times $ vocabulary factor, on FLORES-200 devtest, for 11 of the 15 letters-only and mark-aware tokenizers in the audit (top: letters-only; bottom: mark-aware). Arkios is from \citet  {regmi2026arkios}. Vocabulary extension can only lower the last column, and not below 1.\relax }}{15}{table.caption.53}\protected@file@percent }
+\newlabel{tab:decomp}{{4}{15}{Premium = base $\times $ regex factor $\times $ vocabulary factor, on FLORES-200 devtest, for 11 of the 15 letters-only and mark-aware tokenizers in the audit (top: letters-only; bottom: mark-aware). Arkios is from \citet {regmi2026arkios}. Vocabulary extension can only lower the last column, and not below 1.\relax }{table.caption.53}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Language/English token premium on FLORES-200 devtest, $K{=}32{,}000$. Marks: share of NFC code points that are combining marks. Amharic and Korean have none (control). $^\dagger $Thai is written without spaces, so whole phrases are single pre-tokens and \textsc  {R1}{} is not yet at its floor.\relax }}{15}{table.caption.54}\protected@file@percent }
+\newlabel{tab:xling}{{5}{15}{Language/English token premium on FLORES-200 devtest, $K{=}32{,}000$. Marks: share of NFC code points that are combining marks. Amharic and Korean have none (control). $^\dagger $Thai is written without spaces, so whole phrases are single pre-tokens and \RI {} is not yet at its floor.\relax }{table.caption.54}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Released extensions}{15}{appendix.I}\protected@file@percent }
+\newlabel{app:released}{{I}{15}{Released extensions}{appendix.I}{}}
+\@writefile{toc}{\contentsline {paragraph}{Added tokens.}{15}{section*.55}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Released vocabulary extensions that keep the letters-only regex, on FLORES-200 devtest of the target language. Tokens/floor: extended-tokenizer tokens divided by pre-tokens under its own regex (at least 1 by construction). Gap closed: share of the base-to-floor gap that the extension removed. Room: floor under the letters-only regex divided by floor under the repaired regex. Top block: \citet  {yamaguchi2026lowres}; middle: LFM2.5\nobreakspace  {}\citep  {smith2026inplace}; bottom: Amharic, which has no combining marks (control).\relax }}{15}{table.caption.56}\protected@file@percent }
+\newlabel{tab:released}{{6}{15}{Released vocabulary extensions that keep the letters-only regex, on FLORES-200 devtest of the target language. Tokens/floor: extended-tokenizer tokens divided by pre-tokens under its own regex (at least 1 by construction). Gap closed: share of the base-to-floor gap that the extension removed. Room: floor under the letters-only regex divided by floor under the repaired regex. Top block: \citet {yamaguchi2026lowres}; middle: LFM2.5~\citep {smith2026inplace}; bottom: Amharic, which has no combining marks (control).\relax }{table.caption.56}{}}
+\gdef \@abspage@last{15}
