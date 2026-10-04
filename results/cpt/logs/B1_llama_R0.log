@@ -1,0 +1,109 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:00<01:23,  1.74it/s]Loading weights:   1%|          | 1/146 [00:00<01:22,  1.76it/s]Loading weights:   1%|          | 1/146 [00:00<01:22,  1.75it/s]Loading weights:   1%|          | 1/146 [00:00<01:22,  1.75it/s]Loading weights:  89%|████████▉ | 130/146 [00:00<00:00, 260.83it/s]Loading weights:  89%|████████▉ | 130/146 [00:00<00:00, 257.95it/s]Loading weights:  89%|████████▉ | 130/146 [00:00<00:00, 258.74it/s]Loading weights:  88%|████████▊ | 129/146 [00:00<00:00, 252.33it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 204.86it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 207.16it/s]
+
+Loading weights: 100%|██████████| 146/146 [00:00<00:00, 205.58it/s]
+Loading weights: 100%|██████████| 146/146 [00:00<00:00, 202.86it/s]
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+{'step': 0, 'steps': 796, 'loss': 2.2112, 'lr': 1.4285714285714287e-05, 'gnorm': 0.711, 'elapsed': 4.9, 'tok_per_s': 107685}
+{'step': 10, 'steps': 796, 'loss': 2.3268, 'lr': 9.999678955227749e-05, 'gnorm': 2.419, 'elapsed': 41.4, 'tok_per_s': 139280}
+{'step': 20, 'steps': 796, 'loss': 2.1866, 'lr': 9.99397276687152e-05, 'gnorm': 1.578, 'elapsed': 75.2, 'tok_per_s': 146464}
+{'step': 30, 'steps': 796, 'loss': 2.1421, 'lr': 9.981142662414844e-05, 'gnorm': 1.223, 'elapsed': 109.9, 'tok_per_s': 147860}
+{'step': 40, 'steps': 796, 'loss': 2.1403, 'lr': 9.961208980340498e-05, 'gnorm': 1.062, 'elapsed': 143.3, 'tok_per_s': 149960}
+{'step': 50, 'steps': 796, 'loss': 2.1035, 'lr': 9.934203319833888e-05, 'gnorm': 0.82, 'elapsed': 181.3, 'tok_per_s': 147515}
+{'step': 60, 'steps': 796, 'loss': 2.0804, 'lr': 9.900168490691526e-05, 'gnorm': 0.906, 'elapsed': 227.5, 'tok_per_s': 140550}
+{'step': 70, 'steps': 796, 'loss': 2.0826, 'lr': 9.859158445458272e-05, 'gnorm': 0.764, 'elapsed': 273.7, 'tok_per_s': 135996}
+{'step': 80, 'steps': 796, 'loss': 2.0806, 'lr': 9.811238193900912e-05, 'gnorm': 0.795, 'elapsed': 320.4, 'tok_per_s': 132534}
+{'step': 90, 'steps': 796, 'loss': 2.0227, 'lr': 9.756483699953656e-05, 'gnorm': 0.73, 'elapsed': 366.8, 'tok_per_s': 130079}
+{'step': 100, 'steps': 796, 'loss': 2.0201, 'lr': 9.694981761298924e-05, 'gnorm': 0.769, 'elapsed': 413.4, 'tok_per_s': 128078}
+{'step': 110, 'steps': 796, 'loss': 2.0919, 'lr': 9.626829871774284e-05, 'gnorm': 0.732, 'elapsed': 460.2, 'tok_per_s': 126467}
+{'step': 120, 'steps': 796, 'loss': 1.998, 'lr': 9.552136066823707e-05, 'gnorm': 0.746, 'elapsed': 506.9, 'tok_per_s': 125149}
+{'step': 130, 'steps': 796, 'loss': 1.9895, 'lr': 9.471018752238085e-05, 'gnorm': 0.708, 'elapsed': 552.8, 'tok_per_s': 124243}
+{'step': 140, 'steps': 796, 'loss': 2.0324, 'lr': 9.383606516456502e-05, 'gnorm': 0.683, 'elapsed': 599.4, 'tok_per_s': 123339}
+{'step': 150, 'steps': 796, 'loss': 2.039, 'lr': 9.29003792672584e-05, 'gnorm': 0.662, 'elapsed': 646.1, 'tok_per_s': 122539}
+{'step': 160, 'steps': 796, 'loss': 2.0007, 'lr': 9.1904613094418e-05, 'gnorm': 0.704, 'elapsed': 692.7, 'tok_per_s': 121852}
+{'step': 170, 'steps': 796, 'loss': 2.0233, 'lr': 9.085034515019568e-05, 'gnorm': 0.704, 'elapsed': 739.4, 'tok_per_s': 121251}
+{'step': 180, 'steps': 796, 'loss': 2.0557, 'lr': 8.973924667666872e-05, 'gnorm': 0.611, 'elapsed': 786.1, 'tok_per_s': 120712}
+{'step': 190, 'steps': 796, 'loss': 2.0887, 'lr': 8.857307900456055e-05, 'gnorm': 0.663, 'elapsed': 825.3, 'tok_per_s': 121337}
+{'step': 200, 'steps': 796, 'loss': 1.997, 'lr': 8.735369076115184e-05, 'gnorm': 0.785, 'elapsed': 860.8, 'tok_per_s': 122417}
+{'step': 210, 'steps': 796, 'loss': 1.9709, 'lr': 8.608301493980732e-05, 'gnorm': 0.687, 'elapsed': 906.5, 'tok_per_s': 122038}
+{'step': 220, 'steps': 796, 'loss': 2.0292, 'lr': 8.476306583576462e-05, 'gnorm': 0.688, 'elapsed': 952.9, 'tok_per_s': 121597}
+{'step': 230, 'steps': 796, 'loss': 1.9707, 'lr': 8.339593585304168e-05, 'gnorm': 0.582, 'elapsed': 999.5, 'tok_per_s': 121176}
+{'step': 240, 'steps': 796, 'loss': 1.9825, 'lr': 8.19837921875252e-05, 'gnorm': 0.656, 'elapsed': 1045.8, 'tok_per_s': 120819}
+{'step': 250, 'steps': 796, 'loss': 1.9711, 'lr': 8.052887339149774e-05, 'gnorm': 0.645, 'elapsed': 1092.4, 'tok_per_s': 120461}
+{'step': 260, 'steps': 796, 'loss': 1.9535, 'lr': 7.903348582504946e-05, 'gnorm': 0.631, 'elapsed': 1139.1, 'tok_per_s': 120127}
+{'step': 270, 'steps': 796, 'loss': 1.9857, 'lr': 7.75e-05, 'gnorm': 0.658, 'elapsed': 1185.7, 'tok_per_s': 119833}
+{'step': 280, 'steps': 796, 'loss': 1.962, 'lr': 7.593084682212598e-05, 'gnorm': 0.603, 'elapsed': 1232.3, 'tok_per_s': 119555}
+{'step': 290, 'steps': 796, 'loss': 1.9456, 'lr': 7.432851373765097e-05, 'gnorm': 0.568, 'elapsed': 1278.8, 'tok_per_s': 119301}
+{'step': 300, 'steps': 796, 'loss': 2.0044, 'lr': 7.269554079010685e-05, 'gnorm': 0.605, 'elapsed': 1325.6, 'tok_per_s': 119052}
+{'step': 310, 'steps': 796, 'loss': 1.9285, 'lr': 7.103451659381685e-05, 'gnorm': 0.604, 'elapsed': 1372.1, 'tok_per_s': 118834}
+{'step': 320, 'steps': 796, 'loss': 1.9785, 'lr': 6.934807423038359e-05, 'gnorm': 0.59, 'elapsed': 1418.7, 'tok_per_s': 118630}
+{'step': 330, 'steps': 796, 'loss': 1.969, 'lr': 6.763888707468685e-05, 'gnorm': 0.564, 'elapsed': 1465.3, 'tok_per_s': 118431}
+{'step': 340, 'steps': 796, 'loss': 1.9277, 'lr': 6.590966455700775e-05, 'gnorm': 0.534, 'elapsed': 1510.2, 'tok_per_s': 118386}
+{'step': 350, 'steps': 796, 'loss': 2.0266, 'lr': 6.416314786799746e-05, 'gnorm': 0.573, 'elapsed': 1540.8, 'tok_per_s': 119435}
+{'step': 360, 'steps': 796, 'loss': 1.9929, 'lr': 6.240210561329863e-05, 'gnorm': 0.564, 'elapsed': 1574.9, 'tok_per_s': 120178}
+{'step': 370, 'steps': 796, 'loss': 1.9393, 'lr': 6.062932942470851e-05, 'gnorm': 0.507, 'elapsed': 1602.6, 'tok_per_s': 121372}
+{'step': 380, 'steps': 796, 'loss': 1.9573, 'lr': 5.884762953484031e-05, 'gnorm': 0.519, 'elapsed': 1626.7, 'tok_per_s': 122797}
+{'step': 390, 'steps': 796, 'loss': 1.9724, 'lr': 5.705983032229845e-05, 'gnorm': 0.568, 'elapsed': 1650.8, 'tok_per_s': 124180}
+{'step': 400, 'steps': 796, 'loss': 1.9267, 'lr': 5.526876583442928e-05, 'gnorm': 0.529, 'elapsed': 1674.9, 'tok_per_s': 125523}
+{'step': 410, 'steps': 796, 'loss': 1.9785, 'lr': 5.347727529474484e-05, 'gnorm': 0.517, 'elapsed': 1699.0, 'tok_per_s': 126826}
+{'step': 420, 'steps': 796, 'loss': 1.8902, 'lr': 5.168819860214116e-05, 'gnorm': 0.555, 'elapsed': 1723.2, 'tok_per_s': 128094}
+{'step': 430, 'steps': 796, 'loss': 1.9, 'lr': 4.9904371829046016e-05, 'gnorm': 0.504, 'elapsed': 1747.3, 'tok_per_s': 129326}
+{'step': 440, 'steps': 796, 'loss': 1.9428, 'lr': 4.81286227256325e-05, 'gnorm': 0.538, 'elapsed': 1771.4, 'tok_per_s': 130524}
+{'step': 450, 'steps': 796, 'loss': 2.0283, 'lr': 4.636376623722499e-05, 'gnorm': 0.519, 'elapsed': 1795.5, 'tok_per_s': 131692}
+{'step': 460, 'steps': 796, 'loss': 2.0107, 'lr': 4.4612600042003815e-05, 'gnorm': 0.519, 'elapsed': 1819.6, 'tok_per_s': 132826}
+{'step': 470, 'steps': 796, 'loss': 1.923, 'lr': 4.2877900116081845e-05, 'gnorm': 0.521, 'elapsed': 1843.8, 'tok_per_s': 133932}
+{'step': 480, 'steps': 796, 'loss': 1.9771, 'lr': 4.116241633298362e-05, 'gnorm': 0.485, 'elapsed': 1867.9, 'tok_per_s': 135011}
+{'step': 490, 'steps': 796, 'loss': 1.9504, 'lr': 3.9468868104502775e-05, 'gnorm': 0.488, 'elapsed': 1892.0, 'tok_per_s': 136060}
+{'step': 500, 'steps': 796, 'loss': 1.9379, 'lr': 3.779994006984777e-05, 'gnorm': 0.491, 'elapsed': 1916.1, 'tok_per_s': 137085}
+{'step': 510, 'steps': 796, 'loss': 1.9329, 'lr': 3.615827783990979e-05, 'gnorm': 0.569, 'elapsed': 1940.2, 'tok_per_s': 138083}
+{'step': 520, 'steps': 796, 'loss': 1.9454, 'lr': 3.4546483803398735e-05, 'gnorm': 0.488, 'elapsed': 1964.3, 'tok_per_s': 139057}
+{'step': 530, 'steps': 796, 'loss': 1.8993, 'lr': 3.2967113001496016e-05, 'gnorm': 0.487, 'elapsed': 1988.5, 'tok_per_s': 140007}
+{'step': 540, 'steps': 796, 'loss': 1.9448, 'lr': 3.142266907756307e-05, 'gnorm': 0.484, 'elapsed': 2012.6, 'tok_per_s': 140934}
+{'step': 550, 'steps': 796, 'loss': 1.9419, 'lr': 2.991560030832666e-05, 'gnorm': 0.481, 'elapsed': 2036.7, 'tok_per_s': 141839}
+{'step': 560, 'steps': 796, 'loss': 1.8404, 'lr': 2.8448295722832262e-05, 'gnorm': 0.484, 'elapsed': 2060.8, 'tok_per_s': 142723}
+{'step': 570, 'steps': 796, 'loss': 1.8746, 'lr': 2.7023081315317762e-05, 'gnorm': 0.468, 'elapsed': 2084.9, 'tok_per_s': 143587}
+{'step': 580, 'steps': 796, 'loss': 1.8915, 'lr': 2.5642216358010856e-05, 'gnorm': 0.453, 'elapsed': 2109.1, 'tok_per_s': 144429}
+{'step': 590, 'steps': 796, 'loss': 1.8902, 'lr': 2.4307889819695336e-05, 'gnorm': 0.446, 'elapsed': 2133.2, 'tok_per_s': 145253}
+{'step': 600, 'steps': 796, 'loss': 1.8899, 'lr': 2.3022216895723462e-05, 'gnorm': 0.485, 'elapsed': 2157.3, 'tok_per_s': 146059}
+{'step': 610, 'steps': 796, 'loss': 1.8797, 'lr': 2.178723565497503e-05, 'gnorm': 0.459, 'elapsed': 2181.5, 'tok_per_s': 146847}
+{'step': 620, 'steps': 796, 'loss': 1.9434, 'lr': 2.060490380907875e-05, 'gnorm': 0.488, 'elapsed': 2205.6, 'tok_per_s': 147617}
+{'step': 630, 'steps': 796, 'loss': 1.9341, 'lr': 1.947709560901699e-05, 'gnorm': 0.441, 'elapsed': 2229.7, 'tok_per_s': 148371}
+{'step': 640, 'steps': 796, 'loss': 1.9501, 'lr': 1.840559887403376e-05, 'gnorm': 0.48, 'elapsed': 2253.8, 'tok_per_s': 149109}
+{'step': 650, 'steps': 796, 'loss': 1.8999, 'lr': 1.7392112157555574e-05, 'gnorm': 0.429, 'elapsed': 2278.0, 'tok_per_s': 149831}
+{'step': 660, 'steps': 796, 'loss': 1.9084, 'lr': 1.6438242054617992e-05, 'gnorm': 0.446, 'elapsed': 2302.1, 'tok_per_s': 150538}
+{'step': 670, 'steps': 796, 'loss': 1.9779, 'lr': 1.554550065506592e-05, 'gnorm': 0.436, 'elapsed': 2326.2, 'tok_per_s': 151231}
+{'step': 680, 'steps': 796, 'loss': 1.9216, 'lr': 1.4715303146565056e-05, 'gnorm': 0.438, 'elapsed': 2350.4, 'tok_per_s': 151909}
+{'step': 690, 'steps': 796, 'loss': 1.9208, 'lr': 1.3948965571224299e-05, 'gnorm': 0.447, 'elapsed': 2374.5, 'tok_per_s': 152573}
+{'step': 700, 'steps': 796, 'loss': 1.9142, 'lr': 1.3247702739385104e-05, 'gnorm': 0.433, 'elapsed': 2398.6, 'tok_per_s': 153224}
+{'step': 710, 'steps': 796, 'loss': 1.8786, 'lr': 1.2612626303885045e-05, 'gnorm': 0.432, 'elapsed': 2422.7, 'tok_per_s': 153862}
+{'step': 720, 'steps': 796, 'loss': 1.9009, 'lr': 1.204474299784838e-05, 'gnorm': 0.419, 'elapsed': 2446.9, 'tok_per_s': 154488}
+{'step': 730, 'steps': 796, 'loss': 1.8849, 'lr': 1.154495303879687e-05, 'gnorm': 0.415, 'elapsed': 2471.0, 'tok_per_s': 155101}
+{'step': 740, 'steps': 796, 'loss': 1.8772, 'lr': 1.1114048701610843e-05, 'gnorm': 0.429, 'elapsed': 2495.1, 'tok_per_s': 155702}
+{'step': 750, 'steps': 796, 'loss': 1.9291, 'lr': 1.075271306260268e-05, 'gnorm': 0.428, 'elapsed': 2519.2, 'tok_per_s': 156293}
+{'step': 760, 'steps': 796, 'loss': 1.9521, 'lr': 1.0461518916693454e-05, 'gnorm': 0.436, 'elapsed': 2543.4, 'tok_per_s': 156873}
+{'step': 770, 'steps': 796, 'loss': 1.8837, 'lr': 1.0240927869409516e-05, 'gnorm': 0.43, 'elapsed': 2567.5, 'tok_per_s': 157442}
+{'step': 780, 'steps': 796, 'loss': 1.8647, 'lr': 1.0091289605138118e-05, 'gnorm': 0.431, 'elapsed': 2591.6, 'tok_per_s': 157999}
+{'step': 790, 'steps': 796, 'loss': 1.8483, 'lr': 1.0012841332802281e-05, 'gnorm': 0.434, 'elapsed': 2615.7, 'tok_per_s': 158546}
+{'step': 795, 'steps': 796, 'loss': 1.958, 'lr': 1.0000356720183952e-05, 'gnorm': 0.433, 'elapsed': 2627.8, 'tok_per_s': 158816}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.26s/it]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.26s/it]
+{'model': 'runs/B1_llama_R0_stage1/model', 'data': 'data/llama_R0', 'lr': 0.0001, 'seed': 0, 'steps': 796, 'tokens': 417333248, 'params': 1235814400, 'train_flops': 3094478624863027200, 'secs': 2627.9, 'gpus': 4, 'final_loss': 1.9579954147338867}
+/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)

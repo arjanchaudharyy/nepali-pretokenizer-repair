@@ -1,0 +1,3 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights: 100%|██████████| 310/310 [00:00<00:00, 8905.71it/s]
+{"model": "runs/qwen_R0_s0/model_step556", "vocab": 151669, "bpb_flores_ne": 0.6513995353588217, "bpb_flores_en": 1.0582695019725514, "bpb_native_ne": 0.5073373099983878, "bytes_native_ne": 1018128, "bpb_native_en": 0.8201181407205749, "bytes_native_en": 1000645, "bpb_chunk2k_ne": 0.5489675379593679, "bpb_chunk2k_en": 0.8804213373488119, "ne_tokens_per_byte": 0.3592579063958147, "en_tokens_per_byte": 0.20909792877906977, "secs": 41.9}

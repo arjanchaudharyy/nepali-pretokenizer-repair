@@ -180,6 +180,34 @@
        "final_loss": 1.9579954147338867
       }
      },
+     "R1": {
+      "model": "runs/B1_llama_R1/model",
+      "vocab": 160256,
+      "bpb_flores_ne": 0.6179944070196064,
+      "bpb_flores_en": 1.009960919917885,
+      "bpb_native_ne": 0.43316137714570563,
+      "bytes_native_ne": 4001293,
+      "bpb_native_en": 0.7429302369830446,
+      "bytes_native_en": 4042178,
+      "bpb_chunk2k_ne": 0.4803637367979831,
+      "bpb_chunk2k_en": 0.802090085819986,
+      "ne_tokens_per_byte": 0.17640924730169205,
+      "en_tokens_per_byte": 0.20569131540697674,
+      "secs": 92.0,
+      "train": {
+       "model": "runs/B1_llama_R1_stage1/model",
+       "data": "data/llama_R1",
+       "lr": 0.0001,
+       "seed": 0,
+       "steps": 737,
+       "tokens": 386400256,
+       "params": 1301350400,
+       "train_flops": 3017052766234214400,
+       "secs": 2219.6,
+       "gpus": 4,
+       "final_loss": 2.067927122116089
+      }
+     },
      "R2": {
       "model": "runs/B1_llama_R2/model",
       "vocab": 160256,
@@ -217,10 +245,38 @@
       "pieces": 2259,
       "verdict": "worse"
      },
+     "ne:R2-R1": {
+      "diff": 0.020779084790686006,
+      "lo": 0.020154319434055174,
+      "hi": 0.021401682106906995,
+      "pieces": 2259,
+      "verdict": "worse"
+     },
+     "ne:R1-R0": {
+      "diff": 0.009860253703767318,
+      "lo": 0.00938044960435716,
+      "hi": 0.010347203417001693,
+      "pieces": 2259,
+      "verdict": "worse"
+     },
      "en:R2-R0": {
       "diff": -0.004645547609468655,
       "lo": -0.004987445834532191,
       "hi": -0.004290812776818361,
+      "pieces": 2458,
+      "verdict": "better"
+     },
+     "en:R2-R1": {
+      "diff": -0.003491183058291507,
+      "lo": -0.003839988274082132,
+      "hi": -0.003137825291033488,
+      "pieces": 2458,
+      "verdict": "better"
+     },
+     "en:R1-R0": {
+      "diff": -0.0011543645511771484,
+      "lo": -0.001494882372349576,
+      "hi": -0.000815132996073395,
       "pieces": 2458,
       "verdict": "better"
      }

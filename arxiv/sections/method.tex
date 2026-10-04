@@ -1,0 +1,18 @@
+\section{Repairing a deployed tokenizer}
+\label{sec:method}
+
+The repair has three parts: a one-class edit to the regex, new merges learned on top of the existing merge list, and an embedding initialisation that leaves the model's computation on old tokens unchanged.
+
+\paragraph{Regex edit.} We admit \pM{} wherever the regex has a letter word class, and exclude it from the optional leading class and the punctuation class, so that a mark can only be matched by the word class and stays in one pre-token with the letters around it. For the Llama-3/Qwen pattern this is two substitutions (Appendix~\ref{app:regex}). Digits, contractions, whitespace and punctuation are handled as before. We call the result the \emph{repaired regex}. Qwen3.5 independently shipped almost the same word branch (\S\ref{sec:audit};~\citealp{land2026smallbugs}).
+
+\paragraph{Continued BPE, restricted to Devanagari.} Following \citet{purason-etal-2026-teaching}, we learn $K$ new merges on top of the existing ones. We pre-tokenize Nepali text with the arm's regex, segment every pre-token with the \emph{original} merges, as the deployed model sees it, and run standard BPE over these segmentations, treating each base token as an indivisible symbol. We append the new merges after the existing ones, so the original merges act first at inference. We discard any merge whose output contains no code point in U+0900--U+097F, together with merges that depend on it. Two edge cases and implementation details are in Appendix~\ref{app:regex}. \RI{} and \RII{} use this identical procedure on identical text with identical $K$; they differ only in the regex.
+
+\begin{proposition}[English invariance]
+\label{prop:lossless}
+Let $s$ be a string, after the tokenizer's normalizer, containing no code point of category \pM{} and no code point in U+0900--U+097F. Then the repaired tokenizer \RII{} and the original tokenizer produce identical token ids for $s$.
+\end{proposition}
+The proof is in Appendix~\ref{app:proof}. The proposition covers ASCII English and code, and every other script whose normalised text has no combining marks; it does not cover Devanagari or text with marks (Appendix~\ref{app:regex}).
+
+\paragraph{Embedding initialisation.} Each new token's input and output rows are set to the mean of the rows of its constituent base tokens~\citep{gee-etal-2022-fast}, obtained by applying the original merges to its byte-level string. Original rows are untouched (Qwen3's first new tokens reuse its unused padding rows). On any input whose ids are all original, the resized model therefore gives the same logits for every original token as the base model; we check this on an English probe sentence (maximum absolute difference $<10^{-4}$). The softmax denominator gains the new tokens' logits, so continued pretraining is still needed.
+
+\paragraph{Arms.} \RO{} (no extension) keeps the original tokenizer. \RI{} (extend) appends $K$ merges learned under the original letters-only regex: the standard recipe~\citep{purason-etal-2026-teaching,yamaguchi2026lowres}. \RII{} (repair + extend) switches to the repaired regex and appends $K$ merges learned under it. All arms then continue pretraining on the same bytes (\S\ref{sec:setup}).

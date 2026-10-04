@@ -1,0 +1,4 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+types=1,536,573 tokens=58,777,622 (71s)
+new merges=16,000 new tokens=16,000 (95s)
+{"base": "unsloth/Llama-3.2-1B", "arm": "R2", "K": 16000, "bytes": 1000000463, "types": 1536573, "regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{M}\\p{N}]?[\\p{L}\\p{M}]+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{M}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+", "base_regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+", "new_merges": 16000, "new_tokens": 16000, "first_new_id": 128256, "secs": 98.6}

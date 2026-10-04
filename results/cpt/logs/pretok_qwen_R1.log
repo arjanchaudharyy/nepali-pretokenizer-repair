@@ -1,0 +1,1 @@
+{"tokenizer": "tok/Qwen3-1.7B-Base/R1_K32000/tokenizer.json", "eos_id": 151643, "ne_docs": 166300, "en_docs": 209713, "ne_bytes": 1000000146, "en_bytes": 1000010100, "ne_tokens": 176977665, "en_tokens": 215220821, "total_tokens": 392198486, "vocab": 183669, "secs": 245.1}

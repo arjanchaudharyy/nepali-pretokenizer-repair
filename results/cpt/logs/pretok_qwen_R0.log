@@ -1,0 +1,1 @@
+{"tokenizer": "/home/.cache/huggingface/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/da87bfb608c14b7cf20ba1ce41287e8de496c0cd/tokenizer.json", "eos_id": 151643, "ne_docs": 166300, "en_docs": 209713, "ne_bytes": 1000000146, "en_bytes": 1000010100, "ne_tokens": 359344574, "en_tokens": 215232211, "total_tokens": 574576785, "vocab": 151665, "secs": 280.0}

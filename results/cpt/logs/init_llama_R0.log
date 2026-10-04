@@ -1,0 +1,5 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 41/146 [00:00<00:00, 406.06it/s]Loading weights:  76%|███████▌  | 111/146 [00:00<00:00, 568.61it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 623.63it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.41s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.41s/it]
+saved base unchanged

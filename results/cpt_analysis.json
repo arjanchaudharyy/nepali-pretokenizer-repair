@@ -286,6 +286,51 @@
        0.3788888888888889
       ]
      },
+     "R1": {
+      "model": "runs/B1_llama_R1/model",
+      "vocab": 160256,
+      "bpb_flores_ne": 0.9037586785170779,
+      "bpb_flores_en": 1.133258839295948,
+      "bpb_native_ne": 0.674751375868535,
+      "bytes_native_ne": 4001293,
+      "bpb_native_en": 0.7802952171469345,
+      "bytes_native_en": 4042178,
+      "bpb_chunk2k_ne": 0.808132951873649,
+      "bpb_chunk2k_en": 0.8539429724671319,
+      "ne_tokens_per_byte": 0.17640924730169205,
+      "en_tokens_per_byte": 0.20569131540697674,
+      "gen_tokens_per_s": 1440.2886756189087,
+      "gen_bytes_per_s": 7520.901938104254,
+      "gen_bytes_per_token": 5.2218017578125,
+      "belebele_ne": 0.27111111111111114,
+      "belebele_en": 0.3333333333333333,
+      "chrf_ne_en": 9.904031558471402,
+      "chrf_en_ne": 4.217480525268491,
+      "secs": 566.9,
+      "train": {
+       "model": "runs/B1_llama_R1_stage1/model",
+       "data": "data/llama_R1",
+       "lr": 0.0001,
+       "seed": 0,
+       "steps": 737,
+       "tokens": 386400256,
+       "params": 1301350400,
+       "train_flops": 3017052766234214400,
+       "secs": 2219.6,
+       "gpus": 4,
+       "final_loss": 2.067927122116089
+      },
+      "belebele_npi_Deva_ci": [
+       0.27111111111111114,
+       0.24333333333333335,
+       0.3
+      ],
+      "belebele_eng_Latn_ci": [
+       0.3333333333333333,
+       0.30333333333333334,
+       0.3633611111111107
+      ]
+     },
      "R2": {
       "model": "runs/B1_llama_R2/model",
       "vocab": 160256,
@@ -340,12 +385,40 @@
       "pieces": 2259,
       "verdict": "better"
      },
+     "ne:R2-R1": {
+      "diff": -0.2812895096438764,
+      "lo": -0.2842088285953444,
+      "hi": -0.27832453062591167,
+      "pieces": 2259,
+      "verdict": "better"
+     },
+     "ne:R1-R0": {
+      "diff": 0.029551927330203707,
+      "lo": 0.02706002055700332,
+      "hi": 0.03206225098702559,
+      "pieces": 2259,
+      "verdict": "worse"
+     },
      "en:R2-R0": {
       "diff": -0.010371444270591364,
       "lo": -0.010985917754995208,
       "hi": -0.009766407880858443,
       "pieces": 2458,
       "verdict": "better"
+     },
+     "en:R2-R1": {
+      "diff": -0.014369492089924175,
+      "lo": -0.014917803779391224,
+      "hi": -0.013811924670748136,
+      "pieces": 2458,
+      "verdict": "better"
+     },
+     "en:R1-R0": {
+      "diff": 0.003998047819332811,
+      "lo": 0.0034246162896174777,
+      "hi": 0.004575704220073388,
+      "pieces": 2458,
+      "verdict": "non-inferior"
      }
     },
     "eqcompute": {}

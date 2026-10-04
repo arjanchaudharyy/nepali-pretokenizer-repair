@@ -1,0 +1,10 @@
+
+[notice] A new release of pip is available: 23.0.1 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching ... files: 0it [00:00, ?it/s]Fetching ... files: 1it [00:02,  2.51s/it]Fetching ... files: 2it [00:34, 19.67s/it]Fetching ... files: 3it [00:34, 11.40s/it]
+Fetching ... files: 0it [00:00, ?it/s]Fetching ... files: 1it [00:57, 57.45s/it]Fetching ... files: 3it [00:57, 14.98s/it]Fetching ... files: 6it [00:57,  9.61s/it]
+DONE
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching ... files: 0it [00:00, ?it/s]Fetching ... files: 1it [00:42, 42.19s/it]Fetching ... files: 2it [02:29, 80.78s/it]Fetching ... files: 7it [02:39, 17.03s/it]Fetching ... files: 9it [02:50, 13.36s/it]Fetching ... files: 11it [03:38, 16.73s/it]Fetching ... files: 13it [03:41, 11.97s/it]Fetching ... files: 13it [03:41, 17.00s/it]
+DONE2

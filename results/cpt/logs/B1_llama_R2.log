@@ -1,0 +1,84 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s][transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:00<01:45,  1.37it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 192.31it/s]
+Loading weights:   1%|          | 1/146 [00:00<01:36,  1.50it/s]Loading weights:   1%|          | 1/146 [00:00<01:36,  1.51it/s]Loading weights:   1%|          | 1/146 [00:00<01:36,  1.50it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 204.71it/s]
+Loading weights: 100%|██████████| 146/146 [00:00<00:00, 203.56it/s]
+Loading weights: 100%|██████████| 146/146 [00:00<00:00, 204.52it/s]
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+{'step': 0, 'steps': 545, 'loss': 3.4558, 'lr': 2e-05, 'gnorm': 1.239, 'elapsed': 4.7, 'tok_per_s': 112170}
+{'step': 10, 'steps': 545, 'loss': 3.5252, 'lr': 9.998096275369903e-05, 'gnorm': 2.754, 'elapsed': 40.5, 'tok_per_s': 142472}
+{'step': 20, 'steps': 545, 'loss': 3.3982, 'lr': 9.982876141412856e-05, 'gnorm': 1.607, 'elapsed': 74.0, 'tok_per_s': 148854}
+{'step': 30, 'steps': 545, 'loss': 3.195, 'lr': 9.95248737361425e-05, 'gnorm': 1.277, 'elapsed': 107.8, 'tok_per_s': 150839}
+{'step': 40, 'steps': 545, 'loss': 3.2514, 'lr': 9.907032797944983e-05, 'gnorm': 1.098, 'elapsed': 143.9, 'tok_per_s': 149376}
+{'step': 50, 'steps': 545, 'loss': 3.2165, 'lr': 9.846666218300807e-05, 'gnorm': 1.193, 'elapsed': 190.6, 'tok_per_s': 140293}
+{'step': 60, 'steps': 545, 'loss': 3.0363, 'lr': 9.771591896078653e-05, 'gnorm': 1.044, 'elapsed': 237.0, 'tok_per_s': 134955}
+{'step': 70, 'steps': 545, 'loss': 3.0919, 'lr': 9.682063859020701e-05, 'gnorm': 0.932, 'elapsed': 284.1, 'tok_per_s': 131009}
+{'step': 80, 'steps': 545, 'loss': 3.0954, 'lr': 9.578385041664925e-05, 'gnorm': 0.906, 'elapsed': 331.3, 'tok_per_s': 128202}
+{'step': 90, 'steps': 545, 'loss': 3.095, 'lr': 9.460906260310501e-05, 'gnorm': 0.993, 'elapsed': 377.6, 'tok_per_s': 126348}
+{'step': 100, 'steps': 545, 'loss': 2.9902, 'lr': 9.330025025966499e-05, 'gnorm': 0.821, 'elapsed': 424.8, 'tok_per_s': 124651}
+{'step': 110, 'steps': 545, 'loss': 2.9827, 'lr': 9.186184199300464e-05, 'gnorm': 0.891, 'elapsed': 472.1, 'tok_per_s': 123280}
+{'step': 120, 'steps': 545, 'loss': 2.974, 'lr': 9.02987049213809e-05, 'gnorm': 0.943, 'elapsed': 517.6, 'tok_per_s': 122569}
+{'step': 130, 'steps': 545, 'loss': 2.9936, 'lr': 8.861612820584483e-05, 'gnorm': 0.799, 'elapsed': 549.1, 'tok_per_s': 125090}
+{'step': 140, 'steps': 545, 'loss': 2.946, 'lr': 8.681980515339464e-05, 'gnorm': 0.787, 'elapsed': 595.4, 'tok_per_s': 124151}
+{'step': 150, 'steps': 545, 'loss': 2.9131, 'lr': 8.49158139526272e-05, 'gnorm': 0.785, 'elapsed': 642.7, 'tok_per_s': 123182}
+{'step': 160, 'steps': 545, 'loss': 3.0314, 'lr': 8.291059710707169e-05, 'gnorm': 0.77, 'elapsed': 689.6, 'tok_per_s': 122398}
+{'step': 170, 'steps': 545, 'loss': 2.9688, 'lr': 8.081093963579707e-05, 'gnorm': 0.793, 'elapsed': 736.8, 'tok_per_s': 121682}
+{'step': 180, 'steps': 545, 'loss': 3.0329, 'lr': 7.86239461150552e-05, 'gnorm': 0.815, 'elapsed': 784.0, 'tok_per_s': 121044}
+{'step': 190, 'steps': 545, 'loss': 2.9596, 'lr': 7.635701663864382e-05, 'gnorm': 0.755, 'elapsed': 831.1, 'tok_per_s': 120494}
+{'step': 200, 'steps': 545, 'loss': 2.976, 'lr': 7.401782177833148e-05, 'gnorm': 0.817, 'elapsed': 878.4, 'tok_per_s': 119973}
+{'step': 210, 'steps': 545, 'loss': 2.9231, 'lr': 7.16142766290708e-05, 'gnorm': 0.792, 'elapsed': 924.6, 'tok_per_s': 119648}
+{'step': 220, 'steps': 545, 'loss': 2.9416, 'lr': 6.915451402682261e-05, 'gnorm': 0.77, 'elapsed': 954.1, 'tok_per_s': 121438}
+{'step': 230, 'steps': 545, 'loss': 2.8732, 'lr': 6.664685702961344e-05, 'gnorm': 0.729, 'elapsed': 979.7, 'tok_per_s': 123623}
+{'step': 240, 'steps': 545, 'loss': 2.8622, 'lr': 6.409979075494171e-05, 'gnorm': 0.674, 'elapsed': 1005.2, 'tok_per_s': 125698}
+{'step': 250, 'steps': 545, 'loss': 2.8555, 'lr': 6.15219336688261e-05, 'gnorm': 0.712, 'elapsed': 1030.7, 'tok_per_s': 127680}
+{'step': 260, 'steps': 545, 'loss': 2.9391, 'lr': 5.8922008423644624e-05, 'gnorm': 0.672, 'elapsed': 1056.1, 'tok_per_s': 129567}
+{'step': 270, 'steps': 545, 'loss': 2.8897, 'lr': 5.630881234344002e-05, 'gnorm': 0.679, 'elapsed': 1083.0, 'tok_per_s': 131190}
+{'step': 280, 'steps': 545, 'loss': 2.9024, 'lr': 5.369118765655998e-05, 'gnorm': 0.645, 'elapsed': 1115.4, 'tok_per_s': 132077}
+{'step': 290, 'steps': 545, 'loss': 2.8304, 'lr': 5.107799157635538e-05, 'gnorm': 0.675, 'elapsed': 1146.2, 'tok_per_s': 133109}
+{'step': 300, 'steps': 545, 'loss': 2.8844, 'lr': 4.847806633117391e-05, 'gnorm': 0.661, 'elapsed': 1173.6, 'tok_per_s': 134467}
+{'step': 310, 'steps': 545, 'loss': 2.8771, 'lr': 4.59002092450583e-05, 'gnorm': 0.612, 'elapsed': 1199.0, 'tok_per_s': 135986}
+{'step': 320, 'steps': 545, 'loss': 2.8714, 'lr': 4.3353142970386564e-05, 'gnorm': 0.618, 'elapsed': 1229.0, 'tok_per_s': 136937}
+{'step': 330, 'steps': 545, 'loss': 2.8335, 'lr': 4.08454859731774e-05, 'gnorm': 0.599, 'elapsed': 1263.6, 'tok_per_s': 137340}
+{'step': 340, 'steps': 545, 'loss': 2.8467, 'lr': 3.83857233709292e-05, 'gnorm': 0.611, 'elapsed': 1296.8, 'tok_per_s': 137869}
+{'step': 350, 'steps': 545, 'loss': 2.8726, 'lr': 3.598217822166854e-05, 'gnorm': 0.61, 'elapsed': 1334.9, 'tok_per_s': 137855}
+{'step': 360, 'steps': 545, 'loss': 2.8657, 'lr': 3.3642983361356185e-05, 'gnorm': 0.585, 'elapsed': 1372.4, 'tok_per_s': 137906}
+{'step': 370, 'steps': 545, 'loss': 2.8261, 'lr': 3.13760538849448e-05, 'gnorm': 0.617, 'elapsed': 1410.1, 'tok_per_s': 137946}
+{'step': 380, 'steps': 545, 'loss': 2.8204, 'lr': 2.9189060364202943e-05, 'gnorm': 0.584, 'elapsed': 1449.9, 'tok_per_s': 137771}
+{'step': 390, 'steps': 545, 'loss': 2.8448, 'lr': 2.7089402892928307e-05, 'gnorm': 0.593, 'elapsed': 1483.9, 'tok_per_s': 138152}
+{'step': 400, 'steps': 545, 'loss': 2.8609, 'lr': 2.50841860473728e-05, 'gnorm': 1.062, 'elapsed': 1522.3, 'tok_per_s': 138103}
+{'step': 410, 'steps': 545, 'loss': 2.7998, 'lr': 2.3180194846605367e-05, 'gnorm': 0.56, 'elapsed': 1564.6, 'tok_per_s': 137721}
+{'step': 420, 'steps': 545, 'loss': 2.8542, 'lr': 2.1383871794155192e-05, 'gnorm': 0.547, 'elapsed': 1599.1, 'tok_per_s': 138035}
+{'step': 430, 'steps': 545, 'loss': 2.8144, 'lr': 1.9701295078619095e-05, 'gnorm': 0.526, 'elapsed': 1633.4, 'tok_per_s': 138346}
+{'step': 440, 'steps': 545, 'loss': 2.8066, 'lr': 1.8138158006995364e-05, 'gnorm': 0.541, 'elapsed': 1666.3, 'tok_per_s': 138754}
+{'step': 450, 'steps': 545, 'loss': 2.8495, 'lr': 1.6699749740335015e-05, 'gnorm': 0.534, 'elapsed': 1702.6, 'tok_per_s': 138882}
+{'step': 460, 'steps': 545, 'loss': 2.8552, 'lr': 1.5390937396895007e-05, 'gnorm': 0.548, 'elapsed': 1743.4, 'tok_per_s': 138635}
+{'step': 470, 'steps': 545, 'loss': 2.8328, 'lr': 1.4216149583350754e-05, 'gnorm': 0.514, 'elapsed': 1774.4, 'tok_per_s': 139165}
+{'step': 480, 'steps': 545, 'loss': 2.8231, 'lr': 1.3179361409792988e-05, 'gnorm': 0.511, 'elapsed': 1808.0, 'tok_per_s': 139482}
+{'step': 490, 'steps': 545, 'loss': 2.7958, 'lr': 1.2284081039213476e-05, 'gnorm': 0.523, 'elapsed': 1841.9, 'tok_per_s': 139761}
+{'step': 500, 'steps': 545, 'loss': 2.8564, 'lr': 1.1533337816991932e-05, 'gnorm': 0.528, 'elapsed': 1880.2, 'tok_per_s': 139703}
+{'step': 510, 'steps': 545, 'loss': 2.8162, 'lr': 1.0929672020550185e-05, 'gnorm': 0.528, 'elapsed': 1915.7, 'tok_per_s': 139849}
+{'step': 520, 'steps': 545, 'loss': 2.7475, 'lr': 1.04751262638575e-05, 'gnorm': 0.556, 'elapsed': 1946.4, 'tok_per_s': 140337}
+{'step': 530, 'steps': 545, 'loss': 2.8018, 'lr': 1.017123858587145e-05, 'gnorm': 0.557, 'elapsed': 1979.7, 'tok_per_s': 140627}
+{'step': 540, 'steps': 545, 'loss': 2.7976, 'lr': 1.0019037246300975e-05, 'gnorm': 0.521, 'elapsed': 2014.4, 'tok_per_s': 140806}
+{'step': 544, 'steps': 545, 'loss': 2.8294, 'lr': 1.000076154140151e-05, 'gnorm': 0.512, 'elapsed': 2030.4, 'tok_per_s': 140731}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.31s/it]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.31s/it]
+{'model': 'runs/B1_llama_R2_stage1/model', 'data': 'data/llama_R2', 'lr': 0.0001, 'seed': 0, 'steps': 545, 'tokens': 285736960, 'params': 1301350400, 'train_flops': 2231063443144704000, 'secs': 2032.1, 'gpus': 4, 'final_loss': 2.829383373260498}
+/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)

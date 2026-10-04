@@ -1,0 +1,77 @@
+
+==== Llama-3.2-1B
+base   ne=0.7665 en=0.7884 flores_ne=0.8629 bel_ne=0.277 chrf ne>en=32.4 en>ne=10.8 gen_Bps=5327
+-- A
+R0  ne=0.4737 en=0.7992 flores_ne=0.6115 bel_ne=0.287 chrf ne>en=32.3 en>ne=19.8 gen_Bps=5147 tokens=417M
+R1  ne=0.5336 en=0.8027 flores_ne=0.6478 bel_ne=0.268 chrf ne>en=27.2 en>ne=10.4 gen_Bps=6354 tokens=386M
+R2  ne=0.5394 en=0.7994 flores_ne=0.6714 bel_ne=0.266 chrf ne>en=27.8 en>ne=12.3 gen_Bps=9398 tokens=286M
+   ne:R2-R0  +0.0658 [+0.0649,+0.0667] worse
+   ne:R2-R1  +0.0058 [+0.0049,+0.0067] non-inferior
+   ne:R1-R0  +0.0600 [+0.0591,+0.0609] worse
+   en:R2-R0  +0.0003 [-0.0001,+0.0007] non-inferior
+   en:R2-R1  -0.0033 [-0.0036,-0.0029] better
+   en:R1-R0  +0.0035 [+0.0031,+0.0039] non-inferior
+   eq-compute R0: ne=0.5077 en=0.8139
+   eq-compute R1: ne=0.5619 en=0.8160
+-- B1
+R0  ne=0.7786 en=0.8499 flores_ne=0.8639 bel_ne=0.279 chrf ne>en=8.8 en>ne=9.1 gen_Bps=5349 tokens=417M
+R1  ne=0.8081 en=0.8539 flores_ne=0.9038 bel_ne=0.271 chrf ne>en=9.9 en>ne=4.2 gen_Bps=7521 tokens=386M
+R2  ne=0.5268 en=0.8396 flores_ne=0.6518 bel_ne=0.283 chrf ne>en=16.2 en>ne=15.4 gen_Bps=11078 tokens=286M
+   ne:R2-R0  -0.2517 [-0.2551,-0.2484] better
+   ne:R2-R1  -0.2813 [-0.2842,-0.2783] better
+   ne:R1-R0  +0.0296 [+0.0271,+0.0321] worse
+   en:R2-R0  -0.0104 [-0.0110,-0.0098] better
+   en:R2-R1  -0.0144 [-0.0149,-0.0138] better
+   en:R1-R0  +0.0040 [+0.0034,+0.0046] non-inferior
+
+==== Qwen3-0.6B
+base   ne=0.8516 en=0.8728 flores_ne=0.9451 bel_ne=0.290 chrf ne>en=26.0 en>ne=6.8 gen_Bps=2186
+-- A
+R0  ne=0.5007 en=0.8643 flores_ne=0.6312 bel_ne=0.270 chrf ne>en=20.1 en>ne=13.6 gen_Bps=3089 tokens=574M
+R1  ne=0.5609 en=0.8637 flores_ne=0.6886 bel_ne=0.253 chrf ne>en=11.6 en>ne=6.9 gen_Bps=4972 tokens=392M
+R2  ne=0.5702 en=0.8615 flores_ne=0.6885 bel_ne=0.266 chrf ne>en=17.0 en>ne=3.9 gen_Bps=7454 tokens=292M
+   ne:R2-R0  +0.0695 [+0.0684,+0.0706] worse
+   ne:R2-R1  +0.0094 [+0.0086,+0.0101] worse
+   ne:R1-R0  +0.0602 [+0.0593,+0.0611] worse
+   en:R2-R0  -0.0028 [-0.0031,-0.0025] better
+   en:R2-R1  -0.0022 [-0.0025,-0.0020] better
+   en:R1-R0  -0.0006 [-0.0008,-0.0003] better
+   eq-compute R0: ne=0.5490 en=0.8804
+   eq-compute R1: ne=0.6015 en=0.8720
+######## EOS-PREFIX DIAGNOSTIC
+
+==== Llama-3.2-1B
+base   ne=2.1036 en=1.6520 flores_ne=3.1010 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=-
+-- A
+R0  ne=0.4707 en=0.7986 flores_ne=0.6084 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=417M
+R1  ne=0.4829 en=0.7982 flores_ne=0.6193 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=386M
+R2  ne=0.5102 en=0.7950 flores_ne=0.6409 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=286M
+   ne:R2-R0  +0.0394 [+0.0387,+0.0402] worse
+   ne:R2-R1  +0.0273 [+0.0266,+0.0279] worse
+   ne:R1-R0  +0.0121 [+0.0116,+0.0127] worse
+   en:R2-R0  -0.0037 [-0.0040,-0.0033] better
+   en:R2-R1  -0.0032 [-0.0036,-0.0029] better
+   en:R1-R0  -0.0004 [-0.0007,-0.0001] better
+-- B1
+R0  ne=0.4705 en=0.8032 flores_ne=0.6091 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=417M
+R1  ne=0.4804 en=0.8021 flores_ne=0.6180 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=386M
+R2  ne=0.5011 en=0.7986 flores_ne=0.6298 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=286M
+   ne:R2-R0  +0.0306 [+0.0300,+0.0313] worse
+   ne:R2-R1  +0.0208 [+0.0202,+0.0214] worse
+   ne:R1-R0  +0.0099 [+0.0094,+0.0103] worse
+   en:R2-R0  -0.0046 [-0.0050,-0.0043] better
+   en:R2-R1  -0.0035 [-0.0038,-0.0031] better
+   en:R1-R0  -0.0012 [-0.0015,-0.0008] better
+
+==== Qwen3-0.6B
+base   ne=0.8516 en=0.8728 flores_ne=0.9451 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=-
+-- A
+R0  ne=0.5007 en=0.8643 flores_ne=0.6312 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=574M
+R1  ne=0.5609 en=0.8637 flores_ne=0.6886 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=392M
+R2  ne=0.5702 en=0.8615 flores_ne=0.6885 bel_ne=- chrf ne>en=- en>ne=- gen_Bps=- tokens=292M
+   ne:R2-R0  +0.0695 [+0.0684,+0.0706] worse
+   ne:R2-R1  +0.0094 [+0.0086,+0.0101] worse
+   ne:R1-R0  +0.0602 [+0.0593,+0.0611] worse
+   en:R2-R0  -0.0028 [-0.0031,-0.0025] better
+   en:R2-R1  -0.0022 [-0.0025,-0.0020] better
+   en:R1-R0  -0.0006 [-0.0008,-0.0003] better

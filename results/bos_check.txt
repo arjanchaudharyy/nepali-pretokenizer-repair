@@ -1,0 +1,5 @@
+# BOS-prefix diagnostic, run 2026-10-04 on the GPU box (chk_bos.py, 40 held-out Nepali docs, first 1500 chars each)
+# model                      BPB after BOS   BPB after EOS   ||e_BOS||   ||e_EOS||   mean ||e||
+models/llama_R0 (base)       0.7201          1.865           0.863       0.968       0.987
+runs/llama_R0_s0/model       0.4412          0.4383          0.860       0.962       0.977
+runs/B1_llama_R0/model       0.7583          0.4381          0.896       1.028       0.985

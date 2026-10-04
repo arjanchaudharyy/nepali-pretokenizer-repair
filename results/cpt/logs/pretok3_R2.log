@@ -1,0 +1,1 @@
+{"tokenizer": "tok/Llama-3.2-1B/R2_K32000/tokenizer.json", "eos_id": 128001, "ne_docs": 506382, "en_docs": 627856, "ne_bytes": 3000005221, "en_bytes": 3000000055, "ne_tokens": 226456463, "en_tokens": 632695112, "total_tokens": 859151575, "vocab": 160256, "secs": 463.5}

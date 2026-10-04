@@ -1,0 +1,37 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 9434.26it/s]
+Loading weights: 100%|██████████| 146/146 [00:00<00:00, 9670.71it/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 9708.27it/s]
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 9180.94it/s]
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
+{'step': 0, 'steps': 79, 'loss': 2.4082, 'lr': 0.001, 'gnorm': 0.347, 'elapsed': 3.7, 'tok_per_s': 141042}
+{'step': 10, 'steps': 79, 'loss': 2.4274, 'lr': 0.0009707573092084368, 'gnorm': 0.905, 'elapsed': 30.3, 'tok_per_s': 190410}
+{'step': 20, 'steps': 79, 'loss': 2.3353, 'lr': 0.0008745411013047165, 'gnorm': 0.456, 'elapsed': 58.3, 'tok_per_s': 188874}
+{'step': 30, 'steps': 79, 'loss': 2.3247, 'lr': 0.0007263849744370337, 'gnorm': 0.301, 'elapsed': 85.0, 'tok_per_s': 191256}
+{'step': 40, 'steps': 79, 'loss': 2.2683, 'lr': 0.00055, 'gnorm': 0.256, 'elapsed': 112.8, 'tok_per_s': 190641}
+{'step': 50, 'steps': 79, 'loss': 2.234, 'lr': 0.00037361502556296634, 'gnorm': 0.229, 'elapsed': 143.2, 'tok_per_s': 186735}
+{'step': 60, 'steps': 79, 'loss': 2.2233, 'lr': 0.00022545889869528352, 'gnorm': 0.203, 'elapsed': 174.6, 'tok_per_s': 183221}
+{'step': 70, 'steps': 79, 'loss': 2.1712, 'lr': 0.0001292426907915634, 'gnorm': 0.183, 'elapsed': 205.3, 'tok_per_s': 181318}
+{'step': 78, 'steps': 79, 'loss': 2.2109, 'lr': 0.00010036495082279369, 'gnorm': 0.172, 'elapsed': 224.9, 'tok_per_s': 184187}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.29s/it]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.29s/it]
+{'model': 'models/llama_R0', 'data': 'data/llama_R0', 'lr': 0.001, 'seed': 0, 'steps': 79, 'tokens': 41418752, 'params': 1235814400, 'train_flops': 307115340909772800, 'secs': 225.0, 'gpus': 4, 'final_loss': 2.2109341621398926}
+/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)

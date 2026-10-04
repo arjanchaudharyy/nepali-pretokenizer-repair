@@ -4,7 +4,7 @@ A = json.load(open("results/cpt_analysis.json"))
 EXPNAME = {"A": "1\\,GB", "B1": "1\\,GB + warm-up", "B3": "3\\,GB + warm-up"}
 ARMN = {"R0": "\\RO{}", "R1": "\\RI{}", "R2": "\\RII{}"}
 L = [r"\begin{table*}[t]", r"\centering\small", r"\setlength{\tabcolsep}{4pt}",
-     r"\begin{tabular}{lllrrrrrrrr}", r"\toprule",
+     r"\resizebox{\textwidth}{!}{%", r"\begin{tabular}{lllrrrrrrrr}", r"\toprule",
      r"Model & Data & Arm & Tokens & ne BPB$\downarrow$ & en BPB$\downarrow$ & FLORES ne$\downarrow$ & Belebele ne & chrF ne$\to$en & chrF en$\to$ne & Gen.\ B/s \\",
      r"\midrule"]
 f = lambda r, k, fmt: format(r[k], fmt) if r and r.get(k) is not None else "--"
@@ -31,8 +31,8 @@ for m, d in A.items():
         L.append(r"\addlinespace")
     L.append(r"\midrule")
 L[-1] = r"\bottomrule"
-L += [r"\end{tabular}",
-      r"\caption{Continued pretraining on identical bytes per arm (one seed). BPB: bits per byte on held-out native text split into ${\sim}$2{,}000-byte pieces (primary metric) and on FLORES-200 devtest. Belebele: zero-shot accuracy (900 items, chance 0.25), scored on answer text. chrF++: 5-shot FLORES-200 devtest translation. Gen.\ B/s: UTF-8 bytes of Nepali generated per second (batch 64, greedy). Tokens: training tokens seen. Bold: best Nepali BPB within each block.}",
+L += [r"\end{tabular}}",
+      r"\caption{Continued pretraining on identical bytes per arm (one seed). BPB: bits per byte on held-out native text split into ${\sim}$2{,}000-byte pieces (primary metric) and on FLORES-200 devtest. Belebele: zero-shot accuracy (900 items, chance 0.25), scored on answer text. chrF++: 5-shot FLORES-200 devtest translation. Gen.\ B/s: UTF-8 bytes of Nepali generated per second (batch 64, greedy). Tokens: training tokens seen (for B1, excluding the embedding warm-up on the first 10\% of the same stream). Bold: best Nepali BPB within each block. All BPB here use the registered prefix; the B1 Llama rows are dominated by the scoring artifact of \S\ref{sec:cpt}, and Table~\ref{tab:prefix} gives the training-separator comparison.}",
       r"\label{tab:cpt}", r"\end{table*}"]
 open("paper/sections/cpt_table.tex", "w").write("\n".join(l for l in L if l) + "\n")
 tests = {m: {e: x["tests"] for e, x in d["exps"].items()} for m, d in A.items()}

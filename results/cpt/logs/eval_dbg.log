@@ -1,0 +1,6 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:  82%|████████▏ | 120/146 [00:00<00:00, 1163.45it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 1272.65it/s]
+hf loss nats/token 3.6397969722747803 bpb 1.3127792604358723
+mine eos-prefix nll 5.155475269664418
+mine nll_tokens 5.155475269664418
+bos 128000 eos 128001

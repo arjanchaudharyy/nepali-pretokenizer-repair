@@ -1,0 +1,6 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights:   7%|▋         | 23/310 [00:00<00:01, 226.82it/s]Loading weights:  45%|████▌     | 140/310 [00:00<00:00, 773.77it/s]Loading weights:  85%|████████▌ | 264/310 [00:00<00:00, 977.56it/s]Loading weights: 100%|██████████| 310/310 [00:00<00:00, 954.47it/s]
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights:   0%|          | 1/310 [00:00<00:57,  5.36it/s]Loading weights:  26%|██▌       | 81/310 [00:00<00:00, 349.40it/s]Loading weights:  51%|█████     | 157/310 [00:00<00:00, 498.76it/s]Loading weights:  77%|███████▋  | 239/310 [00:00<00:00, 605.79it/s]Loading weights: 100%|██████████| 310/310 [00:00<00:00, 526.30it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.82s/it]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.82s/it]
+{"base": "Qwen/Qwen3-0.6B-Base", "ext": "tok/Qwen3-1.7B-Base/R1_K32000", "new_rows": 32000, "first_new_id": 151669, "tied": true, "english_logit_maxdiff": 0.0}
