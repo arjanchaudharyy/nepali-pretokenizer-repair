@@ -1,0 +1,4 @@
+.venv/
+flores200_dataset/
+flores200.tar.gz
+__pycache__/
