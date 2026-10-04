@@ -2,3 +2,5 @@
 flores200_dataset/
 flores200.tar.gz
 __pycache__/
+data/
+tok/

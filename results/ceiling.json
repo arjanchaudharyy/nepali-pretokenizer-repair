@@ -1,0 +1,28 @@
+{
+ "npi_Deva": {
+  "pretok_A": 59578,
+  "pretok_B": 21530,
+  "ratio": 2.7672085462145843
+ },
+ "hin_Deva": {
+  "pretok_A": 64563,
+  "pretok_B": 28788,
+  "ratio": 2.2427052938724468
+ },
+ "eng_Latn": {
+  "pretok_A": 25406,
+  "pretok_B": 25406,
+  "ratio": 1.0
+ },
+ "amh_Ethi": {
+  "pretok_A": 20076,
+  "pretok_B": 20076,
+  "ratio": 1.0
+ },
+ "rus_Cyrl": {
+  "pretok_A": 23721,
+  "pretok_B": 23720,
+  "ratio": 1.0000421585160202
+ },
+ "eng_pretok_diff_sentences": 0
+}
