@@ -4,3 +4,7 @@ flores200.tar.gz
 __pycache__/
 data/
 tok/
+arxiv_submission.tar.gz
+*.aux
+*.log
+*.out
