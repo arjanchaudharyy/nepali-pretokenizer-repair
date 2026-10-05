@@ -13,7 +13,7 @@ base_model: meta-llama/Llama-3.2-1B
 
 # Llama-3.2-Nepali-Extended-Tokenizer-32k
 
-**Built with Llama.** A tokenizer for Llama-3.x models extended for Nepali, from the paper *Extend or Repair? Vocabulary Extension Cannot Cross a Pre-Tokenizer Boundary* (Chaudhary, Sharma and Dhakal, Naamche Labs, 2026). Code, data and pre-registration: https://github.com/arjanchaudharyy/nepali-pretokenizer-repair
+**Built with Llama.** A tokenizer for Llama-3.x models extended for Nepali, from the paper *Extend or Repair? Vocabulary Extension Cannot Cross a Pre-Tokenizer Boundary* (Chaudhary and Dhakal, Naamche Labs, 2026). Code, data and pre-registration: https://github.com/arjanchaudharyy/nepali-pretokenizer-repair
 
 ## What it is
 
@@ -52,7 +52,7 @@ This tokenizer is derived from Llama 3.2 and is distributed under the Llama 3.2 
 ```bibtex
 @misc{chaudhary2026extend,
   title  = {Extend or Repair? Vocabulary Extension Cannot Cross a Pre-Tokenizer Boundary},
-  author = {Chaudhary, Aarjan and Sharma, Shrey and Dhakal, Navyata},
+  author = {Chaudhary, Aarjan and Dhakal, Navyata},
   year   = {2026},
   note   = {Naamche Labs. Preprint.},
   url    = {https://github.com/arjanchaudharyy/nepali-pretokenizer-repair}

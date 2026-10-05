@@ -5,7 +5,7 @@ any language model was trained. Experiment 1 (the production sweep,
 `results/sweep_devtest.json`) had already been run and motivates these hypotheses;
 it is observational and is not used to test them.
 
-Authors: Aarjan Chaudhary, Shrey Sharma, Navyata Dhakal.
+Authors: Aarjan Chaudhary, Navyata Dhakal.
 
 ## The claim under test
 

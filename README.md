@@ -1,6 +1,6 @@
 # Extend or Repair? Vocabulary Extension Cannot Cross a Pre-Tokenizer Boundary
 
-Code and data for the paper by **Aarjan Chaudhary, Shrey Sharma and Navyata Dhakal**.
+Code and data for the paper by **Aarjan Chaudhary and Navyata Dhakal**.
 
 Many deployed open LLMs (Llama-3.x, Qwen2.5/3, GLM, Phi-4, OLMo-2, Granite, LFM2)
 pre-tokenize text with a regex whose word class is `\p{L}+`. Vowel signs in
