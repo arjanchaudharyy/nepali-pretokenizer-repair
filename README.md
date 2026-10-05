@@ -1,4 +1,4 @@
-# Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: Repairing Deployed LLMs for Nepali, and What It Costs
+# Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: An English-Preserving Repair for Nepali and Its Cost in Continued Pretraining
 
 Code and data for the paper by **Aarjan Chaudhary** (Naamche Labs).
 
@@ -58,8 +58,8 @@ pre-tokenizer from a hard-coded pattern when it loads, which silently undoes a r
 | `box/init_model.py` | Embedding resize and mean initialisation, with exactness check |
 | `box/train.py` | Continued pretraining (DDP), optional embedding-only warm-up |
 | `box/eval.py` | Per-byte evaluation: BPB, Belebele, FLORES chrF++, generation speed |
-| `analyze_cpt.py` | Pre-registered paired-bootstrap analysis |
-| `PREREG*.md` | Pre-registration and amendments (see git history for timestamps) |
+| `analyze_cpt.py` | Paired-bootstrap analysis (plan in `PREREG*.md`) |
+| `PREREG*.md` | Analysis plan and amendments; the paper (Appendix) maps file names to its numbering and lists every change made after seeing results |
 | `results/` | All measured numbers as JSON |
 | `paper/` | LaTeX source |
 

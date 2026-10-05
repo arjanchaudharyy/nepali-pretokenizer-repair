@@ -39,7 +39,7 @@ L += [r"\end{tabular}",
       r"The base Llama model was never trained without its beginning-of-sequence token, so its separator score is not meaningful (n/a). "
       r"All columns other than sep.\ use the registered prefix; for the Llama warm-up runs they are dominated by the scoring artifact of \S\ref{sec:cpt} and should not be compared with the main runs. "
       r"1\,GB, BOS in training: the BOS-consistent rerun, i.e.\ the main runs repeated with every training document wrapped as BOS, document, end-of-text (third amendment); its sep.\ column is scored after the end-of-text token, which these models never saw directly before text. Belebele, translation and generation speed were not run for it (--). "
-      r"Belebele: zero-shot accuracy on 900 items (chance 0.25); every value lies between 0.25 and 0.29 with 95\% intervals of about $\pm$0.03, so it cannot separate the arms. chrF++: 5-shot FLORES-200 devtest translation, single greedy pass, no intervals. "
+      r"Belebele: zero-shot accuracy on 900 items (chance 0.25); every value lies between 0.25 and 0.29 with 95\% intervals of about $\pm$0.03, so it cannot separate the arms. chrF++: 5-shot FLORES-200 devtest translation, single greedy pass, no intervals, keeping only the first line of output (empty if the model starts with a newline), so we draw no conclusions from it. "
       r"Gen.\ B/s: UTF-8 bytes of Nepali generated per second, measured on GPUs shared with concurrent training runs; it is noisy (the base and \RO{} Qwen models share tokenizer and architecture yet differ by 41\%) and we do not draw conclusions from it.}",
       r"\label{tab:cpt}", r"\end{table*}"]
 open("paper/sections/cpt_table.tex", "w").write("\n".join(L) + "\n")

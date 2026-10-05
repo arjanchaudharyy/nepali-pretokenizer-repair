@@ -13,7 +13,7 @@ base_model: meta-llama/Llama-3.2-1B
 
 # Llama-3.2-Nepali-Extended-Tokenizer-32k
 
-**Built with Llama.** A tokenizer for Llama-3.x models extended for Nepali, from the paper *Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: Repairing Deployed LLMs for Nepali, and What It Costs* (Chaudhary, Naamche Labs, 2026). Code, data and pre-registration: https://github.com/arjanchaudharyy/nepali-pretokenizer-repair
+**Built with Llama.** A tokenizer for Llama-3.x models extended for Nepali, from the paper *Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: An English-Preserving Repair for Nepali and Its Cost in Continued Pretraining* (Chaudhary, Naamche Labs, 2026). Code, data and pre-registration: https://github.com/arjanchaudharyy/nepali-pretokenizer-repair
 
 ## What it is
 
@@ -41,7 +41,7 @@ tok = AutoTokenizer.from_pretrained("Aarjan/Llama-3.2-Nepali-Extended-Tokenizer-
 
 ## Limitations
 
-In the paper's small continued-pretraining experiments (1B and 0.6B models, 2 GB of text, one seed), extending the vocabulary of either kind gave worse held-out Nepali bits per byte than keeping the original vocabulary, and the repaired tokenizer was 2 to 6 percent worse on Nepali than standard extension while needing 26 percent fewer training tokens. Read the paper before relying on this tokenizer for a production model.
+In the paper's small continued-pretraining experiments (1B and 0.6B models, 2 GB of text, one seed), extending the vocabulary of either kind gave worse held-out Nepali bits per byte than keeping the original vocabulary, and the repaired tokenizer was 2 to 6 percent worse on Nepali than standard extension; at equal bytes it also trained for 26 percent fewer steps, which may account for part of that gap. It needs less than half as many decoding steps as standard extension for the same Nepali text. Read the paper before relying on this tokenizer for a production model.
 
 ## Licence
 
@@ -51,7 +51,7 @@ This tokenizer is derived from Llama 3.2 and is distributed under the Llama 3.2 
 
 ```bibtex
 @misc{chaudhary2026extend,
-  title  = {Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: Repairing Deployed LLMs for Nepali, and What It Costs},
+  title  = {Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: An English-Preserving Repair for Nepali and Its Cost in Continued Pretraining},
   author = {Chaudhary, Aarjan},
   year   = {2026},
   note   = {Naamche Labs. Preprint.},
