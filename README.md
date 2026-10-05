@@ -1,4 +1,4 @@
-# Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: An English-Preserving Repair for Nepali and Its Cost in Continued Pretraining
+# Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: An English-Preserving Repair for Nepali, Tested in Continued Pretraining
 
 Code and data for the paper by **Aarjan Chaudhary** (Naamche Labs).
 

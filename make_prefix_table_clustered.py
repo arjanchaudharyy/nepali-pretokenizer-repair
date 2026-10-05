@@ -79,16 +79,10 @@ L += [r"\midrule",
       f"{r['qwen']['R0_over_R2']:.2f} / {r['qwen']['R1_over_R2']:.2f} / 1 \\\\",
       r"\bottomrule", r"\end{tabular}"]
 nd = CB["docs"]["ne"]
-L += [r"\caption{Continued pretraining on the same 1\,GB of Nepali and 1\,GB of English in every arm (one run per arm). "
-      r"BPB: bits per byte on held-out native Nepali, scored in pieces of about 2{,}000 bytes. "
-      r"Registered prefix: the beginning-of-sequence token, as pre-registered. "
-      r"Training separator (sep.): the end-of-text token that preceded every document in the main and warm-up runs (a post hoc diagnostic). "
-      r"BOS rerun: the three Llama arms retrained exactly as in the main runs except that every training document is wrapped as BOS, document, end-of-text (third amendment, registered before running); it has no prefix artifact and is our main Llama result. "
-      r"Qwen has no beginning-of-sequence token, so both prefixes are the end-of-text token. "
-      f"Intervals resample {nd['docs']} documents ({nd['pieces']:,} pieces; a piece shorter than 1{{,}}900 bytes is taken to end a document) "
-      r"and reflect only the sampling of evaluation text. "
-      r"Warm-up runs under the registered prefix and all secondary metrics are in Table~\ref{tab:cpt}. "
-      r"Training tokens and decoding steps are given as \RO{} / \RI{} / \RII{}; decoding steps are the tokens needed for FLORES-200 Nepali devtest, relative to \RII{}.}",
+L += [r"\caption{Continued pretraining, one run per arm, on the same 1\,GB of Nepali and 1\,GB of English. \textbf{Our results are the BOS-rerun (Llama) and Qwen columns}; the other Llama columns show the scoring artifact of \S\ref{sec:cpt}. "
+      r"BPB: held-out native Nepali, in pieces of about 2{,}000 bytes, scored after the registered prefix (BOS for Llama; end-of-text for Qwen, which has no BOS) or the training separator (end-of-text; a post hoc diagnostic). "
+      f"Intervals resample {nd['docs']} documents and reflect only the sampling of evaluation text. "
+      r"Training tokens and decoding steps (FLORES Nepali, relative to \RII{}) are \RO{} / \RI{} / \RII{}. Secondary metrics: Table~\ref{tab:cpt}.}",
       r"\label{tab:prefix}", r"\end{table*}"]
 out = "\n".join(L).replace(f"{nd['pieces']:,}", f"{nd['pieces']:,}".replace(",", "{,}")) + "\n"
 open("paper/sections/prefix_table.tex", "w").write(out)

@@ -1,0 +1,50 @@
+{
+ "Llama-3": {
+  "full_pipeline_floor": 2.1927054580251,
+  "audit_regex_floor": 2.1927054580251
+ },
+ "Llama-4": {
+  "full_pipeline_floor": 0.7961771665187815,
+  "audit_regex_floor": 0.7961771665187815
+ },
+ "Qwen2.5": {
+  "full_pipeline_floor": 2.1732739582201948,
+  "audit_regex_floor": 2.1732739582201948
+ },
+ "DeepSeek-V3": {
+  "full_pipeline_floor": 0.800451166746792,
+  "audit_regex_floor": 0.7829961909692689
+ },
+ "Mistral-NeMo": {
+  "full_pipeline_floor": 0.7900600136558019,
+  "audit_regex_floor": 0.7900600136558019
+ },
+ "GLM-4.5": {
+  "full_pipeline_floor": 2.191576236895347,
+  "audit_regex_floor": 2.191576236895347
+ },
+ "GLM-5.3": {
+  "full_pipeline_floor": 2.191576236895347,
+  "audit_regex_floor": 2.191576236895347
+ },
+ "Falcon3": {
+  "full_pipeline_floor": 3.9605668967542957,
+  "audit_regex_floor": 3.2083639300925246
+ },
+ "Arkios": {
+  "full_pipeline_floor": 0.79148718697525,
+  "audit_regex_floor": 0.7792947360735928
+ },
+ "Qwen3.5": {
+  "full_pipeline_floor": 0.7984017435524882,
+  "audit_regex_floor": 0.7984017435524882
+ },
+ "LFM2": {
+  "full_pipeline_floor": 2.1512963096699647,
+  "audit_regex_floor": 2.1512963096699647
+ },
+ "TituLLM": {
+  "full_pipeline_floor": 0.7853484172900468,
+  "audit_regex_floor": 0.7827689132918156
+ }
+}
