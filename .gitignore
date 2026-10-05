@@ -11,3 +11,5 @@ arxiv_submission.tar.gz
 .gstack/
 hf_release/*/tokenizer.json
 review/
+*.lastlog
+*.blg
