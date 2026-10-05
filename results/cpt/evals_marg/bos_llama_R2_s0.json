@@ -1,0 +1,10 @@
+{
+ "model": "/home/ntt/runs/bos_llama_R2_s0/model",
+ "base": "/home/ntt/models/llama_R0",
+ "pieces": 2259,
+ "identical": 4,
+ "bpb_canonical": 0.5089265146028453,
+ "bpb_two": 0.5089265106982477,
+ "bpb_base_tok": 1.2889722788083335,
+ "share_base_wins": 0.0
+}

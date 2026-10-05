@@ -41,7 +41,7 @@ tok = AutoTokenizer.from_pretrained("Aarjan/Qwen3-Nepali-Extended-Tokenizer-32k"
 
 ## Limitations
 
-In the paper's small continued-pretraining experiments (1B and 0.6B models, 2 GB of text, one seed), extending the vocabulary of either kind gave worse held-out Nepali bits per byte than keeping the original vocabulary, and the repaired tokenizer scored 1.6 (Qwen) to 5 (Llama) percent worse on Nepali than standard extension. At equal bytes it also trained for 26 percent fewer steps, and on Qwen standard extension stopped at the same step count was level with it, so that gap is not established as a cost of the tokenizer. It needs less than half as many decoding steps as standard extension on reference Nepali text, and about a third fewer on the models' own generations. Read the paper before relying on this tokenizer for a production model.
+In the paper's small continued-pretraining experiments (1B and 0.6B models, 2 GB of text, one seed), extending the vocabulary of either kind gave worse held-out Nepali bits per byte than keeping the original vocabulary, and at equal bytes the repaired tokenizer scored worse on Nepali than standard extension, but it also trained for 26 percent fewer steps. Retrained for the same number of steps, it beat standard extension on Qwen3 (by 0.012 bits per byte) and halved the gap on Llama 3.2 (still 0.012 behind). It needs less than half as many decoding steps as standard extension on reference Nepali text, and about a third fewer on the models' own generations. Read the paper before relying on this tokenizer for a production model.
 
 ## Licence
 

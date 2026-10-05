@@ -1,0 +1,10 @@
+{
+ "model": "/home/ntt/runs/qwen_R0_s0/model",
+ "base": "/home/ntt/models/qwen_R0",
+ "pieces": 2259,
+ "identical": 2259,
+ "bpb_canonical": 0.5007050444717446,
+ "bpb_two": 0.5007050444717446,
+ "bpb_base_tok": 0.5007050444717446,
+ "share_base_wins": 0.0
+}
