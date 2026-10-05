@@ -33,6 +33,8 @@ p.add_argument("--save", type=int, default=1)
 p.add_argument("--ckpt", type=int, default=0)
 p.add_argument("--only_embed", type=int, default=0)  # stage 1: train only the (tied) embedding matrix
 p.add_argument("--save_at", type=int, default=0)  # also save a checkpoint after this many steps (equal-compute comparison)
+p.add_argument("--target_steps", type=int, default=0)  # amendment 5: train this many steps; windows past one epoch
+# come from a second permutation (seed + 1000), i.e. a fixed random subset of the stream is seen twice
 a = p.parse_args()
 
 dist.init_process_group("nccl")
@@ -50,6 +52,10 @@ order = np.random.default_rng(a.seed).permutation(n_win)
 accum = a.global_batch // (a.micro * world)
 assert accum * a.micro * world == a.global_batch
 steps = n_win // a.global_batch
+if a.target_steps > steps:
+    extra = (a.target_steps - steps) * a.global_batch
+    order = np.concatenate([order[:steps * a.global_batch], np.random.default_rng(a.seed + 1000).permutation(n_win)[:extra]])
+    steps = a.target_steps
 if a.max_steps:
     steps = min(steps, a.max_steps)
 warm = max(1, int(0.01 * steps))
