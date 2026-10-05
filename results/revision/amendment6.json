@@ -314,5 +314,42 @@
    0.5007050444717446,
    0.5003090403768115
   ]
+ },
+ "qwen_lr3_msR2_minus_lr1_R0": {
+  "a": [
+   "lr3_ms_qwen_R2_s0"
+  ],
+  "b": [
+   "qwen_R0_s0",
+   "qwen_R0_s1"
+  ],
+  "diff": 0.0030246340503056455,
+  "piece": [
+   0.0021777905129414933,
+   0.00384790140745599
+  ],
+  "cluster": [
+   0.0013990235731985946,
+   0.00463523185062007
+  ],
+  "verdict": "non-inferior",
+  "bpb_a": 0.5035316764745836,
+  "bpb_b": 0.500507042424278,
+  "bpb_a_seeds": [
+   0.5035316764745836
+  ],
+  "bpb_b_seeds": [
+   0.5007050444717446,
+   0.5003090403768115
+  ]
+ },
+ "qwen_lr3_R0_minus_lr1_R0": {
+  "missing": "lr3_qwen_R0_s0.per.json'"
+ },
+ "qwen_lr3_msR2_minus_lr3_R0": {
+  "missing": "lr3_qwen_R0_s0.per.json'"
+ },
+ "qwen_lr3_R1_minus_lr3_R0": {
+  "missing": "lr3_qwen_R0_s0.per.json'"
  }
 }
