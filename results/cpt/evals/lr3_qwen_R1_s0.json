@@ -1,0 +1,15 @@
+{
+ "model": "runs/lr3_qwen_R1_s0/model",
+ "vocab": 183669,
+ "bpb_flores_ne": 0.6440520112952276,
+ "bpb_flores_en": 1.0607652532496878,
+ "bpb_native_ne": 0.4637605425355837,
+ "bytes_native_ne": 4001293,
+ "bpb_native_en": 0.8156599214930116,
+ "bytes_native_en": 4042178,
+ "bpb_chunk2k_ne": 0.5091965876805796,
+ "bpb_chunk2k_en": 0.8747661937715866,
+ "ne_tokens_per_byte": 0.1779380920959608,
+ "en_tokens_per_byte": 0.20909792877906977,
+ "secs": 200.2
+}
