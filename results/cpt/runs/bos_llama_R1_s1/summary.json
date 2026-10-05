@@ -1,0 +1,13 @@
+{
+ "model": "models/llama_R1",
+ "data": "data/llamabos_R1",
+ "lr": 0.0001,
+ "seed": 1,
+ "steps": 737,
+ "tokens": 386400256,
+ "params": 1301350400,
+ "train_flops": 3017052766234214400,
+ "secs": 1908.0,
+ "gpus": 4,
+ "final_loss": 2.0558483600616455
+}

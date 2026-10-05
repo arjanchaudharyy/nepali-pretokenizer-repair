@@ -1,0 +1,116 @@
+{
+ "qwen_2seed_msR2_minus_R1": {
+  "a": [
+   "ms_qwen_R2_s0",
+   "ms_qwen_R2_s1"
+  ],
+  "b": [
+   "qwen_R1_s0",
+   "qwen_R1_s1"
+  ],
+  "diff": -0.009903118709812232,
+  "piece": [
+   -0.01060132698183942,
+   -0.009228203965052513
+  ],
+  "cluster": [
+   -0.010949272483371091,
+   -0.008806295415627623
+  ],
+  "verdict": "better",
+  "bpb_a": 0.5494564350986492,
+  "bpb_b": 0.5593595538084615,
+  "bpb_a_seeds": [
+   0.5490567417928722,
+   0.5498561284044259
+  ],
+  "bpb_b_seeds": [
+   0.5608875458153034,
+   0.5578315618016195
+  ]
+ },
+ "qwen_2seed_msR2_minus_R0": {
+  "missing": "qwen_R0_s1.per.json'"
+ },
+ "qwen_2seed_R1_minus_R0": {
+  "missing": "qwen_R0_s1.per.json'"
+ },
+ "qwen_2seed_R2_minus_R1": {
+  "a": [
+   "qwen_R2_s0",
+   "qwen_R2_s1"
+  ],
+  "b": [
+   "qwen_R1_s0",
+   "qwen_R1_s1"
+  ],
+  "diff": 0.012203090569962076,
+  "piece": [
+   0.011511364046589017,
+   0.012899946574187608
+  ],
+  "cluster": [
+   0.011230902777188585,
+   0.013229300234373886
+  ],
+  "verdict": "worse",
+  "bpb_a": 0.5715626443784235,
+  "bpb_b": 0.5593595538084615,
+  "bpb_a_seeds": [
+   0.570249672930795,
+   0.5728756158260522
+  ],
+  "bpb_b_seeds": [
+   0.5608875458153034,
+   0.5578315618016195
+  ]
+ },
+ "llama_2seed_msR2_minus_R1": {
+  "a": [
+   "ms_bos_llama_R2_s0",
+   "ms_bos_llama_R2_s1"
+  ],
+  "b": [
+   "bos_llama_R1_s0",
+   "bos_llama_R1_s1"
+  ],
+  "diff": 0.012007266827590408,
+  "piece": [
+   0.011454549962652882,
+   0.012565003521029152
+  ],
+  "cluster": [
+   0.011151919054493377,
+   0.01289887794989779
+  ],
+  "verdict": "worse",
+  "bpb_a": 0.4952691916056141,
+  "bpb_b": 0.4832619247780237,
+  "bpb_a_seeds": [
+   0.4957091824666969,
+   0.49482920074453135
+  ],
+  "bpb_b_seeds": [
+   0.48332060439193203,
+   0.48320324516411545
+  ]
+ },
+ "llama_2seed_msR2_minus_R0": {
+  "missing": "bos_llama_R0_s1.per.json'"
+ },
+ "llama_2seed_R1_minus_R0": {
+  "missing": "bos_llama_R0_s1.per.json'"
+ },
+ "qwen_lr3_msR2_minus_R1": {
+  "missing": "lr3_ms_qwen_R2_s0.per.json'"
+ },
+ "qwen_lr3_R1_minus_lr1_R1": {
+  "missing": "lr3_qwen_R1_s0.per.json'"
+ },
+ "qwen_lr3_msR2_minus_lr1_msR2": {
+  "missing": "lr3_ms_qwen_R2_s0.per.json'"
+ },
+ "qwen_lr3_R1_minus_R0": {
+  "missing": "lr3_qwen_R1_s0.per.json'"
+ }
+}
