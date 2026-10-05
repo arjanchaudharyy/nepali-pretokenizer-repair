@@ -13,7 +13,7 @@ base_model: Qwen/Qwen3-1.7B-Base
 
 # Qwen3-Nepali-Extended-Tokenizer-32k
 
-A tokenizer for Qwen3 models extended for Nepali, from the paper *Extend or Repair? Vocabulary Extension Cannot Cross a Pre-Tokenizer Boundary* (Chaudhary and Dhakal, Naamche Labs, 2026). Code, data and pre-registration: https://github.com/arjanchaudharyy/nepali-pretokenizer-repair
+A tokenizer for Qwen3 models extended for Nepali, from the paper *Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: Repairing Deployed LLMs for Nepali, and What It Costs* (Chaudhary, Naamche Labs, 2026). Code, data and pre-registration: https://github.com/arjanchaudharyy/nepali-pretokenizer-repair
 
 ## What it is
 
@@ -51,8 +51,8 @@ Apache-2.0, as for the Qwen3 base tokenizer (see LICENSE).
 
 ```bibtex
 @misc{chaudhary2026extend,
-  title  = {Extend or Repair? Vocabulary Extension Cannot Cross a Pre-Tokenizer Boundary},
-  author = {Chaudhary, Aarjan and Dhakal, Navyata},
+  title  = {Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: Repairing Deployed LLMs for Nepali, and What It Costs},
+  author = {Chaudhary, Aarjan},
   year   = {2026},
   note   = {Naamche Labs. Preprint.},
   url    = {https://github.com/arjanchaudharyy/nepali-pretokenizer-repair}

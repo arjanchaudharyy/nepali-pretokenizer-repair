@@ -1,6 +1,6 @@
-# Extend or Repair? Vocabulary Extension Cannot Cross a Pre-Tokenizer Boundary
+# Merge-Based Vocabulary Extension Stalls at the Pre-Tokenizer: Repairing Deployed LLMs for Nepali, and What It Costs
 
-Code and data for the paper by **Aarjan Chaudhary and Navyata Dhakal**.
+Code and data for the paper by **Aarjan Chaudhary** (Naamche Labs).
 
 Many deployed open LLMs (Llama-3.x, Qwen2.5/3, GLM, Phi-4, OLMo-2, Granite, LFM2)
 pre-tokenize text with a regex whose word class is `\p{L}+`. Vowel signs in
