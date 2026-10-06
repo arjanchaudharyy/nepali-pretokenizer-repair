@@ -50,18 +50,19 @@ pre-tokenizer from a hard-coded pattern when it loads, which silently undoes a r
 | `floorcheck.py` | One-command floor diagnostic |
 | `measure.py`, `tok_registry.py`, `audit.py` | Production audit of 33 tokenizers on 36 FLORES languages |
 | `ceiling.py` | Pre-token floors |
-| `released_extensions.py` | 12 released vocabulary extensions vs their floors |
-| `box/retrofit_tok.py` | Repair + continued-BPE extension (R1, R2) |
-| `box/retrofit_tok_xl.py`, `box/xl_*.py` | Cross-script sweep (9 languages) |
+| `released_extensions.py` | Released vocabulary extensions vs their floors |
 | `tokenizer_extras.py` | Regex-only and added-token arms, syllable-break rates |
-| `box/prep.py`, `box/pretok.py` | Corpus cleaning (dedup, FLORES 10-gram decontamination), token streams |
-| `box/init_model.py` | Embedding resize and mean initialisation, with exactness check |
-| `box/train.py` | Continued pretraining (DDP), optional embedding-only warm-up |
-| `box/eval.py` | Per-byte evaluation: BPB, Belebele, FLORES chrF++, generation speed |
-| `analyze_cpt.py` | Paired-bootstrap analysis (plan in `PREREG*.md`) |
-| `PREREG*.md` | Analysis plan and amendments; the paper (Appendix) maps file names to its numbering and lists every change made after seeing results |
-| `results/` | All measured numbers as JSON |
-| `paper/` | LaTeX source |
+| `verify_retrofit.py` | Checks extended tokenizers: lossless decoding, English ids unchanged |
+| `analyze_cpt.py` | Continued-pretraining analysis (paired bootstrap) |
+| `results/revision/*.py` | Later analyses: clustered bootstrap, equal compute, matched steps, seeds, learning rate, two-tokenization scoring, full-pipeline floors |
+| `make_*.py`, `fig_*.py` | Every table and figure in the paper, generated from `results/` |
+| `box/` | GPU-box pipeline: data, tokenizers, training, evaluation (see `box/README.md`) |
+| `hf_release/` | Builder and model cards for the released tokenizers |
+| `PREREG*.md` | Analysis plan and amendments; the paper's appendix maps file names to its numbering and lists every change made after seeing results |
+| `results/` | All measured numbers, per-piece scores and training logs |
+| `logs/` | Logs of the tokenizer sweeps |
+| `paper/` | LaTeX source (`make_arxiv.sh` builds the PDFs and the arXiv bundle) |
+| `arxiv_preview.pdf` | The paper |
 
 ## Reproduce
 

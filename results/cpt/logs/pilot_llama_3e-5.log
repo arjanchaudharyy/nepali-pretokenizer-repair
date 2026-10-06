@@ -1,71 +1,0 @@
-
-*****************************************
-Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-*****************************************
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights: 100%|██████████| 146/146 [00:00<00:00, 39061.58it/s]
-Loading weights: 100%|██████████| 146/146 [00:00<00:00, 7176.14it/s]
-Loading weights: 100%|██████████| 146/146 [00:00<00:00, 8148.83it/s]
-Loading weights: 100%|██████████| 146/146 [00:00<00:00, 8877.35it/s]
-[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
-[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
-[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
-[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
-Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
-Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
-Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
-Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
-Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
-Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
-Backend impl 'liger_kernel.ops.backends._cutedsl.rope' for op 'rope' could not be imported: ImportError: cutedsl backend requires the NVIDIA CUTLASS Python DSL (CuTe DSL). Install it with `pip install nvidia-cutlass-dsl`, or when installing Liger-Kernel use `pip install 'liger-kernel[cutedsl]'`.
-Backend impl 'liger_kernel.ops.backends._ascend.rope' for op 'rope' could not be imported: ImportError: cannot import name 'tanh' from 'triton.language.math' (/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/triton/language/math.py)
-{'step': 0, 'steps': 200, 'loss': 3.0711, 'lr': 1.5e-05, 'gnorm': 18.309, 'elapsed': 5.1, 'tok_per_s': 103541}
-{'step': 10, 'steps': 200, 'loss': 2.6742, 'lr': 2.989138997321574e-05, 'gnorm': 1.831, 'elapsed': 45.5, 'tok_per_s': 126683}
-{'step': 20, 'steps': 200, 'loss': 2.538, 'lr': 2.945315514379572e-05, 'gnorm': 1.125, 'elapsed': 86.2, 'tok_per_s': 127728}
-{'step': 30, 'steps': 200, 'loss': 2.4819, 'lr': 2.868950826686939e-05, 'gnorm': 0.986, 'elapsed': 127.6, 'tok_per_s': 127412}
-{'step': 40, 'steps': 200, 'loss': 2.4422, 'lr': 2.7619633849302744e-05, 'gnorm': 0.857, 'elapsed': 166.2, 'tok_per_s': 129299}
-{'step': 50, 'steps': 200, 'loss': 2.4247, 'lr': 2.6270409514418447e-05, 'gnorm': 0.806, 'elapsed': 200.6, 'tok_per_s': 133306}
-{'step': 60, 'steps': 200, 'loss': 2.4274, 'lr': 2.46757307763585e-05, 'gnorm': 0.756, 'elapsed': 241.8, 'tok_per_s': 132270}
-{'step': 70, 'steps': 200, 'loss': 2.419, 'lr': 2.2875659509431218e-05, 'gnorm': 0.734, 'elapsed': 283.2, 'tok_per_s': 131462}
-{'step': 80, 'steps': 200, 'loss': 2.4058, 'lr': 2.0915417504785195e-05, 'gnorm': 0.695, 'elapsed': 324.6, 'tok_per_s': 130847}
-{'step': 90, 'steps': 200, 'loss': 2.3805, 'lr': 1.8844250398503562e-05, 'gnorm': 0.737, 'elapsed': 364.0, 'tok_per_s': 131055}
-{'step': 100, 'steps': 200, 'loss': 2.3682, 'lr': 1.6714190511769906e-05, 'gnorm': 0.684, 'elapsed': 387.6, 'tok_per_s': 136620}
-{'step': 110, 'steps': 200, 'loss': 2.3433, 'lr': 1.4578749683310654e-05, 'gnorm': 0.676, 'elapsed': 410.4, 'tok_per_s': 141808}
-{'step': 120, 'steps': 200, 'loss': 2.338, 'lr': 1.2491574933068294e-05, 'gnorm': 0.66, 'elapsed': 433.2, 'tok_per_s': 146437}
-{'step': 130, 'steps': 200, 'loss': 2.3566, 'lr': 1.050510072982205e-05, 'gnorm': 0.622, 'elapsed': 456.1, 'tok_per_s': 150601}
-{'step': 140, 'steps': 200, 'loss': 2.3614, 'lr': 8.669231720788827e-06, 'gnorm': 0.642, 'elapsed': 478.8, 'tok_per_s': 154393}
-{'step': 150, 'steps': 200, 'loss': 2.3448, 'lr': 7.0300890159646624e-06, 'gnorm': 0.605, 'elapsed': 501.6, 'tok_per_s': 157845}
-W1004 14:16:27.019000 19188 site-packages/torch/distributed/elastic/agent/server/api.py:739] Received Signals.SIGTERM death signal, shutting down workers
-W1004 14:16:27.020000 19188 site-packages/torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 19256 closing signal SIGTERM
-W1004 14:16:27.021000 19188 site-packages/torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 19257 closing signal SIGTERM
-W1004 14:16:27.021000 19188 site-packages/torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 19258 closing signal SIGTERM
-W1004 14:16:27.021000 19188 site-packages/torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 19259 closing signal SIGTERM
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/run.py", line 994, in <module>
-    main()
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
-    return f(*args, **kwargs)
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/run.py", line 990, in main
-    run(args)
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/run.py", line 981, in run
-    elastic_launch(
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 308, in launch_agent
-    result = agent.run()
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 134, in wrapper
-    result = f(*args, **kwargs)
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 731, in run
-    result = self._invoke_run(role)
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 908, in _invoke_run
-    time.sleep(monitor_interval)
-  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 86, in _terminate_process_handler
-    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
-torch.distributed.elastic.multiprocessing.api.SignalException: Process 19188 got signal: 15

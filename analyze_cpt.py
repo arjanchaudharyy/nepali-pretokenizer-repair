@@ -5,7 +5,7 @@ Experiments:
   A   Llama-3.2-1B and Qwen3-0.6B, 1 GB + 1 GB, no warm-up     evals/<m>_<arm>_s0.json
   B1  Llama-3.2-1B, embedding warm-up, 1 GB + 1 GB             evals/B1_<m>_<arm>.json
   B3  Llama-3.2-1B, embedding warm-up, 3 GB + 3 GB             evals/B3_<m>_<arm>.json
-Inputs are copied from the box by sync_cpt.sh into results/cpt/.
+Inputs are the evaluation files copied from the GPU box into results/cpt/.
 Output: results/cpt_analysis.json, printed summary.
 """
 import json

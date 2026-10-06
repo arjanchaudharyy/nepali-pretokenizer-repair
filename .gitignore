@@ -13,3 +13,13 @@ hf_release/*/tokenizer.json
 review/
 *.lastlog
 *.blg
+# generated
+arxiv/
+paper/*.aux
+paper/*.bbl
+paper/*.out
+paper/*.pdf
+lit/
+sync_cpt.sh
+results/final_analysis*.txt
+.ops/
