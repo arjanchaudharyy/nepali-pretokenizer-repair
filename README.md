@@ -65,16 +65,24 @@ pre-tokenizer from a hard-coded pattern when it loads, which silently undoes a r
 
 ## Reproduce
 
-Tokenizer-side results (CPU, minutes):
+From a fresh clone (tested on CPU; only tokenizer files are downloaded):
 ```bash
-python measure.py results/sweep_devtest.json   # production audit
-python ceiling.py
-python released_extensions.py
-python tokenizer_extras.py
+pip install -r requirements.txt
+curl -sL https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz | tar xz
+python floorcheck.py unsloth/Llama-3.2-1B npi_Deva   # one-command floor diagnostic
+python ceiling.py                                    # pre-token floors
+python released_extensions.py                        # released extensions vs their floors
+python make_decomp_table.py                          # premium decomposition (full pre-tokenizer pipeline)
+python hf_release/build.py                           # needs tok/box/ outputs; verifies the released tokenizers
 ```
-Continued-pretraining results need GPUs (we used 4x H200; see `box/fast_all.sh`).
+`measure.py results/sweep_devtest.json` re-runs the 33-tokenizer audit (slow; some repositories are gated).
 
-FLORES-200: `curl -sL https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz | tar xz`
+What a fresh clone cannot rerun:
+- `tokenizer_extras.py` and `results/revision/devanagari_only.py` read `data/ne_test_sample.txt`, a 262 MB Nepali text sample whose source and licence we did not record, so we do not redistribute it. Their outputs are in `results/`.
+- The K-sweep, cross-script sweep and continued pretraining ran on a 4x H200 box (`box/`). Those scripts assume the box layout (`/home/ntt`) and FineWeb-2 / FineWeb-Edu downloads; every run's evaluation, per-piece scores and training log is in `results/cpt/`, and all statistics in the paper regenerate from them on CPU (`results/revision/amendment5.py`, `amendment6.py`, `cluster_bootstrap.py`, `make_*_table.py`).
+- Trained model checkpoints are not released.
+
+The held-out document boundaries used to check the clustered intervals are in `results/revision/heldout_ne_doc_ids.json`.
 
 ## Licences
 

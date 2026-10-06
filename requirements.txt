@@ -1,0 +1,9 @@
+# Tokenizer-side analyses (CPU). Versions used for the paper.
+transformers==5.18.0
+tokenizers==0.23.2
+tiktoken==0.14.0
+regex==2026.9.29
+numpy==2.5.3
+matplotlib==3.11.2
+huggingface_hub==1.33.0
+# Continued-pretraining scripts in box/ additionally need torch (CUDA), liger-kernel and sacrebleu.

@@ -58,7 +58,7 @@ L = [r"\begin{table*}[t]", r"\centering\small", r"\setlength{\tabcolsep}{4.5pt}"
      r"\multicolumn{6}{l}{\emph{Held-out Nepali BPB} (lower is better)} \\"]
 lb = REG["llama"]["base"]["bpb_chunk2k_ne"]
 qb = REG["qwen"]["base"]["bpb_chunk2k_ne"]
-L.append(f"Base model (untrained) & {lb:.3f} & n/a & n/a & {lb:.3f} & {qb:.3f} \\\\")
+L.append(f"Base model, no CPT & {lb:.3f} & n/a & n/a & {lb:.3f} & {qb:.3f} \\\\")
 for a, lab in ARMS:
     cells = [f"{bpb(src, m, e, a):.3f}" for m, e, src, _ in COLS]
     L.append(f"{lab} & " + " & ".join(cells) + r" \\")
@@ -81,7 +81,7 @@ L += [r"\midrule",
 nd = CB["docs"]["ne"]
 L += [r"\caption{Continued pretraining, seed 0 of each arm, on the same 1\,GB of Nepali and 1\,GB of English. \textbf{Our results are the BOS-rerun (Llama) and Qwen columns}; two-seed means and matched-steps runs are in Table~\ref{tab:extra-runs}; the other Llama columns show the scoring artifact of \S\ref{sec:cpt}. "
       r"BPB: held-out native Nepali, in pieces of about 2{,}000 bytes, scored after the registered prefix (BOS for Llama; end-of-text for Qwen, which has no BOS) or the training separator (end-of-text; a post hoc diagnostic). "
-      f"Intervals resample {nd['docs']} reconstructed documents and reflect only the sampling of evaluation text. "
+      f"Intervals resample {nd['docs']} heuristic document clusters (503 true documents give the same intervals to $\\pm0.0001$) and reflect only the sampling of evaluation text. "
       r"Training tokens and decoding steps (FLORES Nepali, relative to \RII{}) are \RO{} / \RI{} / \RII{}. Secondary metrics: Table~\ref{tab:cpt}.}",
       r"\label{tab:prefix}", r"\end{table*}"]
 out = "\n".join(L).replace(f"{nd['pieces']:,}", f"{nd['pieces']:,}".replace(",", "{,}")) + "\n"
