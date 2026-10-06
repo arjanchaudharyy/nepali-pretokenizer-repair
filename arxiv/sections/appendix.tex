@@ -1,7 +1,7 @@
 \section{Pre-registration history}
 \label{app:prereg}
 
-We committed the analysis plan to the project repository in six steps, four on 2026-10-04 and two on 2026-10-05 (IST), and report all six. Times are commit times.
+We committed the analysis plan to the project repository in eight steps between 2026-10-04 and 2026-10-06 (IST), and report all eight. Times are commit times.
 
 \begin{enumerate}
   \setlength\itemsep{0pt}
@@ -11,6 +11,8 @@ We committed the analysis plan to the project repository in six steps, four on 2
   \item \textbf{Second amendment} (\commitD{}, 21:46; \texttt{PREREG\_AMENDMENT3.md}) was written \emph{after} observing the Llama \RO{} and \RII{} main-run results and before any \RI{} or Qwen result. It registered the warm-up runs, with the prediction that they shrink the \RII{} $-$ \RO{} gap, and 3\,GB runs that we did not run, and it added the ``worse'' category to the claim rules.
   \item \textbf{Third amendment} (\commitE{}, 2026-10-05, 03:24; \texttt{PREREG\_AMENDMENT4.md}) was written after all main and warm-up results and before running what it registered: the three Llama main runs repeated with every training document wrapped as BOS, document, end-of-text, scored with the registered protocol. It predicted that scores after BOS and after the end-of-text token would agree within 0.005 for every arm, and that \RII{} $-$ \RI{} after BOS would lie between the two earlier values ($+0.006$ and $+0.027$). The second prediction held ($+0.026$), and the rerun matches the earlier separator diagnostic within 0.002, which confirms that diagnostic in spirit. The first prediction failed: after the end-of-text token the rerun models score far worse (\S\ref{sec:cpt}).
   \item \textbf{Fourth amendment} (\commitF{}, 2026-10-05, 16:08; \texttt{PREREG\_AMENDMENT5.md}) was written after all earlier results and two external reviews, and before running what it registered: \RII{} retrained for \RI{}'s step count on Llama (BOS setting) and Qwen, Qwen \RI{} and \RII{} with a second seed, and two-tokenization scoring. It predicted that matched-steps \RII{} would be non-inferior to \RI{} on Qwen (it was better), smaller-gapped but still worse on Llama (held), still worse than \RO{} on both (held), that a second Qwen seed would move \RII{} $-$ \RI{} by less than 0.005 (it moved by 0.0056, so this failed narrowly), and that two-tokenization scoring would change no verdict (held).
+  \item \textbf{Fifth amendment} (\commitG{}, 2026-10-06, 00:48; \texttt{PREREG\_AMENDMENT6.md}), written after the fourth amendment's results and before running, added second seeds for matched-steps \RII{} (both models), Llama \RO{} and \RI{} and Qwen \RO{}, and Qwen \RI{} and matched-steps \RII{} at a learning rate of $3{\times}10^{-4}$, under a budget cap. It predicted that with seeds averaged matched-steps \RII{} would be better than \RI{} on Qwen and worse on Llama, that \RO{} would stay best, and that \RII{} $-$ \RI{} would keep its sign at $3{\times}10^{-4}$. All four held.
+  \item \textbf{Sixth amendment} (\commitH{}, 2026-10-06, 05:01; \texttt{PREREG\_AMENDMENT7.md}), written after the fifth amendment's results and before running, added Qwen \RO{} at $3{\times}10^{-4}$. It predicted that \RO{} would gain less than 0.005 and that matched-steps \RII{} would be non-inferior to it. Both failed: \RO{} gained $0.021$ and stays ahead by $0.024$.
 \end{enumerate}
 In the repository these are \texttt{PREREG.md}, \texttt{PREREG\_RETROFIT.md}, \texttt{PREREG\_AMENDMENT.md}, \texttt{PREREG\_AMENDMENT3.md} and \texttt{PREREG\_AMENDMENT4.md}. The first four commits lie within four hours and the fifth about six hours later. All are in a repository we control, so they document our plan without an external timestamp.
 
@@ -243,3 +245,9 @@ Llama-3.1-8B & am & 1.573 & 93.8\% & 1.00$\times$ \\
 \section{What the repair does not fix}
 \label{app:notfix}
 A wider word class removes the splits that the regex forces, but BPE can still split inside a syllable: 26\% of \texttt{o200k}'s Nepali tokens and 11 to 13\% of \RII{}'s start with a combining mark. An akshara-aware rule~\citep{kapila2026typedriven,darshana2026wwho} restricted to the Devanagari block would keep English token ids by the argument of Proposition~\ref{prop:lossless}; testing one in a deployed model is future work. Added tokens are a second route past the floor that needs no regex change; they split more words mid-way (\S\ref{sec:floor}), but we have not measured their effect on model quality, and our training runs give no evidence that segmentation of this kind matters for it.
+
+\section{All runs of the later amendments}
+\label{app:extra-runs}
+Table~\ref{tab:extra-runs} lists every run of the Llama BOS setting and of Qwen. Matched-steps Llama \RII{} is slightly worse on English than the other Llama arms ($0.804$ against $0.798$ to $0.800$), possibly because it sees part of its stream twice.
+
+\input{sections/extra_runs_table}

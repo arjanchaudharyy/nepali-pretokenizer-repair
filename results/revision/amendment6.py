@@ -47,6 +47,11 @@ CMP = {
     "qwen_lr3_R1_minus_lr1_R1": (["lr3_qwen_R1_s0"], ["qwen_R1_s0"]),
     "qwen_lr3_msR2_minus_lr1_msR2": (["lr3_ms_qwen_R2_s0"], ["ms_qwen_R2_s0"]),
     "qwen_lr3_R1_minus_R0": (["lr3_qwen_R1_s0"], Q["R0"]),
+    "qwen_lr3_msR2_minus_lr1_R0": (["lr3_ms_qwen_R2_s0"], Q["R0"]),
+    # amendment 7
+    "qwen_lr3_R0_minus_lr1_R0": (["lr3_qwen_R0_s0"], ["qwen_R0_s0"]),
+    "qwen_lr3_msR2_minus_lr3_R0": (["lr3_ms_qwen_R2_s0"], ["lr3_qwen_R0_s0"]),
+    "qwen_lr3_R1_minus_lr3_R0": (["lr3_qwen_R1_s0"], ["lr3_qwen_R0_s0"]),
 }
 out = {}
 for k, (a, b) in CMP.items():
