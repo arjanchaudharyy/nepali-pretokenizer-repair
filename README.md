@@ -66,7 +66,7 @@ pre-tokenizer from a hard-coded pattern when it loads, which silently undoes a r
 
 ## Reproduce
 
-From a fresh clone (tested on CPU; only tokenizer files are downloaded):
+From a fresh clone (CPU; only tokenizer files and public data are downloaded):
 ```bash
 pip install -r requirements.txt
 curl -sL https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz | tar xz
@@ -74,16 +74,17 @@ python floorcheck.py unsloth/Llama-3.2-1B npi_Deva   # one-command floor diagnos
 python ceiling.py                                    # pre-token floors
 python released_extensions.py                        # released extensions vs their floors
 python make_decomp_table.py                          # premium decomposition (full pre-tokenizer pipeline)
-python hf_release/build.py                           # needs tok/box/ outputs; verifies the released tokenizers
+python measure.py results/sweep_devtest.json         # the 33-tokenizer audit (slow; some repositories are gated)
+python fetch_ne_test_sample.py                       # FineWeb-2 npi_Deva test split -> data/ne_test_sample.txt
+python results/revision/amendment6.py                # every continued-pretraining comparison, from saved per-piece scores
 ```
-`measure.py results/sweep_devtest.json` re-runs the 33-tokenizer audit (slow; some repositories are gated).
+`data/ne_test_sample.txt` is the FineWeb-2 `npi_Deva` test split (ODC-By), one document per line; `fetch_ne_test_sample.py` rebuilds it byte for byte.
 
-What a fresh clone cannot rerun:
-- `tokenizer_extras.py` and `results/revision/devanagari_only.py` read `data/ne_test_sample.txt`, a 262 MB Nepali text sample whose source and licence we did not record, so we do not redistribute it. Their outputs are in `results/`.
-- The K-sweep, cross-script sweep and continued pretraining ran on a 4x H200 box (`box/`). Those scripts assume the box layout (`/home/ntt`) and FineWeb-2 / FineWeb-Edu downloads; every run's evaluation, per-piece scores and training log is in `results/cpt/`, and all statistics in the paper regenerate from them on CPU (`results/revision/amendment5.py`, `amendment6.py`, `cluster_bootstrap.py`, `make_*_table.py`).
-- Trained model checkpoints are not released.
+Needs files from the GPU box (`tok/box/`, not in the repository): `tokenizer_extras.py`, `results/revision/devanagari_only.py` and `hf_release/build.py`, which read the extended tokenizers produced by `box/retrofit_tok.py`. The released tokenizers themselves are on Hugging Face.
 
-The held-out document boundaries used to check the clustered intervals are in `results/revision/heldout_ne_doc_ids.json`.
+The K-sweep, cross-script sweep and continued pretraining ran on a 4x H200 box (`box/`, see `box/README.md`). Those scripts assume the box layout (`/home/ntt`) and FineWeb-2 / FineWeb-Edu downloads. Every run's evaluation, per-piece scores and training log is in `results/cpt/`, and all statistics and tables in the paper regenerate from them on CPU (`results/revision/*.py`, `make_*_table.py`). Trained checkpoints are not released.
+
+The 503 held-out Nepali document boundaries used for the clustered intervals are in `results/revision/heldout_ne_doc_ids.json`.
 
 ## Licences
 

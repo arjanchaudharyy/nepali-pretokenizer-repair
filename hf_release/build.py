@@ -17,6 +17,10 @@ REL = [  # (hf repo name, base repo, local tokenizer dir, arm, family)
     ("Qwen3-Nepali-Extended-Tokenizer-32k", "Qwen/Qwen3-1.7B-Base", "Qwen3-1.7B-Base/R1_K32000", "R1", "qwen"),
 ]
 
+missing = [str(P / "tok/box" / t / "tokenizer.json") for _, _, t, _, _ in REL if not (P / "tok/box" / t / "tokenizer.json").exists()]
+if missing:  # check inputs before touching the release directories
+    raise SystemExit("missing tokenizer inputs (built on the GPU box by box/retrofit_tok.py):\n  " + "\n  ".join(missing))
+
 out = {}
 for name, base_repo, tokdir, arm, fam in REL:
     d = ROOT / name

@@ -31,7 +31,22 @@ EXPS = {"A_llama": lambda a: f"llama_{a}_s0", "A_qwen": lambda a: f"qwen_{a}_s0"
 PAIRS = (("R1", "R0"), ("R2", "R0"), ("R2", "R1"))
 
 
+_TRUE = ROOT / "results/revision/heldout_ne_doc_ids.json"
+
+
 def doc_ids(byts, cut=CUT):
+    """Document ids for a list of piece sizes. Nepali held-out pieces use the true document boundaries
+    (results/revision/heldout_ne_doc_ids.json, recovered from FineWeb-2) when the piece sizes match them,
+    including a prefix of them (the 1 MB equal-compute subset); otherwise the length heuristic below."""
+    byts = list(byts)
+    if _TRUE.exists():
+        t = json.load(open(_TRUE))
+        if byts == t["piece_bytes"][:len(byts)]:
+            return np.array(t["doc_ids"][:len(byts)])
+    return _heuristic_doc_ids(byts, cut)
+
+
+def _heuristic_doc_ids(byts, cut=CUT):
     ids, d = [], 0
     for b in byts:
         ids.append(d)
