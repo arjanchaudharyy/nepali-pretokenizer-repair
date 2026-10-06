@@ -37,12 +37,14 @@ def cmp(A, B):
 Q = dict(R0=["qwen_R0_s0", "qwen_R0_s1"], R1=["qwen_R1_s0", "qwen_R1_s1"], R2=["qwen_R2_s0", "qwen_R2_s1"],
          msR2=["ms_qwen_R2_s0", "ms_qwen_R2_s1"])
 L = dict(R0=["bos_llama_R0_s0", "bos_llama_R0_s1"], R1=["bos_llama_R1_s0", "bos_llama_R1_s1"],
-         msR2=["ms_bos_llama_R2_s0", "ms_bos_llama_R2_s1"], R2=["bos_llama_R2_s0"])
+         msR2=["ms_bos_llama_R2_s0", "ms_bos_llama_R2_s1"], R2=["bos_llama_R2_s0", "bos_llama_R2_s1"])
 CMP = {
     "qwen_2seed_msR2_minus_R1": (Q["msR2"], Q["R1"]), "qwen_2seed_msR2_minus_R0": (Q["msR2"], Q["R0"]),
     "qwen_2seed_R1_minus_R0": (Q["R1"], Q["R0"]), "qwen_2seed_R2_minus_R1": (Q["R2"], Q["R1"]),
     "llama_2seed_msR2_minus_R1": (L["msR2"], L["R1"]), "llama_2seed_msR2_minus_R0": (L["msR2"], L["R0"]),
     "llama_2seed_R1_minus_R0": (L["R1"], L["R0"]),
+    # amendment 8
+    "llama_2seed_R2_minus_R1": (L["R2"], L["R1"]), "llama_2seed_R2_minus_R0": (L["R2"], L["R0"]),
     "qwen_lr3_msR2_minus_R1": (["lr3_ms_qwen_R2_s0"], ["lr3_qwen_R1_s0"]),
     "qwen_lr3_R1_minus_lr1_R1": (["lr3_qwen_R1_s0"], ["qwen_R1_s0"]),
     "qwen_lr3_msR2_minus_lr1_msR2": (["lr3_ms_qwen_R2_s0"], ["ms_qwen_R2_s0"]),
