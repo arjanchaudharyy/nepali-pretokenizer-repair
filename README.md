@@ -38,7 +38,7 @@ Exactly the K=32,000 tokenizers evaluated in the paper. Only tokenizers, no mode
 | [Aarjan/Qwen3-Nepali-Repaired-Tokenizer-32k](https://huggingface.co/Aarjan/Qwen3-Nepali-Repaired-Tokenizer-32k) (R2) | 1.01x (original 4.42x) |
 | [Aarjan/Qwen3-Nepali-Extended-Tokenizer-32k](https://huggingface.co/Aarjan/Qwen3-Nepali-Extended-Tokenizer-32k) (R1 baseline) | 2.19x |
 
-**Pitfall when repairing a Qwen tokenizer.** transformers' `Qwen2Tokenizer` class rebuilds the
+**Pitfall when repairing a Qwen tokenizer.** In transformers 5.x, the `Qwen2Tokenizer` class rebuilds the
 pre-tokenizer from a hard-coded pattern when it loads, which silently undoes a regex repair stored in
 `tokenizer.json`. Our releases set `tokenizer_class` to `PreTrainedTokenizerFast` to avoid this.
 `hf_release/build.py` rebuilds and re-verifies all four (English ids identical, lossless, special-token ids unchanged).

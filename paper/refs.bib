@@ -97,7 +97,7 @@
 
 % source: https://aclanthology.org/2023.emnlp-main.614.bib
 @inproceedings{ahia-etal-2023-languages,
-    title = "Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models",
+    title = "Do All Languages Cost the Same? {T}okenization in the Era of Commercial Language Models",
     author = "Ahia, Orevaoghene  and
       Kumar, Sachin  and
       Gonen, Hila  and
@@ -476,7 +476,7 @@
 }
 
 @misc{regmi2026arkios,
-  title         = {Arkios: An Open Bilingual English-Nepali Language Model Trained From Scratch, with a Devanagari-Aware Tokenizer},
+  title         = {Arkios: An Open Bilingual {English-Nepali} Language Model Trained From Scratch, with a {Devanagari}-Aware Tokenizer},
   author        = {Regmi, Sajal and Pudasaini, Siddhartha and Pun, Chetan Phakami},
   year          = {2026},
   eprint        = {2608.30092},
@@ -501,7 +501,7 @@
   author       = {Land, Sander},
   year         = {2026},
   month        = sep,
-  howpublished = {Substack blog post, 1 September 2026},
+  howpublished = {Substack blog post},
   url          = {https://tokencontributions.substack.com/p/small-pre-tokenization-bugs-with}
 }
 
@@ -515,15 +515,22 @@
 }
 
 % arXiv v1 title was "IndicSuperTokenizer: An Optimized Tokenizer for Indic Multilingual LLMs" (2025-11-05); v2 (2026-03-22) retitled.
-@misc{rana2025mutant,
-  title         = {{MUTANT}: A Recipe for Multilingual Tokenizer Design},
-  author        = {Rana, Souvik and Menezes, Arul and Kulkarni, Ashish and Khatri, Chandra and Agarwal, Shubham},
-  year          = {2025},
-  eprint        = {2511.03237},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL},
-  note          = {v1 titled ``IndicSuperTokenizer: An Optimized Tokenizer for Indic Multilingual LLMs''},
-  url           = {https://arxiv.org/abs/2511.03237}
+@inproceedings{rana2025mutant,
+    title = "{MUTANT}: A Recipe for Multilingual Tokenizer Design",
+    author = "Rana, Souvik  and
+      Kulkarni, Ashish  and
+      Menezes, Arul  and
+      Khatri, Chandra  and
+      Agarwal, Shubham",
+    booktitle = "Proceedings of the 64th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.acl-long.2146/",
+    doi = "10.18653/v1/2026.acl-long.2146",
+    pages = "46261--46277",
+    ISBN = "979-8-89176-390-6"
 }
 
 @misc{brahma2025morphtok,
@@ -690,7 +697,9 @@
   author       = {Kadariya, Ramesh},
   year         = {2026},
   howpublished = {Preprint (Zenodo/ResearchGate)},
-  url          = {https://github.com/RameshKadariya/nepali-llm-benchmark}
+  month        = jul,
+  doi          = {10.13140/RG.2.2.27979.55840},
+  url          = {https://zenodo.org/records/21320729}
 }
 
 
@@ -900,7 +909,7 @@
 }
 
 @inproceedings{bandarkar-etal-2024-belebele,
-    title = "The Belebele Benchmark: a Parallel Reading Comprehension Dataset in 122 Language Variants",
+    title = "The {B}elebele Benchmark: a Parallel Reading Comprehension Dataset in 122 Language Variants",
     author = "Bandarkar, Lucas  and
       Liang, Davis  and
       Muller, Benjamin  and
@@ -1145,13 +1154,28 @@
   url       = {https://mlanthology.org/tmlr/2025/yamaguchi2025tmlr-adapting/}
 }
 
-@misc{csaki2024sambalingo,
-  title         = {{SambaLingo}: Teaching Large Language Models New Languages},
-  author        = {Csaki, Zoltan and Li, Bo and Li, Jonathan and Xu, Qiantong and Pawakapan, Pian and Zhang, Leon and Du, Yun and Zhao, Hengyu and Hu, Changran and Thakker, Urmish},
-  year          = {2024},
-  eprint        = {2404.05829},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL}
+@inproceedings{csaki2024sambalingo,
+    title = "{S}amba{L}ingo: Teaching Large Language Models New Languages",
+    author = "Csaki, Zoltan  and
+      Li, Bo  and
+      Li, Jonathan Lingjie  and
+      Xu, Qiantong  and
+      Pawakapan, Pian  and
+      Zhang, Leon  and
+      Du, Yun  and
+      Zhao, Hengyu  and
+      Hu, Changran  and
+      Thakker, Urmish",
+    editor = {S{\"a}lev{\"a}, Jonne  and
+      Owodunni, Abraham},
+    booktitle = "Proceedings of the Fourth Workshop on Multilingual Representation Learning (MRL 2024)",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.mrl-1.1/",
+    doi = "10.18653/v1/2024.mrl-1.1",
+    pages = "1--21"
 }
 
 @misc{dobler2024tokenizerswap,
@@ -1249,22 +1273,35 @@
   primaryClass  = {cs.CL}
 }
 
-@misc{nag2024efficientcpt,
-  title         = {Efficient Continual Pre-training of {LLMs} for Low-resource Languages},
-  author        = {Nag, Arijit and Chakrabarti, Soumen and Mukherjee, Animesh and Ganguly, Niloy},
-  year          = {2024},
-  eprint        = {2412.10244},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL}
+@inproceedings{nag2024efficientcpt,
+    title = "Efficient Continual Pre-training of {LLM}s for Low-resource Languages",
+    author = "Nag, Arijit  and
+      Chakrabarti, Soumen  and
+      Mukherjee, Animesh  and
+      Ganguly, Niloy",
+    booktitle = "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 3: Industry Track)",
+    month = apr,
+    year = "2025",
+    address = "Albuquerque, New Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.naacl-industry.25/",
+    doi = "10.18653/v1/2025.naacl-industry.25",
+    pages = "304--317",
+    ISBN = "979-8-89176-194-0"
 }
 
-@misc{duwal2024nepalidapt,
-  title         = {Domain-adaptative Continual Learning for Low-resource Tasks: Evaluation on {N}epali},
-  author        = {Duwal, Sharad and Prasai, Suraj and Manandhar, Suresh},
-  year          = {2024},
-  eprint        = {2412.13860},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL}
+@inproceedings{duwal2024nepalidapt,
+    title = "Domain-adaptative Continual Learning for Low-resource Tasks: Evaluation on {N}epali",
+    author = "Duwal, Sharad  and
+      Prasai, Suraj  and
+      Manandhar, Suresh",
+    booktitle = "Proceedings of the First Workshop on Challenges in Processing South Asian Languages (CHiPSAL 2025)",
+    month = jan,
+    year = "2025",
+    address = "Abu Dhabi, UAE",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2025.chipsal-1.14/",
+    pages = "144--153"
 }
 
 @misc{yang2025tibetan,
@@ -1344,9 +1381,10 @@
   note         = {Pre-tokenizer pattern read from the released file}
 }
 
-@misc{penedo2025fineweb2,
+@inproceedings{penedo2025fineweb2,
   title         = {{FineWeb2}: One Pipeline to Scale Them All -- Adapting Pre-Training Data Processing to Every Language},
   author        = {Penedo, Guilherme and Kydl{\'i}{\v{c}}ek, Hynek and Sabol{\v{c}}ec, Vinko and Messmer, Bettina and Foroutan, Negar and Kargaran, Amir Hossein and Raffel, Colin and Jaggi, Martin and Von Werra, Leandro and Wolf, Thomas},
+  booktitle     = {Second Conference on Language Modeling (COLM)},
   year          = {2025},
   eprint        = {2506.20920},
   archivePrefix = {arXiv},
@@ -1380,4 +1418,121 @@
   archivePrefix = {arXiv},
   primaryClass  = {cs.CL},
   url           = {https://arxiv.org/abs/2505.09388}
+}
+@inproceedings{arnett-etal-2024-bit,
+    title = "A Bit of a Problem: Measurement Disparities in Dataset Sizes across Languages",
+    author = "Arnett, Catherine  and
+      Chang, Tyler A.  and
+      Bergen, Benjamin",
+    booktitle = "Proceedings of the 3rd Annual Meeting of the Special Interest Group on Under-resourced Languages @ LREC-COLING 2024",
+    month = may,
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.sigul-1.1/",
+    pages = "1--9"
+}
+
+
+@inproceedings{wegmann-etal-2025-tokenization,
+    title = "Tokenization is Sensitive to Language Variation",
+    author = "Wegmann, Anna  and
+      Nguyen, Dong  and
+      Jurgens, David",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2025",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-acl.572/",
+    doi = "10.18653/v1/2025.findings-acl.572",
+    pages = "10958--10983",
+    ISBN = "979-8-89176-256-5"
+}
+
+
+
+@misc{zhao2024llamabeyond,
+  title         = {{LLaMA} Beyond {English}: An Empirical Study on Language Capability Transfer},
+  author        = {Zhao, Jun and Zhang, Zhihao and Gao, Luhui and Zhang, Qi and Gui, Tao and Huang, Xuanjing},
+  year          = {2024},
+  eprint        = {2401.01055},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2401.01055}
+}
+
+@inproceedings{muennighoff2023scaling,
+  title     = {Scaling Data-Constrained Language Models},
+  author    = {Muennighoff, Niklas and Rush, Alexander M. and Barak, Boaz and Le Scao, Teven and Piktus, Aleksandra and Tazi, Nouamane and Pyysalo, Sampo and Wolf, Thomas and Raffel, Colin},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {36},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2305.16264}
+}
+
+@misc{churchill2026reducing,
+  title         = {Reducing Tokenization Premiums for Low-Resource Languages},
+  author        = {Churchill, Geoffrey and Skiena, Steven},
+  year          = {2026},
+  eprint        = {2601.13328},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2601.13328}
+}
+
+@article{ibrahim2024simple,
+  title   = {Simple and Scalable Strategies to Continually Pre-train Large Language Models},
+  author  = {Ibrahim, Adam and Th{\'e}rien, Benjamin and Gupta, Kshitij and Richter, Mats L. and Anthony, Quentin and Lesort, Timoth{\'e}e and Belilovsky, Eugene and Rish, Irina},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2024},
+  url     = {https://openreview.net/forum?id=DimPeeCxKO}
+}
+
+@misc{thakur2025artofbreaking,
+  title         = {The Art of Breaking Words: Rethinking Multilingual Tokenizer Design},
+  author        = {Thakur, Aamod and Nagpal, Ajay and Savarkar, Atharva and Pundalik, Kundeshwar and Dosi, Siddhesh and Sawarkar, Piyush and Thakur, Viraj and Saluja, Rohit and Desarkar, Maunendra Sankar and Ramakrishnan, Ganesh},
+  year          = {2025},
+  eprint        = {2508.06533},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2508.06533}
+}
+
+@misc{mehta2026defragmenting,
+  title         = {Defragmenting Language Models: An Interpretability-based Approach for Vocabulary Expansion},
+  author        = {Mehta, Maitrey and Subramani, Nishant and Xu, Zhichao and Gupta, Ashim and Srikumar, Vivek},
+  year          = {2026},
+  eprint        = {2604.16656},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2604.16656}
+}
+
+@misc{cui2023chinesellama,
+  title         = {Efficient and Effective Text Encoding for {Chinese} {LLaMA} and {Alpaca}},
+  author        = {Cui, Yiming and Yang, Ziqing and Yao, Xin},
+  year          = {2023},
+  eprint        = {2304.08177},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2304.08177}
+}
+
+@inproceedings{remy2024transtokenization,
+  title     = {Trans-Tokenization and Cross-lingual Vocabulary Transfers: Language Adaptation of {LLMs} for Low-Resource {NLP}},
+  author    = {Remy, Fran{\c{c}}ois and Delobelle, Pieter and Avetisyan, Hayastan and Khabibullina, Alfiya and de Lhoneux, Miryam and Demeester, Thomas},
+  booktitle = {First Conference on Language Modeling (COLM)},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2408.04303}
+}
+
+@misc{luitel2025perplexity,
+  title         = {Can Perplexity Predict Fine-tuning Performance? An Investigation of Tokenization Effects on Sequential Language Models for {Nepali}},
+  author        = {Luitel, Nishant and Bekoju, Nirajan and Sah, Anand Kumar and Shakya, Subarna},
+  year          = {2025},
+  eprint        = {2404.18071},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2404.18071}
 }

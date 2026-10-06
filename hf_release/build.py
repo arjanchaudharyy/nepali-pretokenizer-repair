@@ -26,6 +26,8 @@ for name, base_repo, tokdir, arm, fam in REL:
     base.save_pretrained(d)  # configs + special tokens of the base model
     shutil.copy(P / "tok/box" / tokdir / "tokenizer.json", d / "tokenizer.json")
     shutil.copy(P / "tok/box" / tokdir / "meta.json", d / "build_meta.json")
+    if fam == "llama":  # Llama 3.2 Community License s.1.b.iii: attribution in a "Notice" text file
+        (d / "NOTICE").write_text("Llama 3.2 is licensed under the Llama 3.2 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved.\n")
     for f in ("vocab.json", "merges.txt"):  # slow-tokenizer files from the base would be stale
         (d / f).unlink(missing_ok=True)
     # Model-specific classes (e.g. transformers' Qwen2Tokenizer) rebuild the pre-tokenizer from a

@@ -24,9 +24,9 @@ P_REP = sum(len(REP.findall(s)) for s in NE)
 # (label in table, aliases shown as "(+n)", source)  -- source: ("hf", repo) or ("tt", tiktoken encoding)
 LETTERS = [("GPT-2", 0, ("tt", "gpt2")), ("LFM2", 0, ("hf", "LiquidAI/LFM2-8B-A1B")),
            ("Falcon3", 0, ("hf", "tiiuae/Falcon3-7B-Base")), (r"\texttt{cl100k}", 3, ("tt", "cl100k_base")),
-           ("GLM-4.5", 0, ("hf", "zai-org/GLM-4.5")), ("Qwen2.5/3", 0, ("hf", "Qwen/Qwen2.5-7B")),
+           ("GLM-4.5", 0, ("hf", "zai-org/GLM-4.5")), ("Qwen2.5", 1, ("hf", "Qwen/Qwen2.5-7B")),
            ("GLM-5.3", 0, ("hf", "zai-org/GLM-5.3")), ("Llama-3", 1, ("hf", "NousResearch/Meta-Llama-3-8B"))]
-MARKS = [("DeepSeek-V3/V4", 0, ("hf", "deepseek-ai/DeepSeek-V3")), ("TituLLM", 0, ("hf", "hishab/titulm-llama-3.2-1b-v2.0")),
+MARKS = [("DeepSeek-V3", 1, ("hf", "deepseek-ai/DeepSeek-V3")), ("TituLLM", 0, ("hf", "hishab/titulm-llama-3.2-1b-v2.0")),
          ("Qwen3.5", 0, ("hf", "Qwen/Qwen3.5-9B")), ("Mistral-NeMo", 1, ("hf", "unsloth/Mistral-Nemo-Base-2407")),
          ("Llama-4", 0, ("hf", "unsloth/Llama-4-Scout-17B-16E-Instruct")), (r"\texttt{o200k}", 1, ("tt", "o200k_base")),
          ("Arkios", 0, ("hf", "sajalregmi4/arkios-tokenizer"))]

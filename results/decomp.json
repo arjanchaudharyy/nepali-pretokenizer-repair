@@ -44,7 +44,7 @@
   "source": "zai-org/GLM-4.5",
   "block": "letters"
  },
- "Qwen2.5/3": {
+ "Qwen2.5": {
   "premium": 4.4154085659462,
   "base": 0.7794793816299193,
   "regex": 2.7881096144914075,
@@ -71,7 +71,7 @@
   "source": "NousResearch/Meta-Llama-3-8B",
   "block": "letters"
  },
- "DeepSeek-V3/V4": {
+ "DeepSeek-V3": {
   "premium": 2.9673089012980287,
   "base": 0.796198365445065,
   "regex": 1.0053413841151881,

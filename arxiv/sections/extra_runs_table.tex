@@ -26,6 +26,6 @@ Qwen & \RI{} & $3{\times}10^{-4}$ & 0 & 748 & 0.5092 & 0.8748 \\
 Qwen & \RII{}-m & $3{\times}10^{-4}$ & 0 & 748 & 0.5035 & 0.8751 \\
 \bottomrule
 \end{tabular}
-\caption{Every continued-pretraining run of the Llama BOS setting and of Qwen, including the matched-steps, second-seed and learning-rate runs of the fourth to sixth amendments. BPB: held-out text in pieces of about 2{,}000 bytes after the registered prefix. \RII{}-m: \RII{} trained for \RI{}'s step count, with 35\% of its stream seen twice. Seeds change data order only.}
+\caption{Every continued-pretraining run of the Llama BOS setting and of Qwen, including the matched-steps, second-seed and learning-rate runs of the fourth to sixth amendments. BPB: held-out text in pieces of about 2{,}000 bytes after the registered prefix. \RII{}-m: \RII{} trained for \RI{}'s step count, with 35\% of its stream seen twice. Seeds change data order (and bf16 non-determinism) only.}
 \label{tab:extra-runs}
 \end{table}
