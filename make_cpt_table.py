@@ -34,7 +34,7 @@ for m, d in A.items():
     L.append(r"\midrule")
 L[-1] = r"\bottomrule"
 L += [r"\end{tabular}",
-      r"\caption{Every continued-pretraining run (one run per arm). Main runs: 1\,GB of Nepali and 1\,GB of English, documents separated by the end-of-text token only. Warm-up runs: the same, after training only the embedding matrix on the first 10\% of the stream (Tokens excludes that stage). "
+      r"\caption{Main, warm-up and BOS-rerun runs (seed 0, learning rate $10^{-4}$), with secondary metrics; second seeds, matched-steps and learning-rate runs are in Table~\ref{tab:extra-runs}. Main runs: 1\,GB of Nepali and 1\,GB of English, documents separated by the end-of-text token only. Warm-up runs: the same, after training only the embedding matrix on the first 10\% of the stream (Tokens excludes that stage). "
       r"Held-out BPB is scored in pieces of about 2{,}000 bytes, after the registered prefix (reg.: beginning-of-sequence token for Llama) or the training separator (sep.: end-of-text token); for Qwen the two coincide. "
       r"The base Llama model was never trained without its beginning-of-sequence token, so its separator score is not meaningful (n/a). "
       r"All columns other than sep.\ use the registered prefix; for the Llama warm-up runs they are dominated by the scoring artifact of \S\ref{sec:cpt} and should not be compared with the main runs. "

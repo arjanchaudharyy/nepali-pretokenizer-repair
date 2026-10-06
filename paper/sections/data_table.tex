@@ -12,13 +12,13 @@ dropped: FLORES 10-gram & 0 & 16 \\
 training documents & 166,300 & 209,713 \\
 held-out (MB) & 30 & 30 \\
 \midrule
-\multicolumn{3}{l}{CPT tokens per arm (millions), 1\,GB + 1\,GB}\\
-Llama-3.2-1B R0 & 207 & 211 \\
-Llama-3.2-1B R1 & 176 & 211 \\
-Llama-3.2-1B R2 & 76 & 211 \\
-Qwen3-0.6B R0 & 359 & 215 \\
-Qwen3-0.6B R1 & 177 & 215 \\
-Qwen3-0.6B R2 & 76 & 215 \\
+\multicolumn{3}{l}{Training tokens per arm (millions)}\\
+Llama-3.2-1B \RO{} & 207 & 211 \\
+Llama-3.2-1B \RI{} & 176 & 211 \\
+Llama-3.2-1B \RII{} & 76 & 211 \\
+Qwen3-0.6B \RO{} & 359 & 215 \\
+Qwen3-0.6B \RI{} & 177 & 215 \\
+Qwen3-0.6B \RII{} & 76 & 215 \\
 \bottomrule
 \end{tabular}
 \caption{Corpus cleaning (FineWeb-2 \texttt{npi\_Deva}; FineWeb-Edu; documents placed in the 30\,MB held-out slice are not counted as training documents) and the token counts of each arm's identical 2\,GB training stream. English token counts differ across arms of a model by less than 0.012\%, from the few English documents that contain Devanagari or combining marks.}

@@ -85,4 +85,4 @@ Code: MIT. Tokenizers derived from Llama 3.2 follow the Llama 3.2 Community Lice
 ## Use of AI assistance
 
 This work was carried out with substantial assistance from a large language model assistant
-under the authors' direction; see the paper's ethics statement.
+under the author's direction; see the paper's ethics statement.

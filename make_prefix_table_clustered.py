@@ -53,7 +53,7 @@ L = [r"\begin{table*}[t]", r"\centering\small", r"\setlength{\tabcolsep}{4.5pt}"
      r"\cmidrule(lr){2-5}\cmidrule(lr){6-6}",
      r" & \multicolumn{2}{c}{main runs} & warm-up runs & BOS rerun & main runs \\",
      r"\cmidrule(lr){2-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}\cmidrule(lr){6-6}",
-     r" & registered prefix & training sep. & training sep. & registered prefix & (both identical) \\",
+     r" & registered prefix & training sep. & training sep. & registered prefix & (reg.\ = sep.) \\",
      r"\midrule",
      r"\multicolumn{6}{l}{\emph{Held-out Nepali BPB} (lower is better)} \\"]
 lb = REG["llama"]["base"]["bpb_chunk2k_ne"]
@@ -79,9 +79,9 @@ L += [r"\midrule",
       f"{r['qwen']['R0_over_R2']:.2f} / {r['qwen']['R1_over_R2']:.2f} / 1 \\\\",
       r"\bottomrule", r"\end{tabular}"]
 nd = CB["docs"]["ne"]
-L += [r"\caption{Continued pretraining, one run per arm, on the same 1\,GB of Nepali and 1\,GB of English. \textbf{Our results are the BOS-rerun (Llama) and Qwen columns}; the other Llama columns show the scoring artifact of \S\ref{sec:cpt}. "
+L += [r"\caption{Continued pretraining, seed 0 of each arm (second seeds: Table~\ref{tab:extra-runs}), on the same 1\,GB of Nepali and 1\,GB of English. \textbf{Our results are the BOS-rerun (Llama) and Qwen columns}; the other Llama columns show the scoring artifact of \S\ref{sec:cpt}. "
       r"BPB: held-out native Nepali, in pieces of about 2{,}000 bytes, scored after the registered prefix (BOS for Llama; end-of-text for Qwen, which has no BOS) or the training separator (end-of-text; a post hoc diagnostic). "
-      f"Intervals resample {nd['docs']} documents and reflect only the sampling of evaluation text. "
+      f"Intervals resample {nd['docs']} reconstructed documents and reflect only the sampling of evaluation text. "
       r"Training tokens and decoding steps (FLORES Nepali, relative to \RII{}) are \RO{} / \RI{} / \RII{}. Secondary metrics: Table~\ref{tab:cpt}.}",
       r"\label{tab:prefix}", r"\end{table*}"]
 out = "\n".join(L).replace(f"{nd['pieces']:,}", f"{nd['pieces']:,}".replace(",", "{,}")) + "\n"

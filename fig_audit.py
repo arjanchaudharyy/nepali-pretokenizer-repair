@@ -6,7 +6,7 @@ from matplotlib.lines import Line2D
 plt.rcParams.update({"font.family":"serif","font.size":8,"axes.spines.top":False,"axes.spines.right":False})
 rows=json.load(open("results/audit_unique.json"))
 rows=sorted(rows,key=lambda r:r["premium"])
-C={"letter-regex":"#c0392b","mark-regex":"#2563eb","no-regex":"#7f8c8d","other-regex":"#7f8c8d"}
+C={"letter-regex":"#c0392b","mark-regex":"#2563eb","no-regex":"#7f8c8d","other-regex":"#d4a017"}
 fig,ax=plt.subplots(figsize=(3.3,4.6))
 for i,r in enumerate(rows):
     lab=r["name"]+(f" (+{len(r['aliases'])})" if r["aliases"] else "")
@@ -22,6 +22,7 @@ ax.set_xlabel("Nepali / English token premium")
 ax.set_xlim(0,8)
 ax.legend(handles=[Patch(color=C["letter-regex"],label=r"letters-only regex ($\backslash$p{L}+)"),
                    Patch(color=C["mark-regex"],label="mark-aware regex"),
+                   Patch(color=C["other-regex"],label="other regex (BLOOM)"),
                    Patch(color=C["no-regex"],label="no regex (SentencePiece etc.)"),
                    Line2D([0],[0],color="k",lw=1.4,label="pre-token floor (letters-only)"),
                    Patch(facecolor="#999",alpha=0.35,hatch="////",label="lossy (decode$\\neq$input)")],

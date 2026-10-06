@@ -74,7 +74,7 @@ def verdict(lo, hi, margin=0.01):
         return "better"
     if hi < margin:
         return "non-inferior"
-    return "no detectable difference" if lo < 0 else "worse"
+    return "worse" if lo > 0 else "no detectable difference"
 
 
 def load_per(evdir, tag):

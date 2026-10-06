@@ -29,6 +29,11 @@ for r in sorted(uniq, key=lambda r: r["premium"]["npi_Deva"]["premium"]):
             floor = sum(sum(len(regex.findall(p, s)) for p in r["regexes"][-1:]) for s in ne) / E
         except Exception:
             floor = None
+    # Floors must count the FULL pre-tokenizer pipeline (Falcon3 also splits digit-like bytes after its
+    # byte-level step); results/revision/full_pipeline_floor.py computes them for every HF tokenizer.
+    FP = Path("results/revision/full_pipeline_floor.json")
+    if FP.exists() and r["name"] in (fp := json.load(open(FP))):
+        floor = fp[r["name"]]["full_pipeline_floor"]
     p = r["premium"]["npi_Deva"]
     out.append(dict(name=r["name"], aliases=r["aliases"], family=r["family"], vocab=r["vocab"], kind=r["kind"],
                     premium=p["premium"], lo=p["lo"], hi=p["hi"], lossless=r["name"] not in lossy,
