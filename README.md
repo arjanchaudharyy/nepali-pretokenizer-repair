@@ -34,9 +34,9 @@ Exactly the K=32,000 tokenizers evaluated in the paper. Only tokenizers, no mode
 | Tokenizer | Nepali / English (FLORES-200 devtest) |
 |---|---|
 | [Aarjan/Llama-3.2-Nepali-Repaired-Tokenizer-32k](https://huggingface.co/Aarjan/Llama-3.2-Nepali-Repaired-Tokenizer-32k) (R2, Built with Llama) | 1.01x (original 2.58x) |
-| [Aarjan/Llama-3.2-Nepali-Extended-Tokenizer-32k](https://huggingface.co/Aarjan/Llama-3.2-Nepali-Extended-Tokenizer-32k) (R1 baseline, Built with Llama) | 2.20x |
+| Llama-3.2 Extended (R1 baseline, not published; rebuild with `hf_release/build.py`) | 2.20x |
 | [Aarjan/Qwen3-Nepali-Repaired-Tokenizer-32k](https://huggingface.co/Aarjan/Qwen3-Nepali-Repaired-Tokenizer-32k) (R2) | 1.01x (original 4.42x) |
-| [Aarjan/Qwen3-Nepali-Extended-Tokenizer-32k](https://huggingface.co/Aarjan/Qwen3-Nepali-Extended-Tokenizer-32k) (R1 baseline) | 2.19x |
+| Qwen3 Extended (R1 baseline, not published; rebuild with `hf_release/build.py`) | 2.19x |
 
 **Pitfall when repairing a Qwen tokenizer.** In transformers 5.x, the `Qwen2Tokenizer` class rebuilds the
 pre-tokenizer from a hard-coded pattern when it loads, which silently undoes a regex repair stored in
